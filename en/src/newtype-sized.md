@@ -28,6 +28,8 @@ fn main() {
 }
 ```
 
+{{#playground newtype-sized_1_0.rs answer}}
+
 2. 🌟 Hide the methods of the original type
 
 ```rust,editable
@@ -43,6 +45,8 @@ fn main() {
     assert_eq!(n.pow(2), 4);
 }
 ```
+
+{{#playground newtype-sized_2_0.rs answer}}
 
 3. 🌟🌟 The `newtype` idiom gives compile time guarantees that the right type of value is suplied to a program.
 
@@ -78,6 +82,8 @@ fn main() {
 }
 ```
 
+{{#playground newtype-sized_3_0.rs answer}}
+
 4. 🌟🌟
 
 ```rust,editable
@@ -106,6 +112,8 @@ fn main() {
 /* implement calculate_distance  */
 fn calculate_distance
 ```
+
+{{#playground newtype-sized_4_0.rs answer}}
 
 ## Type alias
 
@@ -158,6 +166,8 @@ fn main() {
 }
 ```
 
+{{#playground newtype-sized_5_0.rs answer}}
+
 6. 🌟🌟 There are a few preserved alias in Rust, one of which can be used in `impl` blocks.
 
 ```rust,editable
@@ -175,6 +185,8 @@ impl VeryVerboseEnumOfThingsToDoWithNumbers {
     }
 }
 ```
+
+{{#playground newtype-sized_6_0.rs answer}}
 
 ## DST and unsized type
 
@@ -194,6 +206,8 @@ fn main() {
 }
 ```
 
+{{#playground newtype-sized_7_0.rs answer}}
+
 8. 🌟🌟 Slice is unsized type, but the reference of slice is not.
 
 ```rust,editable
@@ -205,6 +219,8 @@ fn main() {
 }
 ```
 
+{{#playground newtype-sized_8_0.rs answer}}
+
 9. 🌟🌟 Trait is also a unsized type
 
 ```rust,editable
@@ -215,3 +231,5 @@ fn foobar(thing: Display) {}
 fn main() {
 }
 ```
+
+{{#playground newtype-sized_9_0.rs answer}}

@@ -28,6 +28,8 @@ fn main() {
 }
 ```
 
+{{#playground others_1_0.rs answer}}
+
 ### Parse a String
 
 2. 🌟🌟🌟 We can use `parse` method to convert a `String` into a `i32` number, this is because `FromStr` is implemented for `i32` type in standard library: `impl FromStr for i32`
@@ -45,6 +47,8 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground others_2_0.rs answer}}
 
 3. 🌟🌟 We can also implement the `FromStr` trait for our custom types
 
@@ -82,6 +86,9 @@ fn main() {
 }
 ```
 
+{{#playground others_3_1.rs answer}}
+{{#playground others_3_0.rs answer}}
+
 ### Deref
 
 You can find all the examples and exercises of the `Deref` trait [here](https://practice.rs/smart-pointers/deref.html).
@@ -112,6 +119,8 @@ fn main() {
 }
 ```
 
+{{#playground others_1_0.rs answer}}
+
 2. Extending a lifetime or shortening the lifetime of an invariant is an advanced usage of `transmute`, yeah, **very unsafe Rust!**.
 
 ```rust,editable
@@ -125,6 +134,8 @@ unsafe fn shorten_invariant_lifetime<'b, 'c>(r: &'b mut R<'static>)
     std::mem::transmute::<&'b mut R<'static>, &'b mut R<'c>>(r)
 }
 ```
+
+{{#playground others_2_0.rs answer}}
 
 3. Rather than using `transmute`, you can use some alternatives instead.
 
@@ -172,5 +183,8 @@ fn main() {
     assert_eq!(b"Rust", &[82, 117, 115, 116]);
 }
 ```
+
+{{#playground others_3_1.rs answer}}
+{{#playground others_3_0.rs answer}}
 
 > You can find the solutions [here](https://github.com/sunface/rust-by-practice/blob/master/solutions/type-conversions/others.md)(under the solutions path), but only use it when you need it

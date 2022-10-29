@@ -58,6 +58,8 @@ fn main() {
 }
 ```
 
+{{#playground advance_1_0.rs answer}}
+
 2. 🌟🌟
 
 ```rust,editable
@@ -78,6 +80,8 @@ fn main() {
 }
 ```
 
+{{#playground advance_2_0.rs answer}}
+
 3. 🌟🌟
 
 ```rust,editable
@@ -91,6 +95,8 @@ fn main() {
     println!("Success!")
 }
 ```
+
+{{#playground advance_3_0.rs answer}}
 
 ## HRTB(Higher-ranked trait bounds)
 
@@ -119,6 +125,9 @@ fn main() {
     println!("Success!")
 }
 ```
+
+{{#playground advance_4_1.rs answer}}
+{{#playground advance_4_0.rs answer}}
 
 ## NLL (Non-Lexical Lifetime)
 
@@ -214,6 +223,8 @@ fn main() {
 }
 ```
 
+{{#playground advance_5_0.rs answer}}
+
 ## Unbound lifetime
 
 See more info in [Nomicon - Unbounded Lifetimes](https://doc.rust-lang.org/nomicon/unbounded-lifetimes.html).
@@ -293,3 +304,5 @@ fn use_list(list: &List) {
     println!("{}", list.manager.text);
 }
 ```
+
+{{#playground advance_6_0.rs answer}}

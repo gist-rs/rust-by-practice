@@ -35,6 +35,8 @@ fn main() {
 }
 ```
 
+{{#playground debug-display_1_0.rs answer}}
+
 2. 🌟🌟 So `fmt::Debug` definitely makes one type printable, but sacrifices some elegance. Maybe we can get more elegant by replacing `{:?}` with something else( but not `{}` !)
 
 ```rust,editable
@@ -57,6 +59,8 @@ fn main() {
 }
 ```
 
+{{#playground debug-display_2_0.rs answer}}
+
 3. 🌟🌟 We can also manually implement `Debug` trait for our types
 
 ```rust,editable
@@ -76,6 +80,9 @@ fn main() {
     println!("Now {:?} will print!", Deep(Structure(7)));
 }
 ```
+
+{{#playground debug-display_3_1.rs answer}}
+{{#playground debug-display_3_0.rs answer}}
 
 ## Display
 
@@ -157,3 +164,5 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground debug-display_5_0.rs answer}}

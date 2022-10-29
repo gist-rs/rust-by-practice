@@ -66,6 +66,8 @@ fn hatch_a_bird...
 
 ```
 
+{{#playground trait-object_1_0.rs answer}}
+
 ## Array with trait objects
 
 2. 🌟🌟
@@ -113,6 +115,8 @@ fn main() {
 }
 ```
 
+{{#playground trait-object_2_0.rs answer}}
+
 ## `&dyn` and `Box<dyn>`
 
 3. 🌟🌟
@@ -158,6 +162,8 @@ fn draw_with_ref(x: __) {
 }
 ```
 
+{{#playground trait-object_3_0.rs answer}}
+
 ## Static and Dynamic dispatch
 
 When we use trait bounds on generics, the compiler generates nongeneric implementations of functions and methods for each concrete type that we use in place of a generic type parameter. The code that results from monomorphization is doing static dispatch, which is when the compiler knows what method you’re calling at compile time.
@@ -199,6 +205,8 @@ fn main() {
 }
 ```
 
+{{#playground trait-object_4_0.rs answer}}
+
 ## Object safe
 
 You can only make object-safe traits into trait objects. A trait is object safe if all the methods defined in the trait have the following properties:
@@ -235,5 +243,8 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground trait-object_5_0.rs answer}}
+{{#playground trait-object_5_1.rs answer}}
 
 > You can find the solutions [here](https://github.com/sunface/rust-by-practice)(under the solutions path), but only use it when you need it :)

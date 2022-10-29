@@ -61,6 +61,8 @@ fn main() {
 }
 ```
 
+{{#playground advanced-traits_1_0.rs answer}}
+
 ## Default Generic Type Parameters
 
 When we use generic type parameters, we can specify a default concrete type for the generic type. This eliminates the need for implementors of the trait to specify a concrete type if the default type works.
@@ -97,6 +99,10 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground advanced-traits_2_1.rs answer}}
+{{#playground advanced-traits_2_0.rs answer}}
+{{#playground advanced-traits_2_2.rs answer}}
 
 ## Fully Qualified Syntax
 
@@ -200,6 +206,8 @@ fn main() {
 }
 ```
 
+{{#playground advanced-traits_3_0.rs answer}}
+
 ## Supertraits
 
 Sometimes, you might need one trait to use another trait’s functionality( like the "inheritance" in other languages ). In this case, you need to rely on the dependent trait also being implemented. The trait you rely on is a `supertrait` of the trait you’re implementing.
@@ -261,6 +269,8 @@ fn main() {
 }
 ```
 
+{{#playground advanced-traits_4_0.rs answer}}
+
 ## Orphan Rules
 
 We can’t implement external traits on external types. For example, we can’t implement the `Display` trait on `Vec<T>` within our own crate, because `Display` and `Vec<T>` are defined in the standard library and aren’t local to our crate.
@@ -288,5 +298,7 @@ fn main() {
     println!("w = {}", w);
 }
 ```
+
+{{#playground advanced-traits_5_0.rs answer}}
 
 > You can find the solutions [here](https://github.com/sunface/rust-by-practice)(under the solutions path), but only use it when you need it :)

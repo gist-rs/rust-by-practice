@@ -15,6 +15,8 @@ fn main() {
 }
 ```
 
+{{#playground tuple_1_0.rs answer}}
+
 2. 🌟 Members can be extracted from the tuple using indexing.
 
 ```rust,editable
@@ -28,6 +30,8 @@ fn main() {
 }
 ```
 
+{{#playground tuple_2_0.rs answer}}
+
 3. 🌟 Long tuples cannot be printed
 
 ```rust,editable
@@ -38,6 +42,8 @@ fn main() {
     println!("too long tuple: {:?}", too_long_tuple);
 }
 ```
+
+{{#playground tuple_3_0.rs answer}}
 
 4. 🌟 Destructuring tuple with pattern.
 
@@ -57,6 +63,8 @@ fn main() {
 }
 ```
 
+{{#playground tuple_4_0.rs answer}}
+
 5. 🌟🌟 Destructure assignments.
 
 ```rust,editable
@@ -73,6 +81,8 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground tuple_5_0.rs answer}}
 
 6. 🌟🌟 Tuples can be used as function arguments and return values
 
@@ -92,5 +102,7 @@ fn sum_multiply(nums: (i32, i32)) -> (i32, i32) {
     (nums.0 + nums.1, nums.0 * nums.1)
 }
 ```
+
+{{#playground tuple_6_0.rs answer}}
 
 > You can find the solutions [here](https://github.com/sunface/rust-by-practice)(under the solutions path), but only use it when you need it

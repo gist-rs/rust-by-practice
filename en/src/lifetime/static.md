@@ -33,6 +33,9 @@ fn need_static(r : &'static str) {
 }
 ```
 
+{{#playground static_1_1.rs answer}}
+{{#playground static_1_0.rs answer}}
+
 2. 🌟🌟🌟🌟 Another way to make `'static` lifetime is using `Box::leak`
 
 ```rust,editable
@@ -61,6 +64,8 @@ fn main() {
 }
 ```
 
+{{#playground static_2_0.rs answer}}
+
 3. 🌟 `&'static` only indicates that the data can live forever, not the reference. The latter one will be constrained by its scope.
 
 ```rust,editable
@@ -77,6 +82,8 @@ fn main() {
     println!("static_string reference remains alive: {}", static_string);
 }
 ```
+
+{{#playground static_3_0.rs answer}}
 
 4. `&'static` can be coerced to a shorter lifetime.
 
@@ -147,6 +154,8 @@ fn main() {
     print_it2(&i);
 }
 ```
+
+{{#playground static_5_0.rs answer}}
 
 6. 🌟🌟🌟
 

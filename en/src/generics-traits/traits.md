@@ -115,6 +115,8 @@ fn main() {
 }
 ```
 
+{{#playground traits_1_0.rs answer}}
+
 ### Derive
 
 The compiler is capable of providing basic implementations for some traits via
@@ -168,6 +170,8 @@ fn main() {
 }
 ```
 
+{{#playground traits_2_0.rs answer}}
+
 ### Operator
 
 In Rust, many of the operators can be overloaded via traits. That is, some operators can be used to accomplish different tasks based on their input arguments. This is possible because operators are syntactic sugar for method calls. For example, the + operator in a + b calls the add method (as in a.add(b)). This add method is part of the Add trait. Hence, the + operator can be used by any implementor of the Add trait.
@@ -190,6 +194,8 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground traits_3_0.rs answer}}
 
 4. 🌟🌟🌟
 
@@ -233,6 +239,8 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground traits_4_0.rs answer}}
 
 ### Use trait as function parameters
 
@@ -295,6 +303,8 @@ fn main() {
 
 ```
 
+{{#playground traits_5_0.rs answer}}
+
 ### Returning Types that Implement Traits
 
 We can also use the impl Trait syntax in the return position to return a value of some type that implements a trait.
@@ -341,6 +351,9 @@ fn main() {
 }
 ```
 
+{{#playground traits_6_1.rs answer}}
+{{#playground traits_6_0.rs answer}}
+
 ### Trait bound
 
 The `impl Trait` syntax works for straightforward cases but is actually syntax sugar for a longer form, which is called a trait bound.
@@ -359,6 +372,9 @@ fn sum<T>(x: T, y: T) -> T {
     x + y
 }
 ```
+
+{{#playground traits_7_0.rs answer}}
+{{#playground traits_7_1.rs answer}}
 
 8. 🌟🌟
 
@@ -400,6 +416,8 @@ fn main() {
     pair.cmp_display();
 }
 ```
+
+{{#playground traits_8_0.rs answer}}
 
 9. 🌟🌟🌟
 
@@ -485,5 +503,7 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground traits_9_0.rs answer}}
 
 > You can find the solutions [here](https://github.com/sunface/rust-by-practice)(under the solutions path), but only use it when you need it :)

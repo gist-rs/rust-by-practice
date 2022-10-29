@@ -31,6 +31,8 @@ fn main() {
 }
 ```
 
+{{#playground result_1_0.rs answer}}
+
 ### ?
 
 `?` is almost exactly equivalent to `unwrap`, but `?` returns instead of panic on `Err`.
@@ -51,6 +53,8 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground result_2_0.rs answer}}
 
 3. 🌟🌟
 
@@ -89,6 +93,8 @@ fn main() {
 }
 ```
 
+{{#playground result_3_0.rs answer}}
+
 ### map & and_then
 
 [map](https://doc.rust-lang.org/stable/std/result/enum.Result.html#method.map) and [and_then](https://doc.rust-lang.org/stable/std/result/enum.Result.html#method.and_then) are two common combinators for `Result<T, E>` (also for `Option<T>`).
@@ -109,6 +115,9 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground result_4_0.rs answer}}
+{{#playground result_4_1.rs answer}}
 
 5. 🌟🌟🌟
 
@@ -157,6 +166,8 @@ fn main() {
 }
 ```
 
+{{#playground result_5_0.rs answer}}
+
 ### Type alias
 
 Using `std::result::Result<T, ParseIntError>` everywhere is verbose and tedious, we can use alias for this purpose.
@@ -193,6 +204,8 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground result_6_0.rs answer}}
 
 ### Using Result in `fn main`
 

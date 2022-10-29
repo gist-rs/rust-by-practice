@@ -9,6 +9,8 @@ use std::io::Result;
 fn main() {}
 ```
 
+{{#playground use-pub_1_0.rs answer}}
+
 2. 🌟🌟 If we are using multiple items defined in the same crate or module, then listing each item on its own line will take up too much vertical space.
 
 ```rust,editable
@@ -25,6 +27,9 @@ fn main() {
 }
 ```
 
+{{#playground use-pub_2_0.rs answer}}
+{{#playground use-pub_2_1.rs answer}}
+
 ### Re-exporting names with `pub use`
 
 3. 🌟🌟🌟 In our recently created package `hello-package`, add something to make the below code work
@@ -35,6 +40,8 @@ fn main() {
      assert_eq!(hello_package::eat_at_restaurant(),"yummy yummy!");
 }
 ```
+
+{{#playground use-pub_3_0.rs answer}}
 
 ### Pub(in Crate)
 

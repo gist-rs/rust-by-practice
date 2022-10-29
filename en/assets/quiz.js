@@ -56,16 +56,13 @@ window.onload = function () {
         let answer_text = answer.firstChild.textContent
 
         // Patch first comment to make hint easy to focus
-        if (uncompleted_text.indexOf('//') === 0) {
+        if (uncompleted_text.indexOf('//') === 0 || uncompleted_text.indexOf('\n//') === 0) {
           const comments = uncompleted_text.split('\n').filter((e) => e.indexOf('//') === 0)
           answer_text = comments.join('\n') + '\n' + answer_text
         }
-
-        // Patch first \ncomment to make hint easy to focus
-        if (uncompleted_text.indexOf('\n//') === 0) {
-          const comments = uncompleted_text.split('\n').filter((e) => e.indexOf('//') === 0)
-          answer_text = '\n' + comments.join('\n') + '\n' + answer_text
-        }
+        
+        // Always add newline
+        answer_text = '\n' + answer_text
 
         editor.setValue(answer_text)
         editor.selection.selectTo(0)

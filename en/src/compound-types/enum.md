@@ -34,6 +34,8 @@ fn main() {
 }
 ```
 
+{{#playground enum_1_0.rs answer}}
+
 2. 🌟 Each enum variant can hold its own data.
 
 ```rust,editable
@@ -53,6 +55,8 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground enum_2_0.rs answer}}
 
 3. 🌟🌟 We can get the data which an enum variant is holding by pattern match.
 
@@ -78,6 +82,8 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground enum_3_0.rs answer}}
 
 4. 🌟🌟
 
@@ -108,6 +114,8 @@ fn show_message(msg: Message) {
 }
 ```
 
+{{#playground enum_4_0.rs answer}}
+
 5. 🌟🌟 Since there is no `null` in Rust, we have to use enum `Option<T>` to deal with the cases when the value is absent.
 
 ```rust,editable
@@ -135,6 +143,8 @@ fn plus_one(x: Option<i32>) -> Option<i32> {
     }
 }
 ```
+
+{{#playground enum_5_0.rs answer}}
 
 6. 🌟🌟🌟🌟 Implement a `linked-list` via enums.
 
@@ -210,5 +220,7 @@ fn main() {
     println!("{}", list.stringify());
 }
 ```
+
+{{#playground enum_6_0.rs answer}}
 
 > You can find the solutions [here](https://github.com/sunface/rust-by-practice)(under the solutions path), but only use it when you need it

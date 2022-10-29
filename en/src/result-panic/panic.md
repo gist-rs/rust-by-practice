@@ -27,6 +27,8 @@ fn main() {
 }
 ```
 
+{{#playground panic_1_0.rs answer}}
+
 ## common panic cases
 
 2. 🌟🌟
@@ -68,6 +70,8 @@ pub fn working_items_per_minute(speed: u8) -> u32 {
     (production_rate_per_hour(speed) / 60 as f64) as u32
 }
 ```
+
+{{#playground panic_2_0.rs answer}}
 
 ### Detailed call stack
 

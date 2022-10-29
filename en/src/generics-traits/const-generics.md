@@ -17,6 +17,8 @@ impl<T: Debug, const N: usize> Debug for ArrayPair<T, N> {
 }
 ```
 
+{{#playground const-generics_1_0.rs answer}}
+
 2. Currently, const parameters may only be instantiated by const arguments of the following forms:
 
 - A standalone const parameter.
@@ -40,6 +42,8 @@ fn bar<T, const M: usize>() {
 
 fn main() {}
 ```
+
+{{#playground const-generics_2_0.rs answer}}
 
 3. Const generics can also let us avoid some runtime checks.
 
@@ -70,6 +74,8 @@ fn main() {
 }
 ```
 
+{{#playground const-generics_3_0.rs answer}}
+
 ## Exercises
 
 1. 🌟🌟 `<T, const N: usize>` is part of the struct type, it means `Array<i32, 3>` and `Array<i32, 4>` are different types.
@@ -96,6 +102,8 @@ fn main() {
 }
 ```
 
+{{#playground const-generics_1_0.rs answer}}
+
 2. 🌟🌟
 
 ```rust,editable
@@ -112,6 +120,8 @@ fn main() {
     print_array(arr);
 }
 ```
+
+{{#playground const-generics_2_0.rs answer}}
 
 3. 🌟🌟🌟 Sometimes we want to limit the size of a variable, e.g when using in embedding environments, then `const expressions` will fit your needs.
 
@@ -145,5 +155,7 @@ pub trait IsTrue {}
 
 impl IsTrue for Assert<true> {}
 ```
+
+{{#playground const-generics_3_0.rs answer}}
 
 > You can find the solutions [here](https://github.com/sunface/rust-by-practice)(under the solutions path), but only use it when you need it :)

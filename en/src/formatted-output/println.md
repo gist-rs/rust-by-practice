@@ -25,6 +25,8 @@ fn main() {
 }
 ```
 
+{{#playground println_1_0.rs answer}}
+
 ## `print!`, `println!`
 
 2.🌟
@@ -41,3 +43,5 @@ fn main() {
    __("Sunface!");
 }
 ```
+
+{{#playground println_2_0.rs answer}}

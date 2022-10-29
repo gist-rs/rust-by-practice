@@ -65,6 +65,8 @@ fn main() {
 }
 ```
 
+{{#playground closure_1_0.rs answer}}
+
 2. 🌟🌟
 
 ```rust,editable
@@ -95,6 +97,8 @@ fn main() {
 }
 ```
 
+{{#playground closure_2_0.rs answer}}
+
 3. 🌟🌟
 
 ```rust,editable
@@ -114,6 +118,9 @@ fn main() {
 
 fn take<T>(_v: T) {}
 ```
+
+{{#playground closure_3_1.rs answer}}
+{{#playground closure_3_0.rs answer}}
 
 For comparison, the following code has no error:
 
@@ -154,6 +161,8 @@ fn main() {
 }
 ```
 
+{{#playground closure_4_0.rs answer}}
+
 ## Fn, FnMut, FnOnce
 
 When taking a closure as an input parameter, the closure's complete type must be annotated using one of the following traits:
@@ -180,6 +189,9 @@ fn main() {
 }
 ```
 
+{{#playground closure_5_1.rs answer}}
+{{#playground closure_5_0.rs answer}}
+
 6. 🌟🌟
 
 ```rust,editable
@@ -198,6 +210,8 @@ fn exec<'a, F: __>(mut f: F)  {
     f("hello")
 }
 ```
+
+{{#playground closure_6_0.rs answer}}
 
 #### Which trait does the compiler prefer to use?
 
@@ -269,6 +283,8 @@ fn main() {
 }
 ```
 
+{{#playground closure_7_0.rs answer}}
+
 move closures may still implement `Fn` or `FnMut`, even though they capture variables by move. This is because the traits implemented by a closure type are determined by what the closure does with captured values, not how it captures them. The `move` keyword only specifies the latter.
 
 ```rust
@@ -318,6 +334,8 @@ fn exec<'a, F: __>(mut f: F) {
 }
 ```
 
+{{#playground closure_8_0.rs answer}}
+
 ## Input functions
 
 Since closure maybe used as arguments, you might wonder can we use functions as arguments too? And indeed they can.
@@ -343,6 +361,8 @@ fn main() {
 }
 ```
 
+{{#playground closure_9_0.rs answer}}
+
 ## Closure as return types
 
 Returning a closure is much harder than you may thought of.
@@ -367,6 +387,9 @@ fn main() {
 }
 ```
 
+{{#playground closure_10_1.rs answer}}
+{{#playground closure_10_0.rs answer}}
+
 11. 🌟🌟
 
 ```rust,editable
@@ -382,6 +405,8 @@ fn factory(x:i32) -> __ {
     }
 }
 ```
+
+{{#playground closure_11_0.rs answer}}
 
 ## Closure in structs
 

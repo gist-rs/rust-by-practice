@@ -14,6 +14,8 @@ fn main() {
 }
 ```
 
+{{#playground formatting_1_0.rs answer}}
+
 ## Named arguments
 
 2.🌟🌟
@@ -34,6 +36,8 @@ fn main() {
 }
 ```
 
+{{#playground formatting_2_0.rs answer}}
+
 ## Padding with string
 
 3.🌟🌟 By default, you can pad string with spaces
@@ -51,6 +55,8 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground formatting_3_0.rs answer}}
 
 4.🌟🌟🌟 Left align, right align, pad with specified characters.
 
@@ -70,6 +76,8 @@ fn main() {
 }
 ```
 
+{{#playground formatting_4_0.rs answer}}
+
 5.🌟🌟 You can pad numbers with extra zeros.
 
 ```rust,editable
@@ -85,6 +93,8 @@ fn main() {
     println!("Success!")
 ;}
 ```
+
+{{#playground formatting_5_0.rs answer}}
 
 ## Precision
 
@@ -106,6 +116,8 @@ fn main() {
 }
 ```
 
+{{#playground formatting_6_0.rs answer}}
+
 7.🌟🌟🌟 String length
 
 ```rust,editable
@@ -119,6 +131,8 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground formatting_7_0.rs answer}}
 
 ## Binary, octal, hex
 
@@ -171,6 +185,8 @@ fn main() {
     }
 }
 ```
+
+{{#playground formatting_9_0.rs answer}}
 
 ## Others
 

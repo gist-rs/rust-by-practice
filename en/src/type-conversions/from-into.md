@@ -50,6 +50,9 @@ fn main() {
 }
 ```
 
+{{#playground from-into_1_0.rs answer}}
+{{#playground from-into_1_1.rs answer}}
+
 ### Implement `From` for custom types
 
 2. 🌟🌟
@@ -79,6 +82,8 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground from-into_2_0.rs answer}}
 
 3. 🌟🌟🌟 When performing error handling it is often useful to implement `From` trait for our own error type. Then we can use `?` to automatically convert the underlying error type to our own error type.
 
@@ -114,6 +119,8 @@ fn main() {
 }
 ```
 
+{{#playground from-into_3_0.rs answer}}
+
 ### TryFrom/TryInto
 
 Similar to `From` and `Into`, `TryFrom` and `TryInto` are generic traits for converting between types.
@@ -144,6 +151,8 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground from-into_4_0.rs answer}}
 
 5. 🌟🌟🌟
 
@@ -177,5 +186,7 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground from-into_5_0.rs answer}}
 
 > You can find the solutions [here](https://github.com/sunface/rust-by-practice/blob/master/solutions/type-conversions/from-into.md)(under the solutions path), but only use it when you need it

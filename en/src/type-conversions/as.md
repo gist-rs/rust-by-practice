@@ -21,6 +21,8 @@ fn main() {
 }
 ```
 
+{{#playground as_1_0.rs answer}}
+
 2. 🌟🌟 By default, overflow will cause compile errors, but we can add an global annotation to suppress these errors.
 
 ```rust,editable
@@ -35,6 +37,8 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground as_2_0.rs answer}}
 
 3. 🌟🌟 When casting any value to an unsigned type `T`, `T::MAX + 1` is added or subtracted until the value fits into the new type.
 
@@ -71,6 +75,8 @@ fn main() {
 }
 ```
 
+{{#playground as_3_0.rs answer}}
+
 4. 🌟🌟🌟 Raw pointers can be converted to memory address (integer) and vice versa.
 
 ```rust,editable
@@ -93,6 +99,8 @@ fn main() {
 }
 ```
 
+{{#playground as_4_0.rs answer}}
+
 5. 🌟🌟🌟
 
 ```rust,editable
@@ -108,5 +116,7 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground as_5_0.rs answer}}
 
 > You can find the solutions [here](https://github.com/sunface/rust-by-practice/blob/master/solutions/type-conversions/as.md)(under the solutions path), but only use it when you need it

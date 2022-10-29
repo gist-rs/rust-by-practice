@@ -38,6 +38,8 @@ fn main() {
 }
 ```
 
+{{#playground iterator_1_0.rs answer}}
+
 2. 🌟 One of the easiest ways to create an iterator is to use the range notion: `a..b`.
 
 ```rust,editable
@@ -51,6 +53,8 @@ fn main() {
     assert_eq!(v.len(), 100);
 }
 ```
+
+{{#playground iterator_2_0.rs answer}}
 
 ## next method
 
@@ -82,6 +86,9 @@ fn main() {
 }
 ```
 
+{{#playground iterator_3_1.rs answer}}
+{{#playground iterator_3_0.rs answer}}
+
 ## into_iter, iter and iter_mut
 
 In the previous section, we have mentioned that `for` will apply the `into_iter` to the collection, and change it into a iterator.However, this is not the only way to convert collections into iterators.
@@ -106,6 +113,8 @@ fn main() {
 }
 ```
 
+{{#playground iterator_4_0.rs answer}}
+
 5. 🌟
 
 ```rust,editable
@@ -124,6 +133,8 @@ fn main() {
 }
 ```
 
+{{#playground iterator_5_0.rs answer}}
+
 6. 🌟🌟
 
 ```rust,editable
@@ -139,6 +150,8 @@ fn main() {
     assert_eq!(values, vec![0, 2, 3]);
 }
 ```
+
+{{#playground iterator_6_0.rs answer}}
 
 ## Creating our own iterator
 
@@ -215,6 +228,8 @@ fn main() {
 }
 ```
 
+{{#playground iterator_7_0.rs answer}}
+
 ## Methods that Consume the Iterator
 
 The `Iterator` trait has a number of methods with default implementations provided by the standard library.
@@ -241,6 +256,8 @@ fn main() {
 }
 ```
 
+{{#playground iterator_8_0.rs answer}}
+
 #### collect
 
 Other than converting a collection into an iterator, we can also `collect` the result values into a collection, `collect` will cosume the iterator.
@@ -264,6 +281,8 @@ fn main() {
 }
 ```
 
+{{#playground iterator_9_0.rs answer}}
+
 ### Iterator adaptors
 
 Methods allowing you to change one iterator into another iterator are known as _iterator adaptors_. You can chain multiple iterator adaptors to perform complex actions in a readable way.
@@ -283,6 +302,8 @@ fn main() {
 }
 ```
 
+{{#playground iterator_10_0.rs answer}}
+
 11. 🌟🌟
 
 ```rust
@@ -296,6 +317,8 @@ fn main() {
     println!("{:?}",folks);
 }
 ```
+
+{{#playground iterator_11_0.rs answer}}
 
 #### Using closures in iterator adaptors
 
@@ -346,3 +369,5 @@ fn main() {
     );
 }
 ```
+
+{{#playground iterator_12_0.rs answer}}

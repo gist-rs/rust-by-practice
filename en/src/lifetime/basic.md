@@ -29,6 +29,8 @@ fn main() {
 }
 ```
 
+{{#playground basic_1_0.rs answer}}
+
 2. 🌟🌟
 
 **Example**
@@ -43,6 +45,9 @@ fn main() {
                           // --+       |
 }                         // ----------+
 ```
+
+{{#playground basic_2_0.rs answer}}
+{{#playground basic_2_1.rs answer}}
 
 ```rust,editable
 /* annotate `r` and `x` as above, and explain why this code fails to compile, in the lifetime aspect. */
@@ -147,6 +152,10 @@ fn main() {
 }
 ```
 
+{{#playground basic_4_2.rs answer}}
+{{#playground basic_4_0.rs answer}}
+{{#playground basic_4_1.rs answer}}
+
 5. 🌟🌟
 
 ```rust,editable
@@ -184,6 +193,8 @@ fn main() {
     // Because the lifetime is never constrained, it defaults to `'static`.
 }
 ```
+
+{{#playground basic_5_0.rs answer}}
 
 #### Structs
 
@@ -227,6 +238,8 @@ fn main() {
 }
 ```
 
+{{#playground basic_6_0.rs answer}}
+
 7. 🌟🌟
 
 ```rust,editable
@@ -259,6 +272,8 @@ fn main()
 }
 ```
 
+{{#playground basic_7_0.rs answer}}
+
 8. 🌟🌟
 
 ```rust,editable
@@ -285,6 +300,8 @@ fn main()
     println!("Success!")
 }
 ```
+
+{{#playground basic_8_0.rs answer}}
 
 ## Method
 
@@ -327,6 +344,8 @@ impl ImportantExcerpt {
 
 fn main() {}
 ```
+
+{{#playground basic_9_0.rs answer}}
 
 ## Elision
 
@@ -373,3 +392,5 @@ enum Either<'a> {
 
 fn main() {}
 ```
+
+{{#playground basic_10_0.rs answer}}

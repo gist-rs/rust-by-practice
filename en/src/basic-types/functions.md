@@ -19,6 +19,8 @@ fn sum(x, y: i32) {
 }
 ```
 
+{{#playground functions_1_0.rs answer}}
+
 2. 🌟
 
 ```rust,editable
@@ -31,6 +33,8 @@ fn print() -> i32 {
    println!("Success!");
 }
 ```
+
+{{#playground functions_2_0.rs answer}}
 
 3. 🌟🌟🌟
 
@@ -48,6 +52,9 @@ fn never_return() -> ! {
 
 }
 ```
+
+{{#playground functions_3_0.rs answer}}
+{{#playground functions_3_1.rs answer}}
 
 ### Diverging functions
 
@@ -81,6 +88,11 @@ fn never_return_fn() -> ! {
 }
 ```
 
+{{#playground functions_4_1.rs answer}}
+{{#playground functions_4_0.rs answer}}
+{{#playground functions_4_3.rs answer}}
+{{#playground functions_4_2.rs answer}}
+
 5. 🌟🌟
 
 ```rust,editable
@@ -101,5 +113,7 @@ fn main() {
     println!("Exercise Failed if printing out this line!");
 }
 ```
+
+{{#playground functions_5_0.rs answer}}
 
 > You can find the solutions [here](https://github.com/sunface/rust-by-practice)(under the solutions path), but only use it when you need it

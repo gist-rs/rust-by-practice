@@ -19,6 +19,8 @@ fn main() {
 }
 ```
 
+{{#playground char-bool-unit_1_0.rs answer}}
+
 2. 🌟
 
 ```rust,editable
@@ -33,6 +35,8 @@ fn print_char(c : char) {
     println!("{}", c);
 }
 ```
+
+{{#playground char-bool-unit_2_0.rs answer}}
 
 ### Bool
 
@@ -51,6 +55,8 @@ fn main() {
 }
 ```
 
+{{#playground char-bool-unit_3_0.rs answer}}
+
 4. 🌟
 
 ```rust,editable
@@ -64,6 +70,8 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground char-bool-unit_4_0.rs answer}}
 
 ### Unit type
 
@@ -91,6 +99,8 @@ fn explicitly_ret_unit() -> () {
 }
 ```
 
+{{#playground char-bool-unit_5_0.rs answer}}
+
 6. 🌟🌟 What's the size of the unit type?
 
 ```rust,editable
@@ -104,5 +114,7 @@ fn main() {
     println!("Success!");
 }
 ```
+
+{{#playground char-bool-unit_6_0.rs answer}}
 
 > You can find the solutions [here](https://github.com/sunface/rust-by-practice)(under the solutions path), but only use it when you need it
