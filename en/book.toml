@@ -7,14 +7,15 @@ language = "en"
 [output.html.playpen]
 editable = true
 editor = "ace"
+line-numbers = true
 
 [output.html.fold]
 enable = true
 level = 1
 
 [output.html]
-additional-css = ["theme/style1.css"]
-additional-js = ["assets/custom3.js","assets/lang.js"]
+additional-css = ["theme/style1.css", "theme/quiz.css"]
+additional-js = ["assets/custom3.js","assets/lang.js", "assets/diff.js", "assets/quiz.js"]
 git-repository-url = "https://github.com/sunface/rust-by-practice"
 edit-url-template = "https://github.com/sunface/rust-by-practice/edit/master/en/{path}"
 

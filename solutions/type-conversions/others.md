@@ -1,4 +1,4 @@
-1
+1.
 
 ```rust
 use std::fmt;

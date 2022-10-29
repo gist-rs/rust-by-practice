@@ -1,0 +1,17 @@
+.hint {
+  background-color: dimgrey;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.3em;
+  font-size: x-small;
+  font-weight: 600;
+  color: darkgray;
+  cursor: pointer;
+  user-select: none;
+  padding-right: 0.6em;
+  margin-right: 1em;
+}
+
+.hint:hover {
+  color: beige;
+}
