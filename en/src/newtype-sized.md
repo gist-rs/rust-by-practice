@@ -1,11 +1,13 @@
 # newtype and Sized
 
 ## Newtype
+
 The orphan rule tells us that we are allowed to implement a trait on a type as long as either the trait or the type are local to our crate.
 
 The **newtype pattern** can help us get around this restriction, which involves creating a new type in a **tuple struct**.
 
 1. 🌟
+
 ```rust,editable
 use std::fmt;
 
@@ -27,6 +29,7 @@ fn main() {
 ```
 
 2. 🌟 Hide the methods of the original type
+
 ```rust,editable
 /* Make it workd */
 struct Meters(u32);
@@ -36,12 +39,13 @@ fn main() {
     assert_eq!(i.pow(2), 4);
 
     let n = Meters(i);
-    // The `pow` method is defined on `u32` type, we can't directly call it 
+    // The `pow` method is defined on `u32` type, we can't directly call it
     assert_eq!(n.pow(2), 4);
 }
 ```
 
 3. 🌟🌟 The `newtype` idiom gives compile time guarantees that the right type of value is suplied to a program.
+
 ```rust,editable
 /* Make it work */
 struct Years(i64);
@@ -75,6 +79,7 @@ fn main() {
 ```
 
 4. 🌟🌟
+
 ```rust,editable
 use std::ops::Add;
 use std::fmt::{self, format};
@@ -103,6 +108,7 @@ fn calculate_distance
 ```
 
 ## Type alias
+
 The most importance of type alias is to improve the readability of our codes.
 
 ```rust
@@ -124,6 +130,7 @@ type Result<T> = std::result::Result<T, std::io::Error>;
 ```
 
 And Unlike newtype, type alias don't create new types, so the following code is valid:
+
 ```rust
 type Meters = u32;
 
@@ -134,6 +141,7 @@ println!("x + y = {}", x + y);
 ```
 
 5. 🌟
+
 ```rust,editable
 enum VeryVerboseEnumOfThingsToDoWithNumbers {
     Add,
@@ -151,6 +159,7 @@ fn main() {
 ```
 
 6. 🌟🌟 There are a few preserved alias in Rust, one of which can be used in `impl` blocks.
+
 ```rust,editable
 enum VeryVerboseEnumOfThingsToDoWithNumbers {
     Add,
@@ -168,9 +177,11 @@ impl VeryVerboseEnumOfThingsToDoWithNumbers {
 ```
 
 ## DST and unsized type
+
 These concepts are complicated, so we are not going to explain here, but you can find them in [The Book](https://doc.rust-lang.org/book/ch19-04-advanced-types.html?highlight=DST#dynamically-sized-types-and-the-sized-trait).
 
 7. 🌟🌟🌟 Array with dynamic length is a Dynamic Sized Type ( DST ), we can't directly use it
+
 ```rust,editable
 /* Make it work with const generics */
 fn my_function(n: usize) -> [u32; usize] {
@@ -184,6 +195,7 @@ fn main() {
 ```
 
 8. 🌟🌟 Slice is unsized type, but the reference of slice is not.
+
 ```rust,editable
 /* Make it work with slice references */
 fn main() {
@@ -194,10 +206,11 @@ fn main() {
 ```
 
 9. 🌟🌟 Trait is also a unsized type
+
 ```rust,editable
 /* Make it work in two ways */
 use std::fmt::Display;
-fn foobar(thing: Display) {}    
+fn foobar(thing: Display) {}
 
 fn main() {
 }

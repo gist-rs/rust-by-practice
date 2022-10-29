@@ -1,11 +1,12 @@
 # panic!
+
 Rust 中最简单的错误处理方式就是使用 `panic`。它会打印出一条错误信息并打印出栈调用情况，最终结束当前线程:
 
 - 若 panic 发生在 `main` 线程，那程序会随之退出
 - 如果是在生成的( spawn )子线程中发生 panic, 那么当前的线程会结束，但是程序依然会继续运行
 
-
 1. 🌟🌟
+
 ```rust,editable
 
 // 填空
@@ -27,7 +28,9 @@ fn main() {
 ```
 
 ## 常见的 panic
+
 2. 🌟🌟
+
 ```rust,editable
 // 修复所有的 panic，让代码工作
 fn main() {
@@ -65,7 +68,9 @@ pub fn working_items_per_minute(speed: u8) -> u32 {
 ```
 
 ### 详细的栈调用信息
-默认情况下，栈调用只会展示最基本的信息: 
+
+默认情况下，栈调用只会展示最基本的信息:
+
 ```shell
 thread 'main' panicked at 'index out of bounds: the len is 3 but the index is 99', src/main.rs:4:5
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
@@ -74,6 +79,7 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 但是有时候，我们还希望获取更详细的信息:
 
 3. 🌟
+
 ```shell
 ## 填空以打印全部的调用栈
 ## 提示: 你可以在之前的默认 panic 信息中找到相关线索
@@ -108,4 +114,3 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 [profile.release]
 panic = 'abort'
 ```
-

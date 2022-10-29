@@ -1,4 +1,4 @@
-1. 
+1.
 
 ```rust
 fn main() {
@@ -9,7 +9,7 @@ fn main() {
 }
 ```
 
-2. 
+2.
 
 ```rust
 fn main() {
@@ -22,7 +22,7 @@ fn main() {
 }
 ```
 
-3. 
+3.
 
 ```rust
 fn main() {
@@ -50,7 +50,7 @@ fn main() {
 }
 ```
 
-4. 
+4.
 
 ```rust
 fn main() {
@@ -63,7 +63,7 @@ fn main() {
 }
 ```
 
-5. 
+5.
 
 ```rust
 fn main() {
@@ -80,7 +80,7 @@ fn main() {
 }
 ```
 
-6. 
+6.
 
 ```rust
 fn main() {
@@ -95,7 +95,7 @@ fn main() {
 }
 ```
 
-7. 
+7.
 
 ```rust
 struct Fibonacci {
@@ -108,7 +108,7 @@ struct Fibonacci {
 impl Iterator for Fibonacci {
     // We can refer to this type using Self::Item
     type Item = u32;
-    
+
     // Here, we define the sequence using `.curr` and `.next`.
     // The return type is `Option<T>`:
     //     * When the `Iterator` is finished, `None` is returned.
@@ -121,7 +121,7 @@ impl Iterator for Fibonacci {
         self.curr = self.next;
         self.next = new_next;
 
-        // Since there's no endpoint to a Fibonacci sequence, the `Iterator` 
+        // Since there's no endpoint to a Fibonacci sequence, the `Iterator`
         // will never return `None`, and `Some` is always returned.
         Some(self.curr)
     }
@@ -142,7 +142,7 @@ fn main() {
 }
 ```
 
-8. 
+8.
 
 ```rust
 fn main() {
@@ -159,7 +159,7 @@ fn main() {
 }
 ```
 
-9. 
+9.
 
 ```rust
 use std::collections::HashMap;
@@ -177,7 +177,7 @@ fn main() {
 }
 ```
 
-10. 
+10.
 
 ```rust
 fn main() {
@@ -189,7 +189,7 @@ fn main() {
 }
 ```
 
-11. 
+11.
 
 ```rust
 use std::collections::HashMap;
@@ -202,7 +202,7 @@ fn main() {
 }
 ```
 
-12. 
+12.
 
 ```rust
 #[derive(PartialEq, Debug)]

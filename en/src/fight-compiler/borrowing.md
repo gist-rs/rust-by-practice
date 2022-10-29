@@ -1,6 +1,7 @@
 # Borrowing
 
 1. 🌟🌟
+
 ```rust,editable
 // FIX the error without removing any code line
 struct test {

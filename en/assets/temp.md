@@ -1,26 +1,29 @@
 # 字符、布尔、单元类型
 
 ### 字符
+
 🌟
+
 ```rust
 
 use std::mem::size_of_val;
 fn main() {
     let c1 = 'a';
-    assert_eq!(size_of_val(&c1),1); 
+    assert_eq!(size_of_val(&c1),1);
 
     let c2 = '中';
-    assert_eq!(size_of_val(&c2),3); 
-} 
+    assert_eq!(size_of_val(&c2),3);
+}
 ```
 
 🌟
+
 ```rust
 
 fn main() {
     let c1 = "中";
     print_char(c1);
-} 
+}
 
 fn print_char(c : char) {
     println!("{}", c);
@@ -28,7 +31,9 @@ fn print_char(c : char) {
 ```
 
 ### 布尔
+
 🌟
+
 ```rust
 
 // 让  println! 工作
@@ -39,10 +44,11 @@ fn main() {
     if !t {
         println!("hello, world");
     }
-} 
+}
 ```
 
 🌟
+
 ```rust
 
 fn main() {
@@ -52,9 +58,10 @@ fn main() {
 }
 ```
 
-
 ### 单元类型
+
 🌟🌟
+
 ```rust
 
 // 让代码工作，但不要修改 `implicitly_ret_unit` !
@@ -76,9 +83,10 @@ fn explicitly_ret_unit() -> () {
 ```
 
 🌟🌟 单元类型占用的内存大小是多少？
+
 ```rust
 
-// 让代码工作：修改 `assert!` 中的 `4` 
+// 让代码工作：修改 `assert!` 中的 `4`
 use std::mem::size_of_val;
 fn main() {
     let unit: () = ();

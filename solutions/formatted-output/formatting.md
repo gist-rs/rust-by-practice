@@ -17,7 +17,7 @@ fn main() {
 
     assert_eq!(format!("{name}{}", 1, name = 2), "21");
     assert_eq!(format!("{a} {c} {b}",a = "a", b = 'b', c = 3 ), "a 3 b");
-    
+
     // named argument must be placed after other arguments
     println!("{abc} {0}", 2, abc = "def");
 
@@ -30,7 +30,7 @@ fn main() {
 ```rust
 fn main() {
     // the following two are padding with 5 spaces
-    println!("Hello {:5}!", "x"); // =>  "Hello x    !"  
+    println!("Hello {:5}!", "x"); // =>  "Hello x    !"
     println!("Hello {:1$}!", "x", 5); // =>  "Hello x    !"
 
     assert_eq!(format!("Hello {1:0$}!", 5, "x"), "Hello x    !");
@@ -68,7 +68,7 @@ fn main() {
     println!("Hello {:05}!", -5); // => Hello -0005!
 
     assert!(format!("{number:0>width$}", number=1, width=6) == "000001");
-    
+
     println!("Success!")
 }
 ```
@@ -79,7 +79,7 @@ fn main() {
 fn main() {
     let v = 3.1415926;
 
-    println!("{:.1$}", v, 4); // same as {:.4} => 3.1416 
+    println!("{:.1$}", v, 4); // same as {:.4} => 3.1416
 
     assert_eq!(format!("{:.2}", v), "3.14");
     assert_eq!(format!("{:+.2}", v), "+3.14");
@@ -113,7 +113,7 @@ fn main() {
      assert_eq!(format!("{:#X}", 27), "0x1B");
 
      println!("{:x}!", 27); // hex with no prefix => 1b
- 
+
      println!("{:#010b}", 27); // pad binary with 0, width = 10,  => 0b00011011
 
     println!("Success!")

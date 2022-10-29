@@ -1,5 +1,7 @@
 # Tuple
+
 1. 🌟 Elements in a tuple can have different types. Tuple's type signature is `(T1, T2, ...)`, where `T1`, `T2` are the types of tuple's members.
+
 ```rust,editable
 
 fn main() {
@@ -14,6 +16,7 @@ fn main() {
 ```
 
 2. 🌟 Members can be extracted from the tuple using indexing.
+
 ```rust,editable
 
 // Make it work
@@ -25,7 +28,8 @@ fn main() {
 }
 ```
 
-3. 🌟 Long tuples  cannot be printed
+3. 🌟 Long tuples cannot be printed
+
 ```rust,editable
 
 // Fix the error
@@ -36,6 +40,7 @@ fn main() {
 ```
 
 4. 🌟 Destructuring tuple with pattern.
+
 ```rust,editable
 
 fn main() {
@@ -53,13 +58,14 @@ fn main() {
 ```
 
 5. 🌟🌟 Destructure assignments.
+
 ```rust,editable
 fn main() {
     let (x, y, z);
 
     // Fill the blank
     __ = (1, 2, 3);
-    
+
     assert_eq!(x, 3);
     assert_eq!(y, 1);
     assert_eq!(z, 2);
@@ -69,6 +75,7 @@ fn main() {
 ```
 
 6. 🌟🌟 Tuples can be used as function arguments and return values
+
 ```rust,editable
 
 fn main() {

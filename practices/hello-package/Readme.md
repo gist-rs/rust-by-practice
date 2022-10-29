@@ -1,9 +1,11 @@
 ## Hello Package
+
 A practice project used in [Crate and Module](https://practice.rs/crate-module/crate.html) chapter.
 
 This project will guide us to create a package with a binary crate and several library crates in it.
 
 The project structure is as below:
+
 ```shell
 .
 ├── Cargo.lock

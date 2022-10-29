@@ -5,7 +5,7 @@ fn main() {
     let x = 5;
     // fill the blank
     let p = &x;
- 
+
     println!("the memory address of x is {:p}", p); // one possible output: 0x16fa3ac84
 }
 ```
@@ -56,7 +56,7 @@ fn main() {
 
     // fill the blank to make it work
     let p = &mut s;
-    
+
     p.push_str("world");
 }
 ```
@@ -72,7 +72,7 @@ fn main() {
     let ref r2 = c;
 
     assert_eq!(*r1, *r2);
-    
+
     // check the equality of the two address strings
     assert_eq!(get_addr(r1),get_addr(r2));
 }
@@ -116,7 +116,7 @@ fn main() {
     let mut s = String::from("hello, ");
 
     borrow_object(&s);
-    
+
     s.push_str("world");
 }
 
@@ -133,7 +133,7 @@ fn main() {
     r1.push_str("world");
     let r2 = &mut s;
     r2.push_str("!");
-    
+
     // println!("{}",r1);
 }
 ```

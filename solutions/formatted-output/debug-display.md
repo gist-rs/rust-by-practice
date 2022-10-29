@@ -42,7 +42,7 @@ impl fmt::Debug for Deep {
     }
 }
 
-fn main() {    
+fn main() {
     // The problem with `derive` is there is no control over how
     // the results look. What if I want this to just show a `7`?
 
@@ -78,7 +78,7 @@ fn main() {
 
     assert_eq!(format!("{}",point), "Display: 3.3 + 7.2i");
     assert_eq!(format!("{:?}",point), "Debug: Complex { real: 3.3, imag: 7.2 }");
-    
+
     println!("Success!")
 }
 ```

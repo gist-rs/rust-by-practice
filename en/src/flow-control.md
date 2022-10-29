@@ -1,7 +1,9 @@
 # Flow control
 
 ### If/else
-1. 🌟 
+
+1. 🌟
+
 ```rust,editable
 
 // Fill in the blanks
@@ -15,10 +17,11 @@ fn main() {
     } __ {
         println!("{} is zero", n);
     }
-} 
+}
 ```
 
 2. 🌟🌟 `If/else` expression can be used in assignments.
+
 ```rust,editable
 
 // Fix the errors
@@ -37,10 +40,11 @@ fn main() {
         }
 
     println!("{} -> {}", n, big_n);
-} 
+}
 ```
 
 ### For
+
 3. 🌟 The `for in` construct can be used to iterate through an Iterator, e.g a range `a..b`.
 
 ```rust,editable
@@ -53,11 +57,11 @@ fn main() {
     }
 
     println!("Success!");
-} 
+}
 ```
 
+4. 🌟🌟
 
-4. 🌟🌟 
 ```rust,editable
 
 // Fix the errors without adding or removing lines
@@ -74,12 +78,13 @@ fn main() {
     for n in numbers {
         // Do something with name...
     }
-    
+
     println!("{:?}", numbers);
-} 
+}
 ```
 
 5. 🌟
+
 ```rust,editable
 fn main() {
     let a = [4, 3, 2, 1];
@@ -92,6 +97,7 @@ fn main() {
 ```
 
 ### While
+
 6. 🌟🌟 The `while` keyword can be used to run a loop when a condition is true.
 
 ```rust,editable
@@ -122,7 +128,9 @@ fn main() {
 ```
 
 ### Continue and break
+
 7. 🌟 Use `break` to break the loop.
+
 ```rust,editable
 
 // Fill in the blank
@@ -142,6 +150,7 @@ fn main() {
 ```
 
 8. 🌟🌟 `continue` will skip over the remaining code in current iteration and go to the next iteration.
+
 ```rust,editable
 
 // Fill in the blanks
@@ -152,7 +161,7 @@ fn main() {
            n+=1;
            __;
        }
-       
+
        __
     }
 
@@ -162,7 +171,7 @@ fn main() {
 }
 ```
 
-### Loop 
+### Loop
 
 9. 🌟🌟 Loop is usually used together with `break` or `continue`.
 
@@ -201,6 +210,7 @@ fn main() {
 ```
 
 10. 🌟🌟 Loop is an expression, so we can use it with `break` to return a value
+
 ```rust,editable
 
 // Fill in the blank

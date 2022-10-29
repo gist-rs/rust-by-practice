@@ -1,7 +1,9 @@
 # Iterator
+
 The iterator pattern allows us to perform some tasks on a sequence of items in turn. An iterator is responsible for the logic of iterating over each item and determining when the sequence has finished.
 
 ## for and iterator
+
 ```rust
 fn main() {
     let v = vec![1, 2, 3];
@@ -11,9 +13,10 @@ fn main() {
 }
 ```
 
-In above code, You may consider `for` as a simple loop, but actually it is iterating over a iterator. 
+In above code, You may consider `for` as a simple loop, but actually it is iterating over a iterator.
 
-By default  `for` will apply the `into_iter` to the collection, and change it into a iterator. As a result, the following code is equivalent to previous one:
+By default `for` will apply the `into_iter` to the collection, and change it into a iterator. As a result, the following code is equivalent to previous one:
+
 ```rust
 fn main() {
     let v = vec![1, 2, 3];
@@ -24,6 +27,7 @@ fn main() {
 ```
 
 1. 🌟
+
 ```rust,editable
 /* Refactoring the following code using iterators */
 fn main() {
@@ -35,6 +39,7 @@ fn main() {
 ```
 
 2. 🌟 One of the easiest ways to create an iterator is to use the range notion: `a..b`.
+
 ```rust,editable
 /* Fill in the blank */
 fn main() {
@@ -48,7 +53,9 @@ fn main() {
 ```
 
 ## next method
+
 All iterators implement a trait named `Iterator` that is defined in the standard library:
+
 ```rust
 pub trait Iterator {
     type Item;
@@ -62,6 +69,7 @@ pub trait Iterator {
 And we can call the `next` method on iterators directly.
 
 3. 🌟🌟
+
 ```rust,editable
 /* Fill the blanks and fix the errors.
 Using two ways if possible */
@@ -75,6 +83,7 @@ fn main() {
 ```
 
 ## into_iter, iter and iter_mut
+
 In the previous section, we have mentioned that `for` will apply the `into_iter` to the collection, and change it into a iterator.However, this is not the only way to convert collections into iterators.
 
 `into_iter`, `iter`, `iter_mut`, all of them can convert an collection into iterator, but in different ways.
@@ -84,6 +93,7 @@ In the previous section, we have mentioned that `for` will apply the `into_iter`
 - `iter_mut`, this mutably borrows each element of the collection, allowing for the collection to be modified in place.
 
 4. 🌟
+
 ```rust,editable
 /* Make it work */
 fn main() {
@@ -97,6 +107,7 @@ fn main() {
 ```
 
 5. 🌟
+
 ```rust,editable
 /* Fill in the blank */
 fn main() {
@@ -114,6 +125,7 @@ fn main() {
 ```
 
 6. 🌟🌟
+
 ```rust,editable
 /* Fill in the blank */
 fn main() {
@@ -128,11 +140,12 @@ fn main() {
 }
 ```
 
-
 ## Creating our own iterator
+
 We can not only create iterators from collections types, but also can create iterators by implementing the `Iterator` trait on our own types.
 
 **Example**
+
 ```rust
 struct Counter {
     count: u32,
@@ -170,6 +183,7 @@ fn main() {
 ```
 
 7. 🌟🌟🌟
+
 ```rust,editable
 struct Fibonacci {
     curr: u32,
@@ -181,7 +195,7 @@ struct Fibonacci {
 impl Iterator for Fibonacci {
     // We can refer to this type using Self::Item
     type Item = u32;
-    
+
     /* Implement next method */
     fn next(&mut self)
 }
@@ -202,13 +216,15 @@ fn main() {
 ```
 
 ## Methods that Consume the Iterator
+
 The `Iterator` trait has a number of methods with default implementations provided by the standard library.
 
-
 ### Consuming adaptors
-Some of these methods call the method `next`to use up the iterator, so they are called *consuming adaptors*.
+
+Some of these methods call the method `next`to use up the iterator, so they are called _consuming adaptors_.
 
 8. 🌟🌟
+
 ```rust,edtiable
 /* Fill in the blank and fix the errors */
 fn main() {
@@ -225,11 +241,12 @@ fn main() {
 }
 ```
 
-
 #### collect
+
 Other than converting a collection into an iterator, we can also `collect` the result values into a collection, `collect` will cosume the iterator.
 
 9. 🌟🌟
+
 ```rust,editable
 /* Make it work */
 use std::collections::HashMap;
@@ -247,13 +264,14 @@ fn main() {
 }
 ```
 
+### Iterator adaptors
 
-###  Iterator adaptors
-Methods allowing you to change one iterator into another iterator are known as *iterator adaptors*. You can chain multiple iterator adaptors to perform complex actions in a readable way.
+Methods allowing you to change one iterator into another iterator are known as _iterator adaptors_. You can chain multiple iterator adaptors to perform complex actions in a readable way.
 
 But because **all iterators are lazy**, you have to call one of the consuming adapers to get results from calls to iterator adapters.
 
 10. 🌟🌟
+
 ```rust,editable
 /* Fill in the blanks */
 fn main() {
@@ -266,6 +284,7 @@ fn main() {
 ```
 
 11. 🌟🌟
+
 ```rust
 /* Fill in the blanks */
 use std::collections::HashMap;
@@ -278,10 +297,10 @@ fn main() {
 }
 ```
 
-
 #### Using closures in iterator adaptors
 
-12. 🌟🌟 
+12. 🌟🌟
+
 ```rust
 /* Fill in the blanks */
 #[derive(PartialEq, Debug)]

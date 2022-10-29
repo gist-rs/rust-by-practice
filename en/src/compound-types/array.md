@@ -1,7 +1,9 @@
 # Array
+
 The type of array is `[T; Length]`, as you can see, array's length is part of their type signature. So their length must be known at compile time.
 
 For example, you cant initialize an array like below:
+
 ```rust
 fn init_arr(n: i32) {
     let arr = [1; n];
@@ -10,7 +12,8 @@ fn init_arr(n: i32) {
 
 This will cause an error, because the compiler has no idea of the exact size of the array at compile time.
 
-1. 🌟 
+1. 🌟
+
 ```rust,editable
 
 fn main() {
@@ -25,13 +28,14 @@ fn main() {
 ```
 
 2. 🌟🌟
+
 ```rust,editable
 
 fn main() {
     // We can ignore parts of the array type or even the whole type, let the compiler infer it for us
     let arr0 = [1, 2, 3];
     let arr: [_; 3] = ['a', 'b', 'c'];
-    
+
     // Fill the blank
     // Arrays are stack allocated, `std::mem::size_of_val` returns the bytes which an array occupies
     // A char takes 4 bytes in Rust: Unicode char
@@ -57,6 +61,7 @@ fn main() {
 ```
 
 4. 🌟 All elements in an array must be of the same type
+
 ```rust,editable
 
 fn main() {
@@ -68,11 +73,12 @@ fn main() {
 ```
 
 5. 🌟 Indexing starts at 0.
+
 ```rust,editable
 
 fn main() {
     let arr = ['a', 'b', 'c'];
-    
+
     let ele = arr[1]; // Only modify this line to make the code work!
 
     assert!(ele == 'a');
@@ -82,12 +88,13 @@ fn main() {
 ```
 
 6. 🌟 Out of bounds indexing causes `panic`.
+
 ```rust,editable
 
 // Fix the error
 fn main() {
     let names = [String::from("Sunfei"), "Sunface".to_string()];
-    
+
     // `Get` returns an Option<T>, it's safe to use
     let name0 = names.get(0).unwrap();
 

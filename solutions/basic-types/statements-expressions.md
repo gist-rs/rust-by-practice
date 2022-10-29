@@ -6,7 +6,7 @@ fn main() {
         let mut x = 1;
         x += 2
     };
- 
+
     assert_eq!(v, ());
  }
 ```
@@ -31,7 +31,7 @@ fn main() {
         let x = 3;
         x
     };
- 
+
     assert!(v == 3);
 }
 ```

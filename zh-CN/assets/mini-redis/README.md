@@ -1,7 +1,6 @@
 # mini-redis
 
-本项目从[tokio/mini-redis](https://github.com/tokio-rs/mini-redis)fork而来，作为rust course的练习项目之一，**文档和注释还未进行翻译**，欢迎大家贡献。
-
+本项目从[tokio/mini-redis](https://github.com/tokio-rs/mini-redis)fork 而来，作为 rust course 的练习项目之一，**文档和注释还未进行翻译**，欢迎大家贡献。
 
 `mini-redis` is an incomplete, idiomatic implementation of a
 [Redis](https://redis.io) client and server built with
@@ -28,7 +27,6 @@ The Redis wire protocol documentation can be found [here](https://redis.io/topic
 
 The set of commands Redis provides can be found
 [here](https://redis.io/commands).
-
 
 ## Running
 
@@ -66,10 +64,10 @@ cargo run --bin mini-redis-cli get foo
 
 `mini-redis` currently supports the following commands.
 
-* [GET](https://redis.io/commands/get)
-* [SET](https://redis.io/commands/set)
-* [PUBLISH](https://redis.io/commands/publish)
-* [SUBSCRIBE](https://redis.io/commands/subscribe)
+- [GET](https://redis.io/commands/get)
+- [SET](https://redis.io/commands/set)
+- [PUBLISH](https://redis.io/commands/publish)
+- [SUBSCRIBE](https://redis.io/commands/subscribe)
 
 The Redis wire protocol specification can be found
 [here](https://redis.io/topics/protocol).
@@ -96,7 +94,7 @@ The server maintains a [`Db`] instance that is accessible from all connected
 connections. The [`Db`] instance manages the key-value state as well as pub/sub
 capabilities.
 
-[`Db`]: src/db.rs
+[`db`]: src/db.rs
 
 ### Framing
 
@@ -120,7 +118,7 @@ The server uses a [`Semaphore`] limits the maximum number of concurrent
 connections. Once the limit is reached, the server stops accepting new
 connections until an existing one terminates.
 
-[`Semaphore`]: https://docs.rs/tokio/*/tokio/sync/struct.Semaphore.html
+[`semaphore`]: https://docs.rs/tokio/*/tokio/sync/struct.Semaphore.html
 
 ### Pub/Sub
 
@@ -131,7 +129,7 @@ implements this using one [broadcast channel][broadcast] per channel and a
 the server to update the active subscriptions.
 
 [broadcast]: https://docs.rs/tokio/*/tokio/sync/broadcast/index.html
-[`StreamMap`]: https://docs.rs/tokio/*/tokio/stream/struct.StreamMap.html
+[`streammap`]: https://docs.rs/tokio/*/tokio/stream/struct.StreamMap.html
 
 ### Using a `std::sync::Mutex` in an async application
 

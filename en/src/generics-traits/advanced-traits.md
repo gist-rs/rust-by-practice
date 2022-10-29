@@ -1,7 +1,9 @@
 # Advance Traits
 
 ## Associated types
+
 The use of "Associated types" improves the overall readability of code by moving inner types locally into a trait as output types. For example :
+
 ```rust
 pub trait CacheableItem: Clone + Default + fmt::Debug + Decodable + Encodable {
   type Address: AsRef<[u8]> + Clone + fmt::Debug + Eq + Hash;
@@ -12,6 +14,7 @@ pub trait CacheableItem: Clone + Default + fmt::Debug + Decodable + Encodable {
 Using of `Address` is much more clearer and convenient than `AsRef<[u8]> + Clone + fmt::Debug + Eq + Hash`.
 
 1. 🌟🌟🌟
+
 ```rust,editable
 
 struct Container(i32, i32);
@@ -53,15 +56,17 @@ fn main() {
         container.contains(&number_1, &number_2));
     println!("First number: {}", container.first());
     println!("Last number: {}", container.last());
-    
+
     println!("The difference is: {}", difference(&container));
 }
 ```
 
 ## Default Generic Type Parameters
+
 When we use generic type parameters, we can specify a default concrete type for the generic type. This eliminates the need for implementors of the trait to specify a concrete type if the default type works.
 
 2. 🌟🌟
+
 ```rust,editable
 
 use std::ops::Sub;
@@ -94,11 +99,13 @@ fn main() {
 ```
 
 ## Fully Qualified Syntax
+
 Nothing in Rust prevents a trait from having a method with the same name as another trait’s method, nor does Rust prevent you from implementing both traits on one type. It’s also possible to implement a method directly on the type with the same name as methods from traits.
 
-When calling methods with the same name, we have to use  Fully Qualified Syntax.
+When calling methods with the same name, we have to use Fully Qualified Syntax.
 
 #### Example
+
 ```rust,editable
 trait UsernameWidget {
     // Get the selected username out of this widget
@@ -134,11 +141,11 @@ fn main() {
         age: 28,
     };
 
-    // If you uncomment this line, you'll get an error saying 
+    // If you uncomment this line, you'll get an error saying
     // "multiple `get` found". Because, after all, there are multiple methods
     // named `get`.
     // println!("{}", form.get());
-    
+
     let username = UsernameWidget::get(&form);
     assert_eq!("rustacean".to_owned(), username);
     let age = AgeWidget::get(&form); // You can also use `<Form as AgeWidget>::get`
@@ -149,7 +156,9 @@ fn main() {
 ```
 
 #### Exercise
+
 3. 🌟🌟
+
 ```rust,editable
 trait Pilot {
     fn fly(&self) -> String;
@@ -192,9 +201,11 @@ fn main() {
 ```
 
 ## Supertraits
+
 Sometimes, you might need one trait to use another trait’s functionality( like the "inheritance" in other languages ). In this case, you need to rely on the dependent trait also being implemented. The trait you rely on is a `supertrait` of the trait you’re implementing.
 
 4. 🌟🌟🌟
+
 ```rust,editable
 
 trait Person {
@@ -211,7 +222,7 @@ trait Programmer {
     fn fav_language(&self) -> String;
 }
 
-// CompSciStudent (computer science student) is a subtrait of both Programmer 
+// CompSciStudent (computer science student) is a subtrait of both Programmer
 // and Student. Implementing CompSciStudent requires you to impl both supertraits.
 trait CompSciStudent: Programmer + Student {
     fn git_username(&self) -> String;
@@ -251,13 +262,15 @@ fn main() {
 ```
 
 ## Orphan Rules
-We can’t implement external traits on external types. For example, we can’t implement the `Display` trait on `Vec<T>` within our own crate, because `Display` and `Vec<T>` are defined in the standard library and aren’t local to our crate. 
 
-This restriction is often called the orphan rule, so named because the parent type is not present. This rule ensures that other people’s code can’t break your code and vice versa. 
+We can’t implement external traits on external types. For example, we can’t implement the `Display` trait on `Vec<T>` within our own crate, because `Display` and `Vec<T>` are defined in the standard library and aren’t local to our crate.
+
+This restriction is often called the orphan rule, so named because the parent type is not present. This rule ensures that other people’s code can’t break your code and vice versa.
 
 It’s possible to get around this restriction using the newtype pattern, which involves creating a new type in a tuple struct.
 
 5. 🌟🌟
+
 ```rust,editable
 use std::fmt;
 

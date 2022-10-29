@@ -47,7 +47,7 @@ fn main() {
     assert_eq!(bird.quack(), "swan swan");
 
     println!("Success!")
-}   
+}
 
 fn hatch_a_bird(species: u8) ->Box<dyn Bird> {
     if species == 1 {

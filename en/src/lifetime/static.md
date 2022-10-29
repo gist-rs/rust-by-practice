@@ -1,5 +1,7 @@
 # &'static and T: 'static
+
 `'static` is a reserved lifetime name, you might have encountered it serveral times:
+
 ```rust
 // A reference with 'static lifetime:
 let s: &'static str = "hello world";
@@ -11,9 +13,8 @@ fn generic<T>(x: T) where T: 'static {}
 Though they are all `'static`, but subtly different.
 
 ## &'static
+
 As a reference lifetime, `&'static` indicates the data pointed to by the reference lives as long as the running program. But it can still be coerced to a shorter lifetime.
-
-
 
 1. 🌟🌟 There are several ways to make a variable with `'static` lifetime, two of them are stored in the read-only memory of the binary。
 
@@ -33,6 +34,7 @@ fn need_static(r : &'static str) {
 ```
 
 2. 🌟🌟🌟🌟 Another way to make `'static` lifetime is using `Box::leak`
+
 ```rust,editable
 #[derive(Debug)]
 struct Config {
@@ -60,6 +62,7 @@ fn main() {
 ```
 
 3. 🌟 `&'static` only indicates that the data can live forever, not the reference. The latter one will be constrained by its scope.
+
 ```rust,editable
 fn main() {
     {
@@ -78,6 +81,7 @@ fn main() {
 4. `&'static` can be coerced to a shorter lifetime.
 
 **Example**
+
 ```rust,editable
 // Make a constant with `'static` lifetime.
 static NUM: i32 = 18;
@@ -103,14 +107,14 @@ fn main() {
 }
 ```
 
+## T: 'static
 
-
-##  T: 'static
 As a trait bound, it means the type does not contain any non-static references. Eg. the receiver can hold on to the type for as long as they want and it will never become invalid until they drop it.
 
 It's important to understand this means that any owned data always passes a `'static `lifetime bound, but a reference to that owned data generally does no。
 
 5. 🌟🌟
+
 ```rust,editable
 /* Make it work */
 use std::fmt::Debug;
@@ -144,8 +148,8 @@ fn main() {
 }
 ```
 
-
 6. 🌟🌟🌟
+
 ```rust,editable
 use std::fmt::Display;
 

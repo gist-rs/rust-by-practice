@@ -13,7 +13,7 @@ fn main() {
         age,
         hobby: "coding".to_string()
     };
-} 
+}
 ```
 
 2.
@@ -30,7 +30,7 @@ impl SomeTrait for Unit {  }
 fn main() {
     let u = Unit;
     do_something_with_unit(u);
-} 
+}
 
 // fill the blank to make the code work
 fn do_something_with_unit(u: Unit) {   }
@@ -44,7 +44,7 @@ struct Point(i32, i32, i32);
 fn main() {
     let v = Point(0, 127, 255);
     check_color(v);
-}   
+}
 
 fn check_color(p: Point) {
     let Point(x, _, _) = p;
@@ -68,7 +68,7 @@ fn main() {
         age,
     };
 
-    // how can you believe sunface is only 18? 
+    // how can you believe sunface is only 18?
     p.age = 30;
 
     p.name = String::from("sunfei");
@@ -82,7 +82,7 @@ struct Person {
     name: String,
     age: u8,
 }
-fn main() {} 
+fn main() {}
 
 fn build_person(name: String, age: u8) -> Person {
     Person {
@@ -110,7 +110,7 @@ fn main() {
     };
 
     let u2 = set_email(u1);
-} 
+}
 
 fn set_email(u: User) -> User {
     User {
@@ -159,5 +159,5 @@ fn main() {
     let _name = f.name;
 
     println!("{}", f.data);
-} 
+}
 ```

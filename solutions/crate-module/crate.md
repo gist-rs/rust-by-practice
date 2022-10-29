@@ -23,7 +23,7 @@
 6.
 
 ```shell
-# Create a package which contains 
+# Create a package which contains
 # 1. three binary crates: `hello-package`, `main1` and `main2`
 # 2. one library crate
 # describe the directory tree below

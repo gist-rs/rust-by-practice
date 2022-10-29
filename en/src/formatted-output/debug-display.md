@@ -1,9 +1,11 @@
 # Debug and Display
-All types which want to be printable must implement the `std::fmt` formatting trait: `std::fmt::Debug` or `std::fmt::Display`. 
+
+All types which want to be printable must implement the `std::fmt` formatting trait: `std::fmt::Debug` or `std::fmt::Display`.
 
 Automatic implementations are only provided for types such as in the `std` library. All others have to be manually implemented.
 
 ## Debug
+
 The implementation of `Debug` is very straightfoward: All types can `derive` the `std::fmt::Debug` implementation. This is not true for `std::fmt::Display` which must be manually implemented.
 
 `{:?}` must be used to print out the type which has implemented the `Debug` trait.
@@ -19,6 +21,7 @@ struct DebugPrintable(i32);
 ```
 
 1. 🌟
+
 ```rust,editable
 
 /* Fill in the blanks and Fix the errors */
@@ -32,7 +35,8 @@ fn main() {
 }
 ```
 
-2. 🌟🌟 So `fmt::Debug` definitely makes one type printable, but sacrifices some elegance. Maybe we can get more elegant by replacing `{:?}` with something else( but not `{}` !) 
+2. 🌟🌟 So `fmt::Debug` definitely makes one type printable, but sacrifices some elegance. Maybe we can get more elegant by replacing `{:?}` with something else( but not `{}` !)
+
 ```rust,editable
 #[derive(Debug)]
 struct Person {
@@ -43,7 +47,7 @@ struct Person {
 fn main() {
     let person = Person { name:  "Sunface".to_string(), age: 18 };
 
-    /* Make it output: 
+    /* Make it output:
     Person {
         name: "Sunface",
         age: 18,
@@ -54,6 +58,7 @@ fn main() {
 ```
 
 3. 🌟🌟 We can also manually implement `Debug` trait for our types
+
 ```rust,editable
 
 #[derive(Debug)]
@@ -63,7 +68,7 @@ struct Structure(i32);
 struct Deep(Structure);
 
 
-fn main() {    
+fn main() {
     // The problem with `derive` is there is no control over how
     // the results look. What if I want this to just show a `7`?
 
@@ -73,6 +78,7 @@ fn main() {
 ```
 
 ## Display
+
 Yeah, `Debug` is simple and easy to use. But sometimes we want to customize the output appearance of our type. This is where `Display` really shines.
 
 Unlike `Debug`, there is no way to derive the implementation of the `Display` trait, we have to manually implement it.
@@ -80,6 +86,7 @@ Unlike `Debug`, there is no way to derive the implementation of the `Display` tr
 Another thing to note: the placefolder for `Display` is `{}` not `{:?}`.
 
 4. 🌟🌟
+
 ```rust,editable
 
 /* Make it work*/
@@ -102,11 +109,10 @@ fn main() {
     let point = Point2D { x: 3.3, y: 7.2 };
     assert_eq!(format!("{}",point), "Display: 3.3 + 7.2i");
     assert_eq!(format!("{:?}",point), "Debug: Complex { real: 3.3, imag: 7.2 }");
-    
+
     println!("Success!");
 }
 ```
-
 
 ### `?` operator
 
@@ -115,10 +121,11 @@ Implementing `fmt::Display` for a structure whose elements must be handled separ
 Fortunately, Rust provides the `?` operator to help us eliminate some unnecessary codes for dealing with `fmt::Result`.
 
 5. 🌟🌟
+
 ```rust,editable
 
 /* Make it work */
-use std::fmt; 
+use std::fmt;
 
 struct List(Vec<i32>);
 
@@ -150,4 +157,3 @@ fn main() {
     println!("Success!");
 }
 ```
-

@@ -40,8 +40,8 @@ fn borrow_string(s: &str) {
 
 ```rust
 // FILL in the blanks
-fn main() {  
-   // get a slice of String with reference: String -> &str 
+fn main() {
+   // get a slice of String with reference: String -> &str
    let mut s = String::from("hello, world");
 
    let slice1: &str = &s; // in two ways
@@ -52,7 +52,7 @@ fn main() {
 
    //Note! The type here cant be `&mut str` due to `push` is ONLY defined on String type and its mut reference: `&mut String` !
    // So you can't use `s.as_mut_str()`
-   let slice3: &mut String = &mut s; 
+   let slice3: &mut String = &mut s;
    slice3.push('!');
    assert_eq!(slice3, "hello, world!");
 
@@ -61,10 +61,10 @@ fn main() {
 ```
 
 ```rust
-fn main() {  
+fn main() {
    let mut s = String::from("hello, world");
 
-   let slice1: &str = s.as_str(); 
+   let slice1: &str = s.as_str();
    assert_eq!(slice1, "hello, world");
 
    let slice2 = &s[0..5];
@@ -72,7 +72,7 @@ fn main() {
 
    //Note! The type here cant be `&mut str` due to `push` is ONLY defined on String type and its mut reference: `&mut String` !
    // So you can't use `s.as_mut_str()`
-   let slice3: &mut String = &mut s; 
+   let slice3: &mut String = &mut s;
    slice3.push('!');
    assert_eq!(slice3, "hello, world!");
 
@@ -81,7 +81,6 @@ fn main() {
 ```
 
 3. 2
-
 
 4.
 
@@ -118,8 +117,8 @@ fn main() {
     // Turn a bytes vector into a String
     // We know these bytes are valid, so we'll use `unwrap()`.
     let s1 = String::from_utf8(v).unwrap();
-    
-    
+
+
     assert_eq!(s, s1);
 
     println!("Success!")

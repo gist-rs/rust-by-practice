@@ -8,6 +8,7 @@ cannot be otherwise achieved. Accessing low level hardware primitives, e.g. in k
 > **Note**: the examples here are given in x86/x86-64 assembly, but other architectures are also supported.
 
 Inline assembly is currently supported on the following architectures:
+
 - x86 and x86-64
 - ARM
 - AArch64
@@ -132,7 +133,7 @@ To achieve this Rust provides a `lateout` specifier. This can be used on any out
 written only after all inputs have been consumed.
 There is also a `inlateout` variant of this specifier.
 
-Here is an example where `inlateout` *cannot* be used:
+Here is an example where `inlateout` _cannot_ be used:
 
 ```rust
 use std::arch::asm;
@@ -293,7 +294,7 @@ assert_eq!(x, 4 * 6);
 
 ## Symbol operands and ABI clobbers
 
-By default, `asm!` assumes that any register not specified as an output will have its contents preserved by the assembly code. The [`clobber_abi`] argument to `asm!` tells the compiler to automatically insert the necessary clobber operands according to the given calling convention ABI: any register which is not fully preserved in that ABI will be treated as clobbered.  Multiple `clobber_abi` arguments may be provided and all clobbers from all specified ABIs will be inserted.
+By default, `asm!` assumes that any register not specified as an output will have its contents preserved by the assembly code. The [`clobber_abi`] argument to `asm!` tells the compiler to automatically insert the necessary clobber operands according to the given calling convention ABI: any register which is not fully preserved in that ABI will be treated as clobbered. Multiple `clobber_abi` arguments may be provided and all clobbers from all specified ABIs will be inserted.
 
 [`clobber_abi`]: ../../reference/inline-assembly.html#abi-clobbers
 
@@ -372,9 +373,9 @@ fn load_fpu_control_word(control: u16) {
 
 Any reuse of a named label, local or otherwise, can result in an assembler or linker error or may cause other strange behavior. Reuse of a named label can happen in a variety of ways including:
 
--   explicitly: using a label more than once in one `asm!` block, or multiple times across blocks.
--   implicitly via inlining: the compiler is allowed to instantiate multiple copies of an `asm!` block, for example when the function containing it is inlined in multiple places.
--   implicitly via LTO: LTO can cause code from *other crates* to be placed in the same codegen unit, and so could bring in arbitrary labels.
+- explicitly: using a label more than once in one `asm!` block, or multiple times across blocks.
+- implicitly via inlining: the compiler is allowed to instantiate multiple copies of an `asm!` block, for example when the function containing it is inlined in multiple places.
+- implicitly via LTO: LTO can cause code from _other crates_ to be placed in the same codegen unit, and so could bring in arbitrary labels.
 
 As a consequence, you should only use GNU assembler **numeric** [local labels] inside inline assembly code. Defining symbols in assembly code may lead to assembler and/or linker errors due to duplicate symbol definitions.
 
@@ -408,7 +409,7 @@ This example shows a few things:
 - Second, that when a numeric label is used as a reference (as an instruction operand, for example), the suffixes “b” (“backward”) or ”f” (“forward”) should be added to the numeric label. It will then refer to the nearest label defined by this number in this direction.
 
 [local labels]: https://sourceware.org/binutils/docs/as/Symbol-Names.html#Local-Labels
-[an LLVM bug]: https://bugs.llvm.org/show_bug.cgi?id=36144
+[an llvm bug]: https://bugs.llvm.org/show_bug.cgi?id=36144
 
 ## Options
 
@@ -432,6 +433,7 @@ assert_eq!(a, 8);
 ```
 
 Options can be provided as an optional final argument to the `asm!` macro. We specified three options here:
+
 - `pure` means that the asm code has no observable side effects and that its output depends only on its inputs. This allows the compiler optimizer to call the inline asm fewer times or even eliminate it entirely.
 - `nomem` means that the asm code does not read or write to memory. By default the compiler will assume that inline assembly can read or write any memory address that is accessible to it (e.g. through a pointer passed as an operand, or a global).
 - `nostack` means that the asm code does not push any data onto the stack. This allows the compiler to use optimizations such as the stack red zone on x86-64 to avoid stack pointer adjustments.

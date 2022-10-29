@@ -10,10 +10,10 @@
 
 [![Stars Count](https://img.shields.io/github/stars/sunface/rust-by-practice?style=flat)](https://github.com/sunface/rust-by-practice/stargazers) [![Forks Count](https://img.shields.io/github/forks/sunface/rust-by-practice.svg?style=flat)](https://github.com/naaive/orange/network/members)
 [![LICENSE](https://img.shields.io/badge/license-mit-green?style=flat)](https://github.com/sunface/rust-by-practice/blob/master/LICENSE)
+
 </div>
 
-*Rust语言实战* 的目标是通过大量的实战练习帮助大家更好的学习和上手使用 Rust 语言。书中的练习题非常易于使用：你所需的就是在线完成练习，并让它通过编译。
-
+_Rust 语言实战_ 的目标是通过大量的实战练习帮助大家更好的学习和上手使用 Rust 语言。书中的练习题非常易于使用：你所需的就是在线完成练习，并让它通过编译。
 
 ## 在线阅读
 
@@ -22,14 +22,18 @@
 ## 本地运行
 
 我们使用 [mdbook](https://rust-lang.github.io/mdBook/) 构建在线练习题，你也可以下载到本地运行：
+
 ```shell
 $ cargo install mdbook
-$ cd rust-by-practice && mdbook serve 
+$ cd rust-by-practice && mdbook serve
 ```
-在本地win 10或者linux服务器上运行时，应当使用 -n 参数指定mdbook服务所监听的IP地址（-p 参数指定服务监听的端口，不指定则为默认的3000），以win 10本地运行为例：
+
+在本地 win 10 或者 linux 服务器上运行时，应当使用 -n 参数指定 mdbook 服务所监听的 IP 地址（-p 参数指定服务监听的端口，不指定则为默认的 3000），以 win 10 本地运行为例：
+
 ```shell
 $ mdbook serve -p 8888 -n 127.0.0.1
 ```
+
 ## 特性
 
 部分示例和习题借鉴了 [Rust By Example](https://github.com/rust-lang/rust-by-example), 书中的示例真的非常棒！
@@ -44,21 +48,14 @@ $ mdbook serve -p 8888 -n 127.0.0.1
 
 - 每一道练习题都提供了解答
 
-- 整体难度相对更高，更加贴近于实战难度: 简单 🌟 , 中等 🌟🌟 , 困难 🌟🌟🌟  , 地狱 🌟🌟🌟🌟
+- 整体难度相对更高，更加贴近于实战难度: 简单 🌟 , 中等 🌟🌟 , 困难 🌟🌟🌟 , 地狱 🌟🌟🌟🌟
 
-**总之，我们想做的就是解决入门学习后，不知道该如何运用的问题，毕竟对于 Rust 来说，从学习到实战，中间还隔着数个 Go语言 的难度**
+**总之，我们想做的就是解决入门学习后，不知道该如何运用的问题，毕竟对于 Rust 来说，从学习到实战，中间还隔着数个 Go 语言 的难度**
 
 ## 关于我们
 
-*Rust语言实战* 由 Rust 编程学院倾情打造。
+_Rust 语言实战_ 由 Rust 编程学院倾情打造。
 
-同时我们还提供了一本目前最好也是最用心的开源 Rust 书籍 - [Rust语言圣经](https://github.com/sunface/rust-course)， 适合从入门到精通所有阶段的学习，欢迎大家阅读使用。
+同时我们还提供了一本目前最好也是最用心的开源 Rust 书籍 - [Rust 语言圣经](https://github.com/sunface/rust-course)， 适合从入门到精通所有阶段的学习，欢迎大家阅读使用。
 
 对我们来说，来自读者大大的肯定比什么都重要，因此一个 [Github star](https://github.com/sunface/rust-by-practice) 要比一杯咖啡更让我们开心，而且现在它在跳楼打折，无需 998 ， 仅需 0 元钱 :)
-
-
-
-
-
-
-

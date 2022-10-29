@@ -1,12 +1,13 @@
 # HashMap
+
 Where vectors store values by an integer index, HashMaps store values by key. It is a hash map implemented with quadratic probing and SIMD lookup. By default, `HashMap` uses a hashing algorithm selected to provide resistance against HashDoS attacks.
 
 The default hashing algorithm is currently `SipHash 1-3`, though this is subject to change at any point in the future. While its performance is very competitive for medium sized keys, other hashing algorithms will outperform it for small keys such as integers as well as large keys such as long strings, though those algorithms will typically not protect against attacks such as HashDoS.
 
 The hash table implementation is a Rust port of Google’s [SwissTable](https://abseil.io/blog/20180927-swisstables). The original C++ version of SwissTable can be found [here](https://github.com/abseil/abseil-cpp/blob/master/absl/container/internal/raw_hash_set.h), and this [CppCon talk](https://www.youtube.com/watch?v=ncHmEUmJZf4) gives an overview of how the algorithm works.
 
-
 ### Basic Operations
+
 1. 🌟🌟
 
 ```rust,editable
@@ -40,6 +41,7 @@ fn main() {
 ```
 
 2. 🌟🌟
+
 ```rust,editable
 
 use std::collections::HashMap;
@@ -66,6 +68,7 @@ fn main() {
 ```
 
 3. 🌟🌟
+
 ```rust,editable
 
 // FILL in the blanks
@@ -103,17 +106,19 @@ fn random_stat_buff() -> u8 {
 ```
 
 ### Requirements of HashMap key
+
 Any type that implements the `Eq` and `Hash` traits can be a key in `HashMap`. This includes:
 
 - `bool` (though not very useful since there is only two possible keys)
 - `int`, `uint`, and all variations thereof
 - `String` and `&str` (tips: you can have a `HashMap` keyed by `String` and call `.get()` with an `&str`)
-  
+
 Note that `f32` and `f64` do not implement `Hash`, likely because [floating-point precision](https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems) errors would make using them as hashmap keys horribly error-prone.
 
 All collection classes implement `Eq` and `Hash` if their contained type also respectively implements `Eq` and `Hash`. For example, `Vec<T>` will implement `Hash` if `T`implements `Hash`.
 
 4. 🌟🌟
+
 ```rust,editable
 
 // FIX the errors
@@ -151,9 +156,11 @@ fn main() {
 ```
 
 ### Capacity
+
 Like vectors, HashMaps are growable, but HashMaps can also shrink themselves when they have excess space. You can create a `HashMap` with a certain starting capacity using `HashMap::with_capacity(uint)`, or use `HashMap::new()` to get a HashMap with a default initial capacity (recommended).
 
 #### Example
+
 ```rust,editable
 
 use std::collections::HashMap;
@@ -181,9 +188,11 @@ fn main() {
 ```
 
 ### Ownership
+
 For types that implement the `Copy` trait, like `i32` , the values are copied into `HashMap`. For owned values like `String`, the values will be moved and `HashMap` will be the owner of those values.
 
 5. 🌟🌟
+
 ```rust,editable
 // FIX the errors with least changes
 // DON'T remove any code line
@@ -198,7 +207,7 @@ fn main() {
   let mut m2 = HashMap::new();
   // Ownership moved here
   m2.insert(v2, v1);
-    
+
   assert_eq!(v2, "hello");
 
   println!("Success!");
@@ -206,9 +215,11 @@ fn main() {
 ```
 
 ### Third-party Hash libs
+
 If the performance of `SipHash 1-3` doesn't meet your requirements, you can find replacements in crates.io or github.com.
 
 The usage of third-party hash looks like this:
+
 ```rust
 use std::hash::BuildHasherDefault;
 use std::collections::HashMap;
@@ -220,4 +231,3 @@ let mut hash: HashMap<_, _, BuildHasherDefault<XxHash64>> = Default::default();
 hash.insert(42, "the answer");
 assert_eq!(hash.get(&42), Some(&"the answer"));
 ```
-

@@ -86,8 +86,8 @@
   - [Future](async/future.md)
   - [Pin and Unpin](async/pin-unpin.md)
   - [Stream](async/stream.md)
-  
 - [Standard Library TODO](std/intro.md)
+
   - [String](std/String.md)
 
 - [Fighting with Compiler](fight-compiler/intro.md)

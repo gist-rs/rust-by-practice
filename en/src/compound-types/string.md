@@ -1,8 +1,9 @@
 # String
+
 The type of string literal `"hello, world"` is `&str`, e.g `let s: &str = "hello, world"`.
 
-
 ### Str and &str
+
 1. 🌟 We can't use `str` type in normal ways, but we can use `&str`.
 
 ```rust,editable
@@ -15,8 +16,7 @@ fn main() {
 }
 ```
 
-
-2. 🌟🌟 We can only use `str` by boxed it, `&` can be used to convert `Box<str>` to `&str` 
+2. 🌟🌟 We can only use `str` by boxed it, `&` can be used to convert `Box<str>` to `&str`
 
 ```rust,editable
 
@@ -32,9 +32,11 @@ fn greetings(s: &str) {
 ```
 
 ### String
+
 `String` type is defined in std and stored as a vector of bytes (Vec<u8>), but guaranteed to always be a valid UTF-8 sequence. String is heap allocated, growable and not null terminated.
 
 3. 🌟
+
 ```rust,editable
 
 // Fill the blank
@@ -50,6 +52,7 @@ fn main() {
 ```
 
 4. 🌟🌟🌟
+
 ```rust,editable
 
 // Fix all errors without adding newline
@@ -64,6 +67,7 @@ fn main() {
 ```
 
 5. 🌟🌟 `replace` can be used to replace substring
+
 ```rust,editable
 
 // Fill the blank
@@ -88,16 +92,18 @@ More `String` methods can be found under [String](https://doc.rust-lang.org/std/
 fn main() {
     let s1 = String::from("hello,");
     let s2 = String::from("world!");
-    let s3 = s1 + s2; 
+    let s3 = s1 + s2;
     assert_eq!(s3,"hello,world!");
     println!("{}",s1);
 }
 ```
 
 ### &str and String
+
 Opsite to the seldom using of `str`, `&str` and `String` are used everywhere!
 
 7. 🌟🌟 `&str` can be converted to `String` in two ways
+
 ```rust,editable
 
 // Fix error with at least two solutions
@@ -125,7 +131,9 @@ fn main() {
 ```
 
 ### String escapes
-9. 🌟 
+
+9. 🌟
+
 ```rust,editable
 fn main() {
     // You can use escapes to write bytes by their hexadecimal values
@@ -174,9 +182,11 @@ fn main() {
 ```
 
 ### Byte string
+
 Want a string that's not UTF-8? (Remember, str and String must be valid UTF-8). Or maybe you want an array of bytes that's mostly text? Byte strings to the rescue!
 
 **Example**:
+
 ```rust,editable
 use std::str;
 
@@ -220,6 +230,7 @@ fn main() {
 A more detailed listing of the ways to write string literals and escape characters is given in the ['Tokens' chapter](https://doc.rust-lang.org/reference/tokens.html) of the Rust Reference.
 
 ### String index
+
 11. 🌟🌟🌟 You can't use index to access a char in a string, but you can use slice `&s1[start..end]`.
 
 ```rust,editable
@@ -237,7 +248,9 @@ fn main() {
 ```
 
 ### Operate on UTF8 string
+
 12. 🌟
+
 ```rust,editable
 
 fn main() {
@@ -249,9 +262,11 @@ fn main() {
 ```
 
 #### utf8_slice
+
 You can use [utf8_slice](https://docs.rs/utf8_slice/1.0.0/utf8_slice/fn.slice.html) to slice UTF8 string, it can index chars instead of bytes.
 
 **Example**
+
 ```rust
 use utf8_slice;
 fn main() {

@@ -49,7 +49,7 @@ fn main() {
 
     // fill the blank
     (y, z, x) = (1, 2, 3);
-    
+
     assert_eq!(x, 3);
     assert_eq!(y, 1);
     assert_eq!(z, 2);
@@ -61,11 +61,11 @@ fn main() {
 ```rust
 fn main() {
     let (x, y) = sum_multiply((2, 3));
- 
+
     assert_eq!(x, 5);
     assert_eq!(y, 6);
  }
- 
+
  fn sum_multiply(nums: (i32, i32)) -> (i32, i32) {
      (nums.0 + nums.1, nums.0 * nums.1)
  }

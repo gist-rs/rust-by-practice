@@ -55,9 +55,9 @@ fn main() {
 [`std::fmt`][fmt] contains many [`traits`][traits] which govern the display
 of text. The base form of two important ones are listed below:
 
-* `fmt::Debug`: Uses the `{:?}` marker. Format text for debugging purposes.
-* `fmt::Display`: Uses the `{}` marker. Format text in a more elegant, user
-friendly fashion.
+- `fmt::Debug`: Uses the `{:?}` marker. Format text for debugging purposes.
+- `fmt::Display`: Uses the `{}` marker. Format text in a more elegant, user
+  friendly fashion.
 
 Here, we used `fmt::Display` because the std library provides implementations
 for these types. To print text for custom types, more steps are required.

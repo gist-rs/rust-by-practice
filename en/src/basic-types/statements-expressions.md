@@ -1,6 +1,7 @@
 # Statements and Expressions
 
 ### Examples
+
 ```rust,editable
 fn main() {
     let x = 5u32;
@@ -25,7 +26,9 @@ fn main() {
 ```
 
 ### Exercises
+
 1. 🌟🌟
+
 ```rust,editable
 // Make it work with two ways
 fn main() {
@@ -41,6 +44,7 @@ fn main() {
 ```
 
 2. 🌟
+
 ```rust,editable
 
 fn main() {
@@ -53,6 +57,7 @@ fn main() {
 ```
 
 3. 🌟
+
 ```rust,editable
 
 fn main() {

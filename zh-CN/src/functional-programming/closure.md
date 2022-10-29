@@ -1,6 +1,6 @@
 # Closure
 
-下面代码是Rust圣经课程中[闭包](http://course.rs/advance/functional-programing/closure.html#结构体中的闭包)章节的课内练习题答案：
+下面代码是 Rust 圣经课程中[闭包](http://course.rs/advance/functional-programing/closure.html#结构体中的闭包)章节的课内练习题答案：
 
 ```rust
 struct Cacher<T,E>
@@ -36,7 +36,7 @@ where
     }
 }
 fn main() {
-  
+
 }
 
 #[test]

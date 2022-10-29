@@ -11,7 +11,7 @@ fn main() {
     } else {
         println!("{} is zero", n);
     }
-} 
+}
 ```
 
 2.
@@ -32,7 +32,7 @@ fn main() {
         };
 
     println!("{} -> {}", n, big_n);
-} 
+}
 ```
 
 3.
@@ -44,7 +44,7 @@ fn main() {
             panic!("NEVER LET THIS RUN")
         }
     }
-} 
+}
 ```
 
 4.
@@ -65,7 +65,7 @@ fn main() {
     }
 
     println!("{:?}", numbers);
-} 
+}
 ```
 
 5.
@@ -201,7 +201,7 @@ fn main() {
         'inner1: loop {
             if count >= 20 {
                 // This would break only the inner1 loop
-                break 'inner1; // `break` is also ok 
+                break 'inner1; // `break` is also ok
             }
             count += 2;
         }

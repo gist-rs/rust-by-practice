@@ -1,7 +1,9 @@
 # Package and Crate
+
 A package is a project which you create with Cargo (in most cases), so it contains a `Cargo.toml` file in it.
 
-1. 🌟 Create a package  with below layout:
+1. 🌟 Create a package with below layout:
+
 ```shell
 .
 ├── Cargo.toml
@@ -22,6 +24,7 @@ edition = "2021"
 > Note! We will use this package across the whole chapter as a practice project.
 
 2. 🌟 Create a package with below layout:
+
 ```shell
 .
 ├── Cargo.toml
@@ -41,7 +44,8 @@ edition = "2021"
 
 > Note! This package could be safely removed due to the first one's existence.
 
-3. 🌟 
+3. 🌟
+
 ```rust,editable
 /* FILL in the blank with your ANSWER */
 
@@ -49,8 +53,8 @@ edition = "2021"
 // A: __
 ```
 
-
 ## Crate
+
 A crate is a binary or library. The crate root is a source file that the Rust compiler starts from and makes up the root module of the crate.
 
 In package `hello-package`, there is binary crate with the same name as the package : `hello-package`, and `src/main.rs` is the crate root of this binary crate.
@@ -58,6 +62,7 @@ In package `hello-package`, there is binary crate with the same name as the pack
 Similar to `hello-package`, `hello-package1` also has a crate in it, however, this package doesn't contain a binary crate but a library crate, and `src/lib.rs` is the crate root.
 
 4. 🌟
+
 ```rust,editable
 /* FILL in the blank with your ANSWER */
 
@@ -65,8 +70,8 @@ Similar to `hello-package`, `hello-package1` also has a crate in it, however, th
 // A: __
 ```
 
-
 5. 🌟🌟 Add a library crate for `hello-package` and describe it's files tree below:
+
 ```shell,editable
 # FILL in the blanks
 .
@@ -82,7 +87,7 @@ After this step, there should be two crates in package `hello-package`: **a bina
 6. 🌟🌟🌟 A package can contain at most one library crate, but it can contain as many binary crates as you would like by placing files in `src/bin` directory: **each file will be a separate binary crate with the same name as the file**.
 
 ```shell,editable
-# Create a package which contains 
+# Create a package which contains
 # 1. three binary crates: `hello-package`, `main1` and `main2`
 # 2. one library crate
 # describe the directory tree below
@@ -104,6 +109,5 @@ After this step, there should be two crates in package `hello-package`: **a bina
 ```
 
 Yep, as you can see, the above package structure is very standard and is widely used in many Rust projects.
-
 
 > You can find the solutions [here](https://github.com/sunface/rust-by-practice) (under the solutions path), but only use it when you need it :)

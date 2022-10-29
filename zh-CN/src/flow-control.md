@@ -1,7 +1,9 @@
 # 流程控制
 
 ### if/else
-1. 🌟 
+
+1. 🌟
+
 ```rust,editable
 
 // 填空
@@ -15,10 +17,11 @@ fn main() {
     } __ {
         println!("{} is zero", n);
     }
-} 
+}
 ```
 
 2. 🌟🌟 if/else 可以用作表达式来进行赋值
+
 ```rust,editable
 
 // 修复错误
@@ -37,10 +40,11 @@ fn main() {
         }
 
     println!("{} -> {}", n, big_n);
-} 
+}
 ```
 
 ### for
+
 3. 🌟 `for in` 可以用于迭代一个迭代器，例如序列 `a..b`.
 
 ```rust,editable
@@ -51,11 +55,11 @@ fn main() {
             panic!("NEVER LET THIS RUN")
         }
     }
-} 
+}
 ```
 
+4. 🌟🌟
 
-4. 🌟🌟 
 ```rust,editable
 
 // 修复错误，不要新增或删除代码行
@@ -72,17 +76,18 @@ fn main() {
     for n in numbers {
         // do something with name...
     }
-    
+
     println!("{:?}", numbers);
-} 
+}
 ```
 
 5. 🌟
+
 ```rust,editable
 fn main() {
     let a = [4,3,2,1];
 
-    // 通过索引和值的方式迭代数组 `a` 
+    // 通过索引和值的方式迭代数组 `a`
     for (i,v) in a.__ {
         println!("第{}个元素是{}",i+1,v);
     }
@@ -90,6 +95,7 @@ fn main() {
 ```
 
 ### while
+
 6. 🌟🌟 当条件为 true 时，`while` 将一直循环
 
 ```rust,editable
@@ -120,7 +126,9 @@ fn main() {
 ```
 
 ### continue and break
+
 7. 🌟 使用 `break` 可以跳出循环
+
 ```rust,editable
 
 // 填空，不要修改其它代码
@@ -138,6 +146,7 @@ fn main() {
 ```
 
 8. 🌟🌟 `continue` 会结束当次循环并立即开始下一次循环
+
 ```rust,editable
 
 // 填空，不要修改其它代码
@@ -148,7 +157,7 @@ fn main() {
            n+=1;
            __;
        }
-       
+
        __
     }
 
@@ -156,7 +165,7 @@ fn main() {
 }
 ```
 
-### loop 
+### loop
 
 9. 🌟🌟 loop 一般都需要配合 `break` 或 `continue` 一起使用。
 
@@ -193,6 +202,7 @@ fn main() {
 ```
 
 10. 🌟🌟 loop 是一个表达式，因此我们可以配合 `break` 来返回一个值
+
 ```rust,editable
 
 // 填空
@@ -242,4 +252,4 @@ fn main() {
 }
 ```
 
-> 你可以在[这里](https://github.com/sunface/rust-by-practice/blob/master/solutions/flow-control.md)找到答案(在 solutions 路径下) 
+> 你可以在[这里](https://github.com/sunface/rust-by-practice/blob/master/solutions/flow-control.md)找到答案(在 solutions 路径下)

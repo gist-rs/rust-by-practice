@@ -1,5 +1,6 @@
 # Module
-在 Rust 语言圣经中，我们已经深入讲解过[模块module](https://course.rs/basic/crate-module/module.html)，这里就不再赘述，直接开始我们的练习。
+
+在 Rust 语言圣经中，我们已经深入讲解过[模块 module](https://course.rs/basic/crate-module/module.html)，这里就不再赘述，直接开始我们的练习。
 
 之前我们创建了一个 package `hello-package`，它的目录结构在经过多次修改后，变成了以下模样:
 
@@ -14,6 +15,7 @@
 下面，我们来为其中的库包创建一些模块，然后在二进制包中使用这些模块。
 
 1. 🌟🌟 根据以下的模块树描述实现模块 `front_of_house` :
+
 ```shell
 库包的根(src/lib.rs)
  └── front_of_house
@@ -35,7 +37,6 @@ mod front_of_house {
     // 实现此模块
 }
 ```
-
 
 2. 🌟🌟 让我们在库包的根中定义一个函数 `eat_at_restaurant`, 然后在该函数中调用之前创建的函数 `eat_at_restaurant`
 
@@ -59,6 +60,7 @@ pub fn eat_at_restaurant() {
 ```
 
 3. 🌟🌟 我们还可以使用 `super` 来导入父模块中的项
+
 ```rust,editable
 // in lib.rs
 
@@ -75,8 +77,8 @@ mod back_of_house {
 }
 ```
 
-
 ### 将模块分离并放入独立的文件中
+
 ```rust
 // in lib.rs
 pub mod front_of_house {
@@ -96,13 +98,13 @@ pub mod front_of_house {
         pub fn take_payment() {}
 
         // 我猜你不希望顾客听到你在抱怨他们，因此让这个函数私有化吧
-        fn complain() {} 
+        fn complain() {}
     }
 }
 
 pub fn eat_at_restaurant() -> String {
     front_of_house::hosting::add_to_waitlist();
-    
+
     back_of_house::cook_order();
 
     String::from("yummy yummy!")
@@ -118,7 +120,8 @@ pub mod back_of_house {
 }
 ```
 
-4. 🌟🌟🌟🌟 请将上面的模块和代码分离到以下目录文件中e :
+4. 🌟🌟🌟🌟 请将上面的模块和代码分离到以下目录文件中 e :
+
 ```shell
 .
 ├── Cargo.toml
@@ -144,7 +147,6 @@ pub mod back_of_house {
 // IMPLEMENT...
 ```
 
-
 ```rust,editable
 // in src/front_of_house/mod.rs
 
@@ -164,9 +166,11 @@ pub mod back_of_house {
 ```
 
 ### 从二进制包中访问库包的代码
+
 **请确保你已经完成了第四题，然后再继续进行.**
 
-当到底此处时，你的项目结构应该如下所示: 
+当到底此处时，你的项目结构应该如下所示:
+
 ```shell
 .
 ├── Cargo.toml
@@ -180,7 +184,7 @@ pub mod back_of_house {
 │   └── main.rs
 ```
 
-5. 🌟🌟🌟现在我们可以从二进制包中发起函数调用了.
+5. 🌟🌟🌟 现在我们可以从二进制包中发起函数调用了.
 
 ```rust,editable
 // in src/main.rs
@@ -192,4 +196,4 @@ fn main() {
 }
 ```
 
-> 你可以在[这里](https://github.com/sunface/rust-by-practice/blob/master/solutions/crate-module/module.md)找到答案(在 solutions 路径下) 
+> 你可以在[这里](https://github.com/sunface/rust-by-practice/blob/master/solutions/crate-module/module.md)找到答案(在 solutions 路径下)

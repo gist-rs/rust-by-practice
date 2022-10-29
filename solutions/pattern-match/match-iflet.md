@@ -59,7 +59,7 @@ fn main() {
     for msg in msgs {
         show_message(msg)
     }
-} 
+}
 
 fn show_message(msg: Message) {
     match msg {
@@ -86,7 +86,7 @@ fn main() {
     for ab in alphabets {
         assert!(matches!(ab, 'a'..='z' | 'A'..='Z' | '0'..='9'))
     }
-} 
+}
 ```
 
 5.
@@ -167,7 +167,7 @@ fn main() {
     if let Some(age) = age { // create a new variable with the same name as previous `age`
        assert_eq!(age, 30);
     } // the new variable `age` goes out of scope here
-    
+
     match age {
         // match can also introduce a new shadowed variable
         Some(age) =>  println!("age is a new variable, it's value is {}",age),

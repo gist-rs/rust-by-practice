@@ -1,4 +1,5 @@
 # Enum
+
 1. 🌟🌟 Enums can be created with explicit discriminator.
 
 ```rust,editable
@@ -30,10 +31,11 @@ fn main() {
     assert_eq!(Number1::One, Number2::One);
 
     println!("Success!");
-} 
+}
 ```
 
 2. 🌟 Each enum variant can hold its own data.
+
 ```rust,editable
 
 // Fill in the blank
@@ -45,14 +47,15 @@ enum Message {
 }
 
 fn main() {
-    let msg1 = Message::Move{__}; // Instantiating with x = 1, y = 2 
+    let msg1 = Message::Move{__}; // Instantiating with x = 1, y = 2
     let msg2 = Message::Write(__); // Instantiating with "hello, world!"
 
     println!("Success!");
-} 
+}
 ```
 
 3. 🌟🌟 We can get the data which an enum variant is holding by pattern match.
+
 ```rust,editable
 
 // Fill in the blank and fix the error
@@ -73,10 +76,10 @@ fn main() {
     }
 
     println!("Success!");
-} 
+}
 ```
 
-4. 🌟🌟 
+4. 🌟🌟
 
 ```rust,editable
 
@@ -98,14 +101,15 @@ fn main() {
     for msg in msgs {
         show_message(msg)
     }
-} 
+}
 
 fn show_message(msg: Message) {
     println!("{}", msg);
 }
 ```
 
-5. 🌟🌟 Since there is no `null` in Rust, we have to use enum  `Option<T>`  to deal with the cases when the value is absent.
+5. 🌟🌟 Since there is no `null` in Rust, we have to use enum `Option<T>` to deal with the cases when the value is absent.
+
 ```rust,editable
 
 // Fill in the blank to make the `println` work.
@@ -119,10 +123,10 @@ fn main() {
         println!("{}", n);
 
         println!("Success!");
-    } 
-        
+    }
+
     panic!("NEVER LET THIS RUN！");
-} 
+}
 
 fn plus_one(x: Option<i32>) -> Option<i32> {
     match x {
@@ -131,7 +135,6 @@ fn plus_one(x: Option<i32>) -> Option<i32> {
     }
 }
 ```
-
 
 6. 🌟🌟🌟🌟 Implement a `linked-list` via enums.
 
@@ -167,7 +170,7 @@ impl List {
         // `self` has type `&List`, and `*self` has type `List`, matching on a
         // concrete type `T` is preferred over a match on a reference `&T`
         // After Rust 2018 you can use self here and tail (with no ref) below as well,
-        // rust will infer &s and ref tail. 
+        // rust will infer &s and ref tail.
         // See https://doc.rust-lang.org/edition-guide/rust-2018/ownership-and-lifetimes/default-match-bindings.html
         match *self {
             // Can't take ownership of the tail, because `self` is borrowed;

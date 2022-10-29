@@ -51,7 +51,7 @@ fn read_file1() -> Result<String, io::Error> {
         Ok(file) => file,
         Err(e) => return Err(e),
     };
-    
+
     let mut s = String::new();
     match f.read_to_string(&mut s) {
         Ok(_) => Ok(s),

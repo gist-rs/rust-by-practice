@@ -13,7 +13,7 @@ fn main() {
     let s: Box<str> = "hello, world".into();
     greetings(&s)
  }
- 
+
  fn greetings(s: &str) {
      println!("{}",s)
  }
@@ -37,7 +37,7 @@ fn main() {
     let mut s = String::new();
     s.push_str("hello, world");
     s.push('!');
- 
+
     assert_eq!(s, "hello, world!");
  }
 ```
@@ -50,7 +50,7 @@ fn main() {
      s.push(',');
      s.push_str(" world");
      s += "!";
- 
+
      println!("{}", s)
  }
 ```
@@ -62,7 +62,7 @@ fn main() {
     let s = String::from("I like dogs");
     // Allocate new memory and store the modified string there
     let s1 = s.replace("dogs", "cats");
- 
+
     assert_eq!(s1, "I like cats")
  }
 ```
@@ -73,7 +73,7 @@ fn main() {
 fn main() {
     let s1 = String::from("hello,");
     let s2 = String::from("world!");
-    let s3 = s1.clone() + &s2; 
+    let s3 = s1.clone() + &s2;
     assert_eq!(s3,"hello,world!");
     println!("{}",s1);
 }
@@ -178,7 +178,7 @@ fn main() {
 ```rust
 fn main() {
     let s1 = String::from("hi,中国");
-    let h = &s1[0..1]; 
+    let h = &s1[0..1];
     assert_eq!(h, "h");
 
     let h1 = &s1[3..6];

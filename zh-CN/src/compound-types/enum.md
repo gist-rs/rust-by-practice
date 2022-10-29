@@ -1,4 +1,5 @@
 # 枚举 Enum
+
 1. 🌟🌟 在创建枚举时，你可以使用显式的整数设定枚举成员的值。
 
 ```rust,editable
@@ -28,10 +29,11 @@ fn main() {
     // 通过 `as` 可以将枚举值强转为整数类型
     assert_eq!(Number::One, Number1::One);
     assert_eq!(Number1::One, Number2::One);
-} 
+}
 ```
 
 2. 🌟 枚举成员可以持有各种类型的值
+
 ```rust,editable
 
 // 填空
@@ -45,10 +47,11 @@ enum Message {
 fn main() {
     let msg1 = Message::Move{__}; // 使用x = 1, y = 2 来初始化
     let msg2 = Message::Write(__); // 使用 "hello, world!" 来初始化
-} 
+}
 ```
 
 3. 🌟🌟 枚举成员中的值可以使用模式匹配来获取
+
 ```rust,editable
 
 // 仅填空并修复错误
@@ -67,7 +70,7 @@ fn main() {
     } else {
         panic!("不要让这行代码运行！");
     }
-} 
+}
 ```
 
 4. 🌟🌟 使用枚举对类型进行同一化
@@ -92,7 +95,7 @@ fn main() {
     for msg in msgs {
         show_message(msg)
     }
-} 
+}
 
 fn show_message(msg: Message) {
     println!("{}", msg);
@@ -100,6 +103,7 @@ fn show_message(msg: Message) {
 ```
 
 5. 🌟🌟 Rust 中没有 `null`，我们通过 `Option<T>` 枚举来处理值为空的情况
+
 ```rust,editable
 
 // 填空让 `println` 输出，同时添加一些代码不要让最后一行的 `panic` 执行到
@@ -110,10 +114,10 @@ fn main() {
 
     if let __ = six {
         println!("{}", n)
-    } 
-        
+    }
+
     panic!("不要让这行代码运行！");
-} 
+}
 
 fn plus_one(x: Option<i32>) -> Option<i32> {
     match x {
@@ -122,7 +126,6 @@ fn plus_one(x: Option<i32>) -> Option<i32> {
     }
 }
 ```
-
 
 6. 🌟🌟🌟🌟 使用枚举来实现链表.
 
@@ -191,4 +194,4 @@ fn main() {
 }
 ```
 
-> 你可以在[这里](https://github.com/sunface/rust-by-practice/blob/master/solutions/compound-types/enum.md)找到答案(在 solutions 路径下) 
+> 你可以在[这里](https://github.com/sunface/rust-by-practice/blob/master/solutions/compound-types/enum.md)找到答案(在 solutions 路径下)

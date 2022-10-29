@@ -1,6 +1,7 @@
 # 语句与表达式
 
 ### 示例
+
 ```rust,editable
 fn main() {
     let x = 5u32;
@@ -25,7 +26,9 @@ fn main() {
 ```
 
 ### 练习
+
 1. 🌟🌟
+
 ```rust,editable
 // 使用两种方法让代码工作起来
 fn main() {
@@ -39,6 +42,7 @@ fn main() {
 ```
 
 2. 🌟
+
 ```rust,editable
 
 fn main() {
@@ -49,6 +53,7 @@ fn main() {
 ```
 
 3. 🌟
+
 ```rust,editable
 
 fn main() {
@@ -61,4 +66,4 @@ fn sum(x: i32, y: i32) -> i32 {
 }
 ```
 
-> 你可以在[这里](https://github.com/sunface/rust-by-practice/blob/master/solutions/basic-types/statements-expressions.md)找到答案(在 solutions 路径下) 
+> 你可以在[这里](https://github.com/sunface/rust-by-practice/blob/master/solutions/basic-types/statements-expressions.md)找到答案(在 solutions 路径下)

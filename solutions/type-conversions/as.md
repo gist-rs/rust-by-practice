@@ -37,17 +37,17 @@ fn main() {
     println!("1000 mod 256 is : {}", 1000 % 256);
 
     assert_eq!(-1_i8 as u8, 255);
-    
-    // Since Rust 1.45, the `as` keyword performs a *saturating cast* 
-    // when casting from float to int. If the floating point value exceeds 
-    // the upper bound or is less than the lower bound, the returned value 
+
+    // Since Rust 1.45, the `as` keyword performs a *saturating cast*
+    // when casting from float to int. If the floating point value exceeds
+    // the upper bound or is less than the lower bound, the returned value
     // will be equal to the bound crossed.
     assert_eq!(300.1_f32 as u8, 255);
     assert_eq!(-100.1_f32 as u8, 0);
-    
 
-    // This behavior incurs a small runtime cost and can be avoided 
-    // with unsafe methods, however the results might overflow and 
+
+    // This behavior incurs a small runtime cost and can be avoided
+    // with unsafe methods, however the results might overflow and
     // return **unsound values**. Use these methods wisely:
     unsafe {
         // 300.0 is 44
@@ -66,7 +66,7 @@ fn main() {
 fn main() {
     let mut values: [i32; 2] = [1, 2];
     let p1: *mut i32 = values.as_mut_ptr();
-    let first_address = p1 as usize; 
+    let first_address = p1 as usize;
     let second_address = first_address + 4; // 4 == std::mem::size_of::<i32>()
     let p2 = second_address as *mut i32;
     unsafe {

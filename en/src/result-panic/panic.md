@@ -1,11 +1,12 @@
 # panic!
+
 The simplest error handling mechanism is to use `panic`. It just prints an error message and starts unwinding the stack, finally exit the current thread:
 
 - if panic occurred in `main` thread, then the program will be exited.
 - if in spawned thread, then this thread will be terminated, but the program won't
 
-
 1. 🌟🌟
+
 ```rust,editable
 
 // FILL the blanks
@@ -27,7 +28,9 @@ fn main() {
 ```
 
 ## common panic cases
+
 2. 🌟🌟
+
 ```rust,editable
 // MAKE the code work by fixing all panics
 fn main() {
@@ -67,7 +70,9 @@ pub fn working_items_per_minute(speed: u8) -> u32 {
 ```
 
 ### Detailed call stack
+
 By default the stack unwinding will only give something like this:
+
 ```shell
 thread 'main' panicked at 'index out of bounds: the len is 3 but the index is 99', src/main.rs:4:5
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
@@ -76,9 +81,10 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 Though there is the reason of panic and the line of the code is showing where the panic has occured, sometimes we want to get more info about the call stack.
 
 3. 🌟
+
 ```shell
 ## FILL in the blank to display the whole call stack
-## Tips: you can find the clue in the default panic info 
+## Tips: you can find the clue in the default panic info
 $ __ cargo run
 thread 'main' panicked at 'assertion failed: `(left == right)`
   left: `[97, 98, 99]`,
@@ -99,13 +105,14 @@ note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose bac
 ```
 
 ### `unwinding` and `abort`
-By default, when a `panic` occurs, the program starts *unwinding*, which means Rust walks back up the stack and cleans up the data from each function it encounters.
+
+By default, when a `panic` occurs, the program starts _unwinding_, which means Rust walks back up the stack and cleans up the data from each function it encounters.
 
 But this walk back and clean up is a lot of work. The alternative is to immediately abort the program without cleaning up.
 
 If in your project you need to make the resulting binary as small as possible, you can switch from unwinding to aborting by adding below content to `Cargo.toml`:
+
 ```toml
 [profile.release]
 panic = 'abort'
 ```
-

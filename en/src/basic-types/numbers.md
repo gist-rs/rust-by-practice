@@ -2,7 +2,7 @@
 
 ### Integer
 
-1. 🌟 
+1. 🌟
 
 > Tips: If we don't explicitly assign a type to a variable, then the compiler will infer one for us.
 
@@ -14,14 +14,15 @@ fn main() {
     let mut y: u32 = 5;
 
     y = x;
-    
-    let z = 10; // Type of z ? 
+
+    let z = 10; // Type of z ?
 
     println!("Success!");
 }
 ```
 
 2. 🌟
+
 ```rust,editable
 
 // Fill the blank
@@ -32,7 +33,7 @@ fn main() {
 }
 ```
 
-3. 🌟🌟🌟  
+3. 🌟🌟🌟
 
 > Tips: If we don't explicitly assign a type to a variable, then the compiler will infer one for us.
 
@@ -52,19 +53,21 @@ fn type_of<T>(_: &T) -> String {
 }
 ```
 
-4. 🌟🌟 
+4. 🌟🌟
+
 ```rust,editable
 
 // Fill the blanks to make it work
 fn main() {
-    assert_eq!(i8::MAX, __); 
-    assert_eq!(u8::MAX, __); 
+    assert_eq!(i8::MAX, __);
+    assert_eq!(u8::MAX, __);
 
     println!("Success!");
 }
 ```
 
-5. 🌟🌟 
+5. 🌟🌟
+
 ```rust,editable
 
 // Fix errors and panics to make it work
@@ -76,6 +79,7 @@ fn main() {
 ```
 
 6. 🌟🌟
+
 ```rust,editable
 
 // Modify `assert!` to make it work
@@ -87,8 +91,8 @@ fn main() {
 }
 ```
 
-
 ### Floating-Point
+
 7. 🌟
 
 ```rust,editable
@@ -120,6 +124,7 @@ fn main() {
 ```
 
 ### Range
+
 9. 🌟🌟 Two goals: 1. Modify `assert!` to make it work 2. Make `println!` output: 97 - 122
 
 ```rust,editable
@@ -137,7 +142,8 @@ fn main() {
 }
 ```
 
-10. 🌟🌟 
+10. 🌟🌟
+
 ```rust,editable
 
 // Fill the blanks
@@ -152,7 +158,8 @@ fn main() {
 
 ### Computations
 
-11. 🌟 
+11. 🌟
+
 ```rust,editable
 
 // Fill the blanks and fix the errors
@@ -162,8 +169,8 @@ fn main() {
 
     // Integer subtraction
     assert!(1i32 - 2 == __);
-    assert!(1u8 - 2 == -1); 
-    
+    assert!(1u8 - 2 == -1);
+
     assert!(3 * 50 == __);
 
     assert!(9.6 / 3.2 == 3.0); // error ! make it work

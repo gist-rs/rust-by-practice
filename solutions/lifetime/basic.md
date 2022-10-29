@@ -25,7 +25,7 @@ fn main() {
 2. We can't borrow a item whose lifetime is smaller.
 
 ```rust
-fn main() {  
+fn main() {
     {
         let r;                // ---------+-- 'a
                               //          |
@@ -56,15 +56,15 @@ fn main() {}
 4.
 
 ```rust
-fn invalid_output() -> String { 
-    String::from("foo") 
+fn invalid_output() -> String {
+    String::from("foo")
 }
 
 fn main() {}
 ```
 
 ```rust
-fn invalid_output() -> &'static str { 
+fn invalid_output() -> &'static str {
     "foo"
 }
 
@@ -72,7 +72,7 @@ fn main() {}
 ```
 
 ```rust
-fn invalid_output<'a>(s: &'a String) -> &'a String { 
+fn invalid_output<'a>(s: &'a String) -> &'a String {
     s
 }
 
@@ -95,9 +95,9 @@ fn failed_borrow<'a>() {
 
 fn main() {
     let (four, nine) = (4, 9);
-    
+
     print_refs(&four, &nine);
-    
+
     failed_borrow();
 }
 ```
@@ -155,19 +155,19 @@ struct Example<'a, 'b> {
 }
 
 fn main()
-{ 
+{
   /* 'a tied to fn-main stackframe */
   let var_a = 35;
   let example: Example;
-  
+
   // {
-    /* lifetime 'b tied to new stackframe/scope */ 
+    /* lifetime 'b tied to new stackframe/scope */
     let var_b = NoCopyType {};
-    
+
     /* fixme */
     example = Example { a: &var_a, b: &var_b };
   // }
-  
+
   println!("(Success!) {:?}", example);
 }
 ```

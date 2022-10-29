@@ -1,5 +1,7 @@
 # 元组( Tuple )
+
 1. 🌟 元组中的元素可以是不同的类型。元组的类型签名是 `(T1, T2, ...)`, 这里 `T1`, `T2` 是相对应的元组成员的类型.
+
 ```rust,editable
 
 fn main() {
@@ -12,6 +14,7 @@ fn main() {
 ```
 
 2. 🌟 可以使用索引来获取元组的成员
+
 ```rust,editable
 
 // 修改合适的地方，让代码工作
@@ -22,6 +25,7 @@ fn main() {
 ```
 
 3. 🌟 过长的元组无法被打印输出
+
 ```rust,editable
 
 // 修复代码错误
@@ -32,6 +36,7 @@ fn main() {
 ```
 
 4. 🌟 使用模式匹配来解构元组
+
 ```rust,editable
 
 fn main() {
@@ -47,13 +52,14 @@ fn main() {
 ```
 
 5. 🌟🌟 解构式赋值
+
 ```rust,editable
 fn main() {
     let (x, y, z);
 
     // 填空
     __ = (1, 2, 3);
-    
+
     assert_eq!(x, 3);
     assert_eq!(y, 1);
     assert_eq!(z, 2);
@@ -61,6 +67,7 @@ fn main() {
 ```
 
 6. 🌟🌟 元组可以用于函数的参数和返回值
+
 ```rust,editable
 
 fn main() {
@@ -76,5 +83,4 @@ fn sum_multiply(nums: (i32, i32)) -> (i32, i32) {
 }
 ```
 
-
-> 你可以在[这里](https://github.com/sunface/rust-by-practice/blob/master/solutions/compound-types/tuple.md)找到答案(在 solutions 路径下) 
+> 你可以在[这里](https://github.com/sunface/rust-by-practice/blob/master/solutions/compound-types/tuple.md)找到答案(在 solutions 路径下)

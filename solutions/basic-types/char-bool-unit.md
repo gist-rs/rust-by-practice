@@ -9,7 +9,7 @@ fn main() {
 
     let c2 = '中';
     assert_eq!(size_of_val(&c2), 4);
-} 
+}
 ```
 
 2.
@@ -35,7 +35,7 @@ fn main() {
     if !t {
         println!("hello, world");
     }
-} 
+}
 ```
 
 4.
@@ -79,5 +79,3 @@ fn main() {
     assert!(size_of_val(&unit) == 0);
 }
 ```
-
-

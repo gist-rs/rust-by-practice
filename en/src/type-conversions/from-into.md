@@ -1,7 +1,8 @@
 # From/Into
+
 The `From` trait allows for a type to define how to create itself from another type, hence providing a very simple mechanism for converting between several types.
 
-The `From` and `Into` traits are inherently linked, and this is actually part of its implementation. It means if we write something like this: `impl From<T> for U`, then we can use 
+The `From` and `Into` traits are inherently linked, and this is actually part of its implementation. It means if we write something like this: `impl From<T> for U`, then we can use
 `let u: U = U::from(T)` or `let u:U = T.into()`.
 
 The `Into` trait is simply the reciprocal of the `From` trait. That is, if you have implemented the `From` trait for your type, then the `Into` trait will be automatically implemented for the same type.
@@ -9,6 +10,7 @@ The `Into` trait is simply the reciprocal of the `From` trait. That is, if you h
 Using the `Into` trait will typically require the type annotations as the compiler is unable to determine this most of the time.
 
 For example, we can easily convert `&str` into `String` :
+
 ```rust
 fn main() {
     let my_str = "hello";
@@ -26,12 +28,13 @@ Because the standard library has already implemented this for us : `impl From<&'
 Some implementations of `From` trait can be found [here](https://doc.rust-lang.org/stable/std/convert/trait.From.html#implementors).
 
 1. 🌟🌟🌟
+
 ```rust,editable
 
 fn main() {
      // impl From<bool> for i32
     let i1:i32 = false.into();
-    let i2:i32 = i32::from(false);  
+    let i2:i32 = i32::from(false);
     assert_eq!(i1, i2);
     assert_eq!(i1, 0);
 
@@ -48,7 +51,9 @@ fn main() {
 ```
 
 ### Implement `From` for custom types
+
 2. 🌟🌟
+
 ```rust,editable
 
 // From is now included in `std::prelude`, so there is no need to introduce it into the current scope
@@ -76,6 +81,7 @@ fn main() {
 ```
 
 3. 🌟🌟🌟 When performing error handling it is often useful to implement `From` trait for our own error type. Then we can use `?` to automatically convert the underlying error type to our own error type.
+
 ```rust,editable
 
 use std::fs;
@@ -108,13 +114,14 @@ fn main() {
 }
 ```
 
-
 ### TryFrom/TryInto
+
 Similar to `From` and `Into`, `TryFrom` and `TryInto` are generic traits for converting between types.
 
-Unlike `From/Into`, `TryFrom` and `TryInto` are used for fallible conversions and return a `Result` instead of a plain value. 
+Unlike `From/Into`, `TryFrom` and `TryInto` are used for fallible conversions and return a `Result` instead of a plain value.
 
 4. 🌟🌟
+
 ```rust,editable
 // TryFrom and TryInto are included in `std::prelude`, so there is no need to introduce it into the current scope
 // use std::convert::TryInto;
@@ -139,6 +146,7 @@ fn main() {
 ```
 
 5. 🌟🌟🌟
+
 ```rust,editable
 #[derive(Debug, PartialEq)]
 struct EvenNum(i32);

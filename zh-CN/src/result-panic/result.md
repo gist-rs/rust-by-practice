@@ -1,4 +1,5 @@
 # result and ?
+
 `Result<T>` 是一个枚举类型用于描述返回的结果或错误，它包含两个成员(变体 variants) :
 
 - `Ok(T)`: 返回一个结果值 T
@@ -6,8 +7,8 @@
 
 简而言之，如果期待一个正确的结果，就返回 `Ok`，反之则是 `Err`。
 
-
 1. 🌟🌟
+
 ```rust,editable
 
 // 填空并修复错误
@@ -30,10 +31,12 @@ fn main() {
 }
 ```
 
-### ? 
+### ?
+
 `?` 跟 `unwrap` 非常像，但是 `?` 会返回一个错误，而不是直接 panic.
 
 2. 🌟🌟
+
 ```rust,editable
 
 use std::num::ParseIntError;
@@ -50,6 +53,7 @@ fn main() {
 ```
 
 3. 🌟🌟
+
 ```rust,editable
 
 use std::fs::File;
@@ -86,9 +90,10 @@ fn main() {
 ```
 
 ### map & and_then
+
 [map](https://doc.rust-lang.org/stable/std/result/enum.Result.html#method.map) and [and_then](https://doc.rust-lang.org/stable/std/result/enum.Result.html#method.and_then) 是两个常用的组合器( combinator )，可以用于 `Result<T, E>` (也可用于 `Option<T>`).
 
-4. 🌟🌟 
+4. 🌟🌟
 
 ```rust,editable
 use std::num::ParseIntError;
@@ -106,6 +111,7 @@ fn main() {
 ```
 
 5. 🌟🌟🌟
+
 ```rust,editable
 use std::num::ParseIntError;
 
@@ -151,11 +157,13 @@ fn main() {
 ```
 
 ### 类型别名
+
 如果我们要在代码中到处使用 `std::result::Result<T, ParseIntError>` ，那毫无疑问，代码将变得特别冗长和啰嗦，对于这种情况，可以使用类型别名来解决。
 
 例如在标准库中，就在大量使用这种方式来简化代码: [`io::Result`](https://doc.rust-lang.org/std/io/type.Result.html).
 
 6. 🌟
+
 ```rust,editable
 use std::num::ParseIntError;
 
@@ -186,12 +194,15 @@ fn main() {
 ```
 
 ### 在 `fn main` 中使用 `Result`
-一个典型的 `main` 函数长这样: 
+
+一个典型的 `main` 函数长这样:
+
 ```rust
 fn main() {
     println!("Hello World!");
 }
 ```
+
 事实上 `main` 函数还可以返回一个 `Result` 类型：如果 `main` 函数内部发生了错误，那该错误会被返回并且打印出一条错误的 debug 信息。
 
 ```rust,editable

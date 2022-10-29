@@ -1,5 +1,7 @@
 # Functions
+
 1. 🌟🌟🌟
+
 ```rust,editable
 
 fn main() {
@@ -17,8 +19,8 @@ fn sum(x, y: i32) {
 }
 ```
 
-
 2. 🌟
+
 ```rust,editable
 fn main() {
    print();
@@ -29,7 +31,6 @@ fn print() -> i32 {
    println!("Success!");
 }
 ```
-
 
 3. 🌟🌟🌟
 
@@ -44,14 +45,16 @@ fn main() {
 
 fn never_return() -> ! {
     // Implement this function, don't modify the fn signatures
-    
+
 }
 ```
 
-### Diverging functions 
+### Diverging functions
+
 Diverging functions never return to the caller, so they may be used in places where a value of any type is expected.
 
 4. 🌟🌟
+
 ```rust,editable
 
 fn main() {
@@ -67,18 +70,19 @@ fn get_option(tp: u8) -> Option<i32> {
             // TODO
         }
     };
-    
+
     // Rather than returning a None, we use a diverging function instead
     never_return_fn()
 }
 
 // IMPLEMENT this function in THREE ways
 fn never_return_fn() -> ! {
-    
+
 }
 ```
 
 5. 🌟🌟
+
 ```rust,editable
 
 fn main() {

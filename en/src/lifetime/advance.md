@@ -1,11 +1,14 @@
 # advanced lifetime
 
 ## Trait Bounds
+
 Just like generic types can be bounded, lifetimes can also be bounded as below:
+
 - `T: 'a`，all references in `T` must outlive the lifetime `'a`
 - `T: Trait + 'a`: `T` must implement trait `Trait` and all references in `T` must outlive `'a`
 
 **Example**
+
 ```rust,editable
 use std::fmt::Debug; // Trait to bound with.
 
@@ -40,6 +43,7 @@ fn main() {
 ```
 
 1. 🌟
+
 ```rust,editable
 /* Annotate struct with lifetime:
 1. `r` and `s` must has different lifetimes
@@ -54,8 +58,8 @@ fn main() {
 }
 ```
 
-
 2. 🌟🌟
+
 ```rust,editable
 /* Adding trait bounds to make it work */
 struct ImportantExcerpt<'a> {
@@ -75,11 +79,12 @@ fn main() {
 ```
 
 3. 🌟🌟
+
 ```rust,editable
 /* Adding trait bounds to make it work */
 fn f<'a, 'b>(x: &'a i32, mut y: &'b i32) {
-    y = x;                      
-    let r: &'b &'a i32 = &&0;   
+    y = x;
+    let r: &'b &'a i32 = &&0;
 }
 
 fn main() {
@@ -88,7 +93,8 @@ fn main() {
 ```
 
 ## HRTB(Higher-ranked trait bounds)
-Type bounds may be higher ranked over lifetimes. These bounds specify a bound is true for all lifetimes. For example, a bound such as `for<'a> &'a T: PartialEq<i32>` would require an implementation like: 
+
+Type bounds may be higher ranked over lifetimes. These bounds specify a bound is true for all lifetimes. For example, a bound such as `for<'a> &'a T: PartialEq<i32>` would require an implementation like:
 
 ```rust
 impl<'a> PartialEq<i32> for &'a T {
@@ -101,6 +107,7 @@ and could then be used to compare a `&'a T` with any lifetime to an `i32`.
 Only a higher-ranked bound can be used here, because the lifetime of the reference is shorter than any possible lifetime parameter on the function。
 
 4. 🌟🌟🌟
+
 ```rust,editable
 /* Adding HRTB to make it work!*/
 fn call_on_ref_zero<'a, F>(f: F) where F: Fn(&'a i32) {
@@ -112,8 +119,11 @@ fn main() {
     println!("Success!")
 }
 ```
+
 ## NLL (Non-Lexical Lifetime)
+
 Before explaining NLL, let's see some code first:
+
 ```rust
 fn main() {
    let mut s = String::from("hello");
@@ -155,9 +165,11 @@ use(a);                 //   |                            |
 ```
 
 ## Reborrow
+
 After learning NLL, we can easily understand reborrow now.
 
 **Example**
+
 ```rust
 #[derive(Debug)]
 struct Point {
@@ -186,8 +198,8 @@ fn main() {
 }
 ```
 
-
 5. 🌟🌟
+
 ```rust,editable
 /* Make it work by reordering some code */
 fn main() {
@@ -202,10 +214,9 @@ fn main() {
 }
 ```
 
-
 ## Unbound lifetime
-See more info in [Nomicon - Unbounded Lifetimes](https://doc.rust-lang.org/nomicon/unbounded-lifetimes.html).
 
+See more info in [Nomicon - Unbounded Lifetimes](https://doc.rust-lang.org/nomicon/unbounded-lifetimes.html).
 
 ## More elision rules
 
@@ -216,7 +227,7 @@ impl<'a> Reader for BufReader<'a> {
 
 // can be writing as :
 impl Reader for BufReader<'_> {
-    
+
 }
 ```
 
@@ -232,10 +243,10 @@ struct Ref<'a, T> {
 }
 ```
 
-
 ## A difficult exercise
 
 6. 🌟🌟🌟🌟
+
 ```rust,editable
 /* Make it work */
 struct Interface<'a> {

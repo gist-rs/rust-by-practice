@@ -1,14 +1,15 @@
 # Comments and Docs
+
 Every program requires comments:
 
-
 ## Comments
+
 - Regular comments which are ignored by the compiler:
   - `// Line comment, which goes to the end of the line`
   - `/* Block comment, which goes to the end of the closing delimiter */`
 
-
 ### Examples
+
 ```rust
 fn main() {
     // This is an example of a line comment
@@ -19,7 +20,7 @@ fn main() {
 
     // Run it. See? Now try deleting the two slashes, and run it again.
 
-    /* 
+    /*
      * This is another type of comment, a block comment. In general,
      * line comments are the recommended comment style. But
      * block comments are extremely useful for temporarily disabling
@@ -36,7 +37,9 @@ fn main() {
 ```
 
 ### Exercises
+
 1. 🌟🌟
+
 ```rust,editable
 
 /* Make it work, only using comments! */
@@ -48,18 +51,19 @@ fn main() {
 }
 ```
 
-
 ## Doc Comments
+
 - Doc comments which are parsed into HTML and supported `Markdown`
   - `/// Generate library docs for the following item`
   - `//! Generate library docs for the eclosing item`
 
 Before starting, we need to create a new package for practice: `cargo new --lib doc-comments`.
 
+### Line doc comments `///`
 
-### Line doc comments `///` 
 Add docs for function `add_one`
-```rust
+
+````rust
 // in lib.rs
 
 /// Add one to the given value and return the value
@@ -75,13 +79,16 @@ Add docs for function `add_one`
 pub fn add_one(x: i32) -> i32 {
     x + 1
 }
-```
+````
 
 ### Cargo doc
+
 We can use `cargo doc --open` to generate html files and open them in the browser.
 
 ### Block doc comments `/** ... */`
+
 Add docs for function `add_two`:
+
 ```rust
 /** Add two to the given value and return a new value
 
@@ -99,14 +106,16 @@ pub fn add_two(x: i32) -> i32 {
 ```
 
 ### Doc comments for crate and module
+
 We can also add doc comments for our crates and modules.
 
 Firstly, let's add some doc comments for our library crate:
 
 > Note: We mush place crates and module comments at the top of the crate root or module file.
+
 ```rust
 //! # Doc comments
-//! 
+//!
 //! A library for showing how to use doc comments
 
 // in lib.rs
@@ -114,6 +123,7 @@ pub mod compute;
 ```
 
 You can also use block comments to achieve this:
+
 ```rust
 /*! # Doc comments
 
@@ -121,6 +131,7 @@ You can also use block comments to achieve this:
 ```
 
 Next, create a new module file `src/compute.rs`, and add following comments to it:
+
 ```rust
 //! //! Do some complicated arithmetic that you can't do by yourself
 
@@ -129,13 +140,14 @@ Next, create a new module file `src/compute.rs`, and add following comments to i
 
 Then run `cargo doc --open` and see the results.
 
-
 ### Doc tests
+
 The doc comments of `add_one` and `add_tow` contain two example code blocks.
 
 The examples can not only demonstrate how to use your library, but also running as test with `cargo test` command.
 
-2. 🌟🌟 But there are errors in the two examples, please fix them, and running with `cargo test` to get following result: 
+2. 🌟🌟 But there are errors in the two examples, please fix them, and running with `cargo test` to get following result:
+
 ```shell
 running 0 tests
 
@@ -154,7 +166,7 @@ test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 
 > You can only modify the comments, DON'T modify `fn div`
 
-```rust
+````rust
 // in src/compute.rs
 
 /// # Panics
@@ -172,13 +184,13 @@ pub fn div(a: i32, b: i32) -> i32 {
 
     a / b
 }
-```
+````
 
 4. 🌟🌟 Sometimes we want to hide the doc comments, but keep the doc tests.
 
 Add following code to `src/compute.rs` ,
 
-```rust
+````rust
 // in src/compute.rs
 
 /// ```
@@ -186,7 +198,7 @@ Add following code to `src/compute.rs` ,
 /// let res = doc_comments::compute::try_div(10, 0)?;
 /// # Ok(()) // returning from try_main
 /// # }
-/// # fn main() { 
+/// # fn main() {
 /// #    try_main().unwrap();
 /// #
 /// # }
@@ -198,7 +210,7 @@ pub fn try_div(a: i32, b: i32) -> Result<i32, String> {
         Ok(a / b)
     }
 }
-```
+````
 
 and modify this code to achieve two goals:
 
@@ -222,9 +234,11 @@ test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 ```
 
 ### Code navigation
+
 Rust provide a very powerful feature for us, that is code navigation in doc comments.
 
 Add following code to `src/lib.rs`:
+
 ```rust
 // in lib.rs
 
@@ -251,6 +265,7 @@ struct MySpecialFormatter;
 ```
 
 ### Doc attributes
+
 Below are a few examples of the most common `#[doc]` attributes used with `rustdoc`.
 
 ### `inline`
@@ -290,6 +305,6 @@ pub use self::async_await::*;
 
 For documentation, `rustdoc` is widely used by the community. It's what is used to generate the [std library docs](https://doc.rust-lang.org/std/).
 
-
 ### Full Code
+
 The full code of package `doc-comments` is [here](https://github.com/sunface/rust-by-practice/tree/master/practices/doc-comments).

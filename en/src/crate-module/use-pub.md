@@ -1,4 +1,5 @@
 # Use and pub
+
 1. 🌟 We can bring two types of the same name into the same scope with use, but you need `as` keyword.
 
 ```rust,editable
@@ -25,7 +26,9 @@ fn main() {
 ```
 
 ### Re-exporting names with `pub use`
+
 3. 🌟🌟🌟 In our recently created package `hello-package`, add something to make the below code work
+
 ```rust,editable
 fn main() {
     assert_eq!(hello_package::hosting::seat_at_table(), "sit down please");
@@ -33,11 +36,12 @@ fn main() {
 }
 ```
 
+### Pub(in Crate)
 
-### Pub(in Crate) 
 Sometimes we want an item only be public to a certain crate. For this we can use the `pub(in Crate)` syntax.
 
 #### Example
+
 ```rust,editable
 pub mod a {
     pub const I: i32 = 3;
@@ -63,7 +67,7 @@ pub mod a {
 ```
 
 ### Full Code
-The full code of `hello-package` is [here](https://github.com/sunface/rust-by-practice/tree/master/practices/hello-package).
 
+The full code of `hello-package` is [here](https://github.com/sunface/rust-by-practice/tree/master/practices/hello-package).
 
 > You can find the solutions [here](https://github.com/sunface/rust-by-practice) (under the solutions path), but only use it when you need it :)

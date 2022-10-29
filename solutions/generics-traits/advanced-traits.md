@@ -48,7 +48,7 @@ fn main() {
         container.contains(&number_1, &number_2));
     println!("First number: {}", container.first());
     println!("Last number: {}", container.last());
-    
+
     println!("The difference is: {}", difference(&container));
 }
 ```
@@ -153,7 +153,7 @@ trait Programmer {
     fn fav_language(&self) -> String;
 }
 
-// CompSciStudent (computer science student) is a subtrait of both Programmer 
+// CompSciStudent (computer science student) is a subtrait of both Programmer
 // and Student. Implementing CompSciStudent requires you to impl both supertraits.
 trait CompSciStudent: Programmer + Student {
     fn git_username(&self) -> String;

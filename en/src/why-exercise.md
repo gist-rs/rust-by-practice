@@ -8,23 +8,23 @@
 
 [![Stars Count](https://img.shields.io/github/stars/sunface/rust-by-practice?style=flat)](https://github.com/sunface/rust-by-practice/stargazers) [![Forks Count](https://img.shields.io/github/forks/sunface/rust-by-practice.svg?style=flat)](https://github.com/naaive/orange/network/members)
 [![LICENSE](https://img.shields.io/badge/license-mit-green?style=flat)](https://github.com/sunface/rust-by-practice/blob/master/LICENSE)
+
 </div>
 
 This book was designed for easily diving into and get skilled with Rust, and it's very easy to use: All you need to do is to make each exercise compile without ERRORS and Panics !
-
 
 ## Reading online
 
 - [English](https://practice.rs)
 - [简体中文](https://zh.practice.rs)
 
-
 ## Running locally
 
 We use [mdbook](https://rust-lang.github.io/mdBook/) building our exercises. You can run locally with below steps:
+
 ```shell
 $ cargo install mdbook
-$ cd rust-by-practice && mdbook serve 
+$ cd rust-by-practice && mdbook serve
 ```
 
 ## Features
