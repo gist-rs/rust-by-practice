@@ -233,3 +233,4 @@ fn main() {
 ```
 
 {{#playground newtype-sized_9_0.rs answer}}
+

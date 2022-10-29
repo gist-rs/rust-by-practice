@@ -7,7 +7,9 @@ fn main() {
 
     y = x;
 
-    let z = 10; // type of z : i32
+    let z = 10; // Type of z : i32
+
+    println!("Success!");
 }
 ```
 
@@ -16,6 +18,8 @@ fn main() {
 ```rust
 fn main() {
     let v: u16 = 38_u8 as u16;
+
+    println!("Success!");
 }
 ```
 
@@ -25,9 +29,11 @@ fn main() {
 fn main() {
     let x = 5;
     assert_eq!("i32".to_string(), type_of(&x));
+
+    println!("Success!");
 }
 
-// get the type of given variable, return a string representation of the type  , e.g "i8", "u8", "i32", "u32"
+// Get the type of given variable, return a string representation of the type  , e.g "i8", "u8", "i32", "u32"
 fn type_of<T>(_: &T) -> String {
     format!("{}", std::any::type_name::<T>())
 }
@@ -39,6 +45,8 @@ fn type_of<T>(_: &T) -> String {
 fn main() {
     assert_eq!(i8::MAX, 127);
     assert_eq!(u8::MAX, 255);
+
+    println!("Success!");
 }
 ```
 
@@ -48,16 +56,18 @@ fn main() {
 fn main() {
     let v1 = 247_u8 + 8;
     let v2 = i8::checked_add(119, 8).unwrap();
-    println!("{},{}",v1,v2);
- }
+    println!("{},{}", v1, v2);
+}
 ```
 
 6.
 
 ```rust
- fn main() {
+fn main() {
     let v = 1_024 + 0xff + 0o77 + 0b1111_1111;
     assert!(v == 1597);
+
+    println!("Success!");
 }
 ```
 
@@ -82,13 +92,17 @@ fn type_of<T>(_: &T) -> String {
 
 ```rust
 fn main() {
-    assert!(0.1_f32+0.2_f32==0.3_f32);
+    assert!(0.1_f32 + 0.2_f32 == 0.3_f32);
+
+    println!("Success!");
 }
 ```
 
 ```rust
 fn main() {
     assert!((0.1_f64+ 0.2 - 0.3).abs() < 0.001);
+
+    println!("Success!");
 }
 ```
 
@@ -104,7 +118,7 @@ fn main() {
     assert!(sum == -5);
 
     for c in 'a'..='z' {
-        println!("{}",c as u8);
+        println!("{}", c as u8);
     }
 }
 ```
@@ -114,8 +128,10 @@ fn main() {
 ```rust
 use std::ops::{Range, RangeInclusive};
 fn main() {
-    assert_eq!((1..5), Range{ start: 1, end: 5 });
+    assert_eq!((1..5), Range { start: 1, end: 5 });
     assert_eq!((1..=5), RangeInclusive::new(1, 5));
+
+    println!("Success!");
 }
 ```
 

@@ -4,5 +4,7 @@ fn main() {
 
     y = x;
 
-    let z = 10; // type of z : i32
+    let z = 10; // Type of z : i32
+
+    println!("Success!");
 }

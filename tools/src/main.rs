@@ -155,14 +155,25 @@ fn insert_answer_rs(answer_file_name: &String) -> Result<(), anyhow::Error> {
 
     // File hosts must exist in current path before this produces output
     if let Ok(lines) = read_lines(&quiz_file_name_md) {
+        let mut is_inserted = false;
         // Consumes the iterator, returns an (Optional) String
         for line in lines {
             match line {
                 Ok(text) => {
                     // Keep all line, except inserted
                     if !INSERTED_RS_RE.is_match(text.as_str()) {
+                        if is_inserted {
+                            if text.is_empty() {
+                                continue;
+                            } else {
+                                is_inserted = false;
+                            }
+                        }
+
                         rust_content.push_str(text.as_str());
                         rust_content.push_str("\n".as_ref());
+                    } else {
+                        is_inserted = true
                     }
 
                     // Process state
@@ -171,7 +182,12 @@ fn insert_answer_rs(answer_file_name: &String) -> Result<(), anyhow::Error> {
                             // Begin with number and dot?
                             if NUM_BULLET_RE.is_match(text.as_str()) {
                                 current_num_bullet = text.split_once(".").unwrap().0.to_string();
+
+                                // Must not empty
+                                assert!(!current_num_bullet.is_empty());
+
                                 state = ParseExpect::CodeBegin;
+
                                 continue;
                             }
                         }
@@ -179,7 +195,6 @@ fn insert_answer_rs(answer_file_name: &String) -> Result<(), anyhow::Error> {
                             // Begin code block?
                             if CODE_BEGIN_RE.is_match(text.as_str()) {
                                 state = ParseExpect::CodeEnd;
-
                                 continue;
                             }
                         }
@@ -188,24 +203,23 @@ fn insert_answer_rs(answer_file_name: &String) -> Result<(), anyhow::Error> {
                             if CODE_END_RE.is_match(text.as_str()) {
                                 // Insert answer
                                 let base_file_name = format!("{file_name}_{current_num_bullet}_");
-                                let mut is_push = false;
 
                                 // Match answer(s)
-                                rs_file_names
+                                let rs_file_names = rs_file_names
                                     .iter()
                                     .filter(|e| e.starts_with(&base_file_name))
-                                    .for_each(|e| {
-                                        // {{#playground statements_1_0.rs answer}}
-                                        rust_content.push_str(
-                                            format!("\n{{{{#playground {e} answer}}}}").as_str(),
-                                        );
+                                    .collect::<Vec<_>>();
 
-                                        is_push = true
-                                    });
-
-                                if is_push {
-                                    rust_content.push_str(format!("\n").as_str())
+                                if !rs_file_names.is_empty() {
+                                    rust_content.push_str("\n".to_string().as_str())
                                 }
+
+                                rs_file_names.into_iter().for_each(|e| {
+                                    // {{#playground statements_1_0.rs answer}}
+                                    rust_content.push_str(
+                                        format!("{{{{#playground {e} answer}}}}\n").as_str(),
+                                    );
+                                });
 
                                 // Next
                                 state = ParseExpect::Number;
@@ -219,7 +233,7 @@ fn insert_answer_rs(answer_file_name: &String) -> Result<(), anyhow::Error> {
         }
     }
 
-    Ok(write_file_md(&quiz_file_name_md, &rust_content)?)
+    write_file_md(quiz_file_name_md, &rust_content)
 }
 
 fn generate_solution(path_string: &str) -> Result<(), anyhow::Error> {

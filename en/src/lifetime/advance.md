@@ -306,3 +306,4 @@ fn use_list(list: &List) {
 ```
 
 {{#playground advance_6_0.rs answer}}
+

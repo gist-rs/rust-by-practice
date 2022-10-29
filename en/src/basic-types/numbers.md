@@ -80,9 +80,9 @@ fn main() {
 
 // Fix errors and panics to make it work
 fn main() {
-   let v1 = 251_u8 + 8;
-   let v2 = i8::checked_add(251, 8).unwrap();
-   println!("{},{}",v1,v2);
+    let v1 = 251_u8 + 8;
+    let v2 = i8::checked_add(251, 8).unwrap();
+    println!("{},{}", v1, v2);
 }
 ```
 
@@ -168,7 +168,7 @@ fn main() {
 // Fill the blanks
 use std::ops::{Range, RangeInclusive};
 fn main() {
-    assert_eq!((1..__), Range{ start: 1, end: 5 });
+    assert_eq!((1..__), Range { start: 1, end: 5 });
     assert_eq!((1..__), RangeInclusive::new(1, 5));
 
     println!("Success!");
