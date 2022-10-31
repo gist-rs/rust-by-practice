@@ -1,3 +1,15 @@
+# An interactive version of rust by practices
+![image](https://user-images.githubusercontent.com/97060/198936916-e5c41d8f-d047-41d1-b1f2-7b7a994b406a.png)
+
+## Features
+- Multiple hints generated from solutions.
+- Different highlighted code for better understand the change.
+- Able to undo and retry.
+- Formatted markdown and also rust code in markdown.
+- `Monokai` theme fro more contrast.
+
+---
+
 <div align="center">
     <img src="https://github.com/sunface/rust-by-practice/blob/master/en/assets/header.jpg?raw=true">
 </div>
