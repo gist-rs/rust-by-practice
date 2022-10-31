@@ -2,7 +2,7 @@
 
 ```rust
 fn main() {
-    println!("{0}, this is {1}. {1}, this is {0}", "Alice", "Bob");// => Alice, this is Bob. Bob, this is Alice
+    println!("{0}, this is {1}. {1}, this is {0}", "Alice", "Bob"); // => Alice, this is Bob. Bob, this is Alice
     assert_eq!(format!("{1}{0}", 1, 2), "21");
     assert_eq!(format!("{1}{}{0}{}", 1, 2), "2112");
     println!("Success!")
@@ -16,7 +16,7 @@ fn main() {
     println!("{argument}", argument = "test"); // => "test"
 
     assert_eq!(format!("{name}{}", 1, name = 2), "21");
-    assert_eq!(format!("{a} {c} {b}",a = "a", b = 'b', c = 3 ), "a 3 b");
+    assert_eq!(format!("{a} {c} {b}", a = "a", b = 'b', c = 3), "a 3 b");
 
     // named argument must be placed after other arguments
     println!("{abc} {0}", 2, abc = "def");
@@ -46,7 +46,7 @@ fn main() {
 fn main() {
     // left align
     println!("Hello {:<5}!", "x"); // => Hello x    !
-    // right align
+                                   // right align
     assert_eq!(format!("Hello {:>5}!", "x"), "Hello     x!");
     // center align
     assert_eq!(format!("Hello {:^5}!", "x"), "Hello   x  !");
@@ -67,7 +67,7 @@ fn main() {
     println!("Hello {:05}!", 5); // => Hello 00005!
     println!("Hello {:05}!", -5); // => Hello -0005!
 
-    assert!(format!("{number:0>width$}", number=1, width=6) == "000001");
+    assert!(format!("{number:0>width$}", number = 1, width = 6) == "000001");
 
     println!("Success!")
 }
@@ -107,14 +107,14 @@ fn main() {
 
 ```rust
 fn main() {
-     assert_eq!(format!("{:#b}", 27), "0b11011");
-     assert_eq!(format!("{:#o}", 27), "0o33");
-     assert_eq!(format!("{:#x}", 27), "0x1b");
-     assert_eq!(format!("{:#X}", 27), "0x1B");
+    assert_eq!(format!("{:#b}", 27), "0b11011");
+    assert_eq!(format!("{:#o}", 27), "0o33");
+    assert_eq!(format!("{:#x}", 27), "0x1b");
+    assert_eq!(format!("{:#X}", 27), "0x1B");
 
-     println!("{:x}!", 27); // hex with no prefix => 1b
+    println!("{:x}!", 27); // hex with no prefix => 1b
 
-     println!("{:#010b}", 27); // pad binary with 0, width = 10,  => 0b00011011
+    println!("{:#010b}", 27); // pad binary with 0, width = 10,  => 0b00011011
 
     println!("Success!")
 }
@@ -130,7 +130,6 @@ fn get_person() -> String {
 fn get_format() -> (usize, usize) {
     (4, 1)
 }
-
 
 fn main() {
     let person = get_person();

@@ -5,4 +5,4 @@ fn main() {
 
     // modify this line only, don't use `_s`
     println!("{:?}", t.1);
- }
+}

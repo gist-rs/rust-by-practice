@@ -5,10 +5,7 @@ struct Pair<T> {
 
 impl<T> Pair<T> {
     fn new(x: T, y: T) -> Self {
-        Self {
-            x,
-            y,
-        }
+        Self { x, y }
     }
 }
 
@@ -26,9 +23,9 @@ impl<T: std::fmt::Debug + PartialOrd> Pair<T> {
 struct Unit(i32);
 
 fn main() {
-    let pair = Pair{
+    let pair = Pair {
         x: Unit(1),
-        y: Unit(3)
+        y: Unit(3),
     };
 
     pair.cmp_display();

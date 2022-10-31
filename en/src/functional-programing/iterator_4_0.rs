@@ -4,5 +4,5 @@ fn main() {
         println!("{}", i)
     }
 
-    println!("{:?}",arr);
+    println!("{:?}", arr);
 }

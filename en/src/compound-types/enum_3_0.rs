@@ -6,9 +6,9 @@ enum Message {
 }
 
 fn main() {
-    let msg = Message::Move{x: 1, y: 1};
+    let msg = Message::Move { x: 1, y: 1 };
 
-    if let Message::Move{x: a, y: b} = msg {
+    if let Message::Move { x: a, y: b } = msg {
         assert_eq!(a, b);
     } else {
         panic!("NEVER LET THIS RUN！");

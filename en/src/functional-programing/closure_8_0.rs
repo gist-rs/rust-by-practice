@@ -1,7 +1,10 @@
 fn main() {
     let mut s = String::new();
 
-    let update_string = |str| -> String {s.push_str(str); s };
+    let update_string = |str| -> String {
+        s.push_str(str);
+        s
+    };
 
     exec(update_string);
 }

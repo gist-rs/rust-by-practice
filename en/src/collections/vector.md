@@ -7,7 +7,6 @@ Vectors are resizable arrays. Like slices, their size is not known at compile ti
 1. 🌟🌟🌟
 
 ```rust,editable
-
 fn main() {
     let arr: [u8; 3] = [1, 2, 3];
 
@@ -37,7 +36,6 @@ fn is_vec(v: Vec<u8>) {}
 2. 🌟🌟 A Vec can be extended with `extend` method
 
 ```rust,editable
-
 // FILL in the blank
 fn main() {
     let mut v1 = Vec::from([1, 2, 4]);
@@ -58,7 +56,6 @@ fn main() {
 3. 🌟🌟🌟
 
 ```rust,editable
-
 // FILL in the blanks
 fn main() {
     // Array -> Vec
@@ -68,7 +65,6 @@ fn main() {
     let v2: Vec<i32> = arr.__();
 
     assert_eq!(v1, v2);
-
 
     // String -> Vec
     // impl From<String> for Vec
@@ -89,7 +85,7 @@ fn main() {
     assert_eq!(v4, vec![0; 10]);
 
     println!("Success!");
- }
+}
 ```
 
 ### Indexing
@@ -97,7 +93,6 @@ fn main() {
 4. 🌟🌟🌟
 
 ```rust,editable
-
 // FIX the error and IMPLEMENT the code
 fn main() {
     let mut v = Vec::from([1, 2, 3]);
@@ -106,7 +101,7 @@ fn main() {
     }
 
     for i in 0..5 {
-       // IMPLEMENT the code here...
+        // IMPLEMENT the code here...
     }
 
     assert_eq!(v, vec![2, 3, 4, 5, 6]);
@@ -124,7 +119,6 @@ In Rust, it’s more common to pass slices as arguments rather than vectors when
 5. 🌟🌟
 
 ```rust,editable
-
 // FIX the errors
 fn main() {
     let mut v = vec![1, 2, 3];
@@ -178,7 +172,6 @@ fn main() {
     assert_eq!(vec.len(), 11);
     assert!(vec.capacity() >= 11);
 
-
     // Fill in an appropriate value to make the `for` done without reallocating
     let mut vec = Vec::with_capacity(__);
     for i in 0..100 {
@@ -214,7 +207,7 @@ enum IpAddr {
 }
 fn main() {
     // FILL in the blank
-    let v : Vec<IpAddr>= __;
+    let v: Vec<IpAddr> = __;
 
     // Comparing two enums need to derive the PartialEq trait
     assert_eq!(v[0], IpAddr::V4("127.0.0.1".to_string()));
@@ -234,19 +227,19 @@ trait IpAddr {
 struct V4(String);
 impl IpAddr for V4 {
     fn display(&self) {
-        println!("ipv4: {:?}",self.0)
+        println!("ipv4: {:?}", self.0)
     }
 }
 struct V6(String);
 impl IpAddr for V6 {
     fn display(&self) {
-        println!("ipv6: {:?}",self.0)
+        println!("ipv6: {:?}", self.0)
     }
 }
 
 fn main() {
     // FILL in the blank
-    let v: __= vec![
+    let v: __ = vec![
         Box::new(V4("127.0.0.1".to_string())),
         Box::new(V6("::1".to_string())),
     ];

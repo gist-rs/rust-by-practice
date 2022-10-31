@@ -5,7 +5,6 @@
 1. 🌟🌟
 
 ```rust,editable
-
 // Fill the blanks
 enum Direction {
     East,
@@ -18,9 +17,10 @@ fn main() {
     let dire = Direction::South;
     match dire {
         Direction::East => println!("East"),
-        __  => { // Matching South or North here
+        __ => {
+            // Matching South or North here
             println!("South or North");
-        },
+        }
         _ => println!(__),
     };
 }
@@ -31,7 +31,6 @@ fn main() {
 2. 🌟🌟 Match is an expression, so we can use it in assignments.
 
 ```rust,editable
-
 fn main() {
     let boolean = true;
 
@@ -52,7 +51,6 @@ fn main() {
 3. 🌟🌟 Using match to get the data an enum variant holds.
 
 ```rust,editable
-
 // Fill in the blanks
 enum Message {
     Quit,
@@ -64,8 +62,8 @@ enum Message {
 fn main() {
     let msgs = [
         Message::Quit,
-        Message::Move{x:1, y:3},
-        Message::ChangeColor(255,255,0)
+        Message::Move { x: 1, y: 3 },
+        Message::ChangeColor(255, 255, 0),
     ];
 
     for msg in msgs {
@@ -77,15 +75,16 @@ fn main() {
 
 fn show_message(msg: Message) {
     match msg {
-        __ => { // match  Message::Move
+        __ => {
+            // match  Message::Move
             assert_eq!(a, 1);
             assert_eq!(b, 3);
-        },
+        }
         Message::ChangeColor(_, g, b) => {
             assert_eq!(g, __);
             assert_eq!(b, __);
         }
-        __ => println!("no data in these variants")
+        __ => println!("no data in these variants"),
     }
 }
 ```
@@ -99,9 +98,8 @@ fn show_message(msg: Message) {
 4. 🌟🌟
 
 ```rust,editable
-
 fn main() {
-    let alphabets = ['a', 'E', 'Z', '0', 'x', '9' , 'Y'];
+    let alphabets = ['a', 'E', 'Z', '0', 'x', '9', 'Y'];
 
     // Fill the blank with `matches!` to make the code work
     for ab in alphabets {
@@ -117,18 +115,18 @@ fn main() {
 5. 🌟🌟
 
 ```rust,editable
-
 enum MyEnum {
     Foo,
-    Bar
+    Bar,
 }
 
 fn main() {
     let mut count = 0;
 
-    let v = vec![MyEnum::Foo,MyEnum::Bar,MyEnum::Foo];
+    let v = vec![MyEnum::Foo, MyEnum::Bar, MyEnum::Foo];
     for e in v {
-        if e == MyEnum::Foo { // Fix the error by changing only this line
+        if e == MyEnum::Foo {
+            // Fix the error by changing only this line
             count += 1;
         }
     }
@@ -148,7 +146,6 @@ For some cases, when matching enums, `match` is too heavy. We can use `if let` i
 6. 🌟
 
 ```rust,editable
-
 fn main() {
     let o = Some(7);
 
@@ -191,11 +188,10 @@ fn main() {
 8. 🌟🌟
 
 ```rust,editable
-
 enum Foo {
     Bar,
     Baz,
-    Qux(u32)
+    Qux(u32),
 }
 
 fn main() {
@@ -219,20 +215,20 @@ fn main() {
 9. 🌟🌟
 
 ```rust,editable
-
 // Fix the errors in-place
 fn main() {
     let age = Some(30);
-    if let Some(age) = age { // Create a new variable with the same name as previous `age`
-       assert_eq!(age, Some(30));
+    if let Some(age) = age {
+        // Create a new variable with the same name as previous `age`
+        assert_eq!(age, Some(30));
     } // The new variable `age` goes out of scope here
 
     match age {
         // Match can also introduce a new shadowed variable
-        Some(age) =>  println!("age is a new variable, it's value is {}",age),
-        _ => ()
+        Some(age) => println!("age is a new variable, it's value is {}", age),
+        _ => (),
     }
- }
+}
 ```
 
 {{#playground match-iflet_9_0.rs answer}}

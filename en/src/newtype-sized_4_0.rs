@@ -1,5 +1,5 @@
-use std::ops::Add;
 use std::fmt::{self, format};
+use std::ops::Add;
 
 struct Meters(u32);
 

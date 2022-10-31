@@ -1,5 +1,5 @@
 enum Foo {
-    Bar(u8)
+    Bar(u8),
 }
 
 fn main() {

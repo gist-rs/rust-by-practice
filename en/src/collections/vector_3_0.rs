@@ -6,7 +6,6 @@ fn main() {
 
     assert_eq!(v1, v2);
 
-
     // String -> Vec
     let s = "hello".to_string();
     let v1: Vec<u8> = s.into();
@@ -20,4 +19,4 @@ fn main() {
     assert_eq!(v2, v3);
 
     println!("Success!")
- }
+}

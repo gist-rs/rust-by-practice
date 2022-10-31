@@ -16,13 +16,13 @@ impl Swan {
 }
 
 impl Bird for Duck {
-    fn quack(&self) -> String{
+    fn quack(&self) -> String {
         "duck duck".to_string()
     }
 }
 
 impl Bird for Swan {
-    fn quack(&self) -> String{
+    fn quack(&self) -> String {
         "swan swan".to_string()
     }
 }
@@ -46,10 +46,10 @@ fn main() {
     println!("Success!")
 }
 
-fn hatch_a_bird(species: u8) ->Box<dyn Bird> {
+fn hatch_a_bird(species: u8) -> Box<dyn Bird> {
     if species == 1 {
-        Box::new(Swan{})
+        Box::new(Swan {})
     } else {
-        Box::new(Duck{})
+        Box::new(Duck {})
     }
 }

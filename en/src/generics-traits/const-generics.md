@@ -31,7 +31,7 @@ fn foo<const N: usize>() {}
 fn bar<T, const M: usize>() {
     foo::<M>(); // Okay: `M` is a const parameter
     foo::<2021>(); // Okay: `2021` is a literal
-    foo::<{20 * 100 + 20 * 10 + 1}>(); // Okay: const expression contains no generic parameters
+    foo::<{ 20 * 100 + 20 * 10 + 1 }>(); // Okay: const expression contains no generic parameters
 
     foo::<{ M + 1 }>(); // Error: const expression contains the generic parameter `M`
     foo::<{ std::mem::size_of::<T>() }>(); // Error: const expression contains the generic parameter `T`
@@ -82,20 +82,16 @@ fn main() {
 
 ```rust,editable
 struct Array<T, const N: usize> {
-    data : [T; N]
+    data: [T; N],
 }
 
 fn main() {
     let arrays = [
-        Array{
-            data: [1, 2, 3],
-        },
+        Array { data: [1, 2, 3] },
         Array {
             data: [1.0, 2.0, 3.0],
         },
-        Array {
-            data: [1, 2]
-        }
+        Array { data: [1, 2] },
     ];
 
     println!("Success!");
@@ -141,13 +137,11 @@ fn main() {
     check_size([0u8; 767]);
     check_size([0i32; 191]);
     check_size(["hello你好"; __]); // Size of &str ?
-    check_size([(); __].map(|_| "hello你好".to_string()));  // Size of String?
+    check_size([(); __].map(|_| "hello你好".to_string())); // Size of String?
     check_size(['中'; __]); // Size of char ?
 
     println!("Success!");
 }
-
-
 
 pub enum Assert<const CHECK: bool> {}
 

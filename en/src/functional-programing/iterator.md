@@ -33,7 +33,7 @@ fn main() {
 fn main() {
     let arr = [0; 10];
     for i in 0..arr.len() {
-        println!("{}",arr[i])
+        println!("{}", arr[i])
     }
 }
 ```
@@ -47,7 +47,7 @@ fn main() {
 fn main() {
     let mut v = Vec::new();
     for n in __ {
-       v.push(n);
+        v.push(n);
     }
 
     assert_eq!(v.len(), 100);
@@ -109,7 +109,7 @@ fn main() {
         println!("{}", i)
     }
 
-    println!("{:?}",arr);
+    println!("{:?}", arr);
 }
 ```
 
@@ -122,7 +122,7 @@ fn main() {
 fn main() {
     let mut names = vec!["Bob", "Frank", "Ferris"];
 
-    for name in names.__{
+    for name in names.__ {
         *name = match name {
             &mut "Ferris" => "There is a rustacean among us!",
             _ => "Hello",
@@ -143,7 +143,7 @@ fn main() {
     let mut values = vec![1, 2, 3];
     let mut values_iter = values.__;
 
-    if let Some(v) = values_iter.__{
+    if let Some(v) = values_iter.__ {
         __
     }
 
@@ -252,7 +252,7 @@ fn main() {
 
     assert_eq!(total, __);
 
-    println!("{:?}, {:?}",v1, v1_iter);
+    println!("{:?}, {:?}", v1, v1_iter);
 }
 ```
 
@@ -268,10 +268,10 @@ Other than converting a collection into an iterator, we can also `collect` the r
 /* Make it work */
 use std::collections::HashMap;
 fn main() {
-    let names = [("sunface",18), ("sunfei",18)];
+    let names = [("sunface", 18), ("sunfei", 18)];
     let folks: HashMap<_, _> = names.into_iter().collect();
 
-    println!("{:?}",folks);
+    println!("{:?}", folks);
 
     let v1: Vec<i32> = vec![1, 2, 3];
 
@@ -314,7 +314,7 @@ fn main() {
     let ages = [18, 18];
     let folks: HashMap<_, _> = names.into_iter().__.collect();
 
-    println!("{:?}",folks);
+    println!("{:?}", folks);
 }
 ```
 

@@ -6,6 +6,6 @@ fn main() {
     println!("{}", s);
 }
 
-fn print_str(s: String)  {
-    println!("{}",s)
+fn print_str(s: String) {
+    println!("{}", s)
 }

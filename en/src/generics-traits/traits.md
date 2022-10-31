@@ -84,7 +84,6 @@ fn main() {
 1. 🌟🌟
 
 ```rust,editable
-
 // Fill in the two impl blocks to make the code work.
 // DON'T modify the code in `main`.
 trait Hello {
@@ -96,11 +95,9 @@ trait Hello {
 }
 
 struct Student {}
-impl Hello for Student {
-}
+impl Hello for Student {}
 struct Teacher {}
-impl Hello for Teacher {
-}
+impl Hello for Teacher {}
 
 fn main() {
     let s = Student {};
@@ -125,7 +122,6 @@ the `#[derive]` attribute. For more info, please visit [here](https://doc.rust-l
 2. 🌟🌟
 
 ```rust,editable
-
 // `Centimeters`, a tuple struct that can be compared
 #[derive(PartialEq, PartialOrd)]
 struct Centimeters(f64);
@@ -159,12 +155,11 @@ fn main() {
 
     let meter = Centimeters(100.0);
 
-    let cmp =
-        if foot.to_centimeters() < meter {
-            "smaller"
-        } else {
-            "bigger"
-        };
+    let cmp = if foot.to_centimeters() < meter {
+        "smaller"
+    } else {
+        "bigger"
+    };
 
     println!("One foot is {} than one meter.", cmp);
 }
@@ -200,7 +195,6 @@ fn main() {
 4. 🌟🌟🌟
 
 ```rust,editable
-
 // Fix the errors, DON'T modify the code in `main`.
 use std::ops;
 
@@ -249,7 +243,6 @@ Instead of a concrete type for the item parameter, we specify the impl keyword a
 5. 🌟🌟🌟
 
 ```rust,editable
-
 // Implement `fn summary` to make the code work.
 // Fix the errors without removing any code line
 trait Summary {
@@ -300,7 +293,6 @@ fn main() {
 }
 
 // Implement `fn summary` below.
-
 ```
 
 {{#playground traits_5_0.rs answer}}
@@ -314,7 +306,6 @@ However, you can only use impl Trait if you’re returning a single type, use Tr
 6. 🌟🌟
 
 ```rust,editable
-
 struct Sheep {}
 struct Cow {}
 
@@ -347,7 +338,10 @@ fn random_animal(random_number: f64) -> impl Animal {
 fn main() {
     let random_number = 0.234;
     let animal = random_animal(random_number);
-    println!("You've randomly chosen an animal, and it says {}", animal.noise());
+    println!(
+        "You've randomly chosen an animal, and it says {}",
+        animal.noise()
+    );
 }
 ```
 
@@ -379,7 +373,6 @@ fn sum<T>(x: T, y: T) -> T {
 8. 🌟🌟
 
 ```rust,editable
-
 // FIX the errors.
 struct Pair<T> {
     x: T,
@@ -388,10 +381,7 @@ struct Pair<T> {
 
 impl<T> Pair<T> {
     fn new(x: T, y: T) -> Self {
-        Self {
-            x,
-            y,
-        }
+        Self { x, y }
     }
 }
 
@@ -408,9 +398,9 @@ impl<T: std::fmt::Debug + PartialOrd> Pair<T> {
 struct Unit(i32);
 
 fn main() {
-    let pair = Pair{
+    let pair = Pair {
         x: Unit(1),
-        y: Unit(3)
+        y: Unit(3),
     };
 
     pair.cmp_display();
@@ -422,7 +412,6 @@ fn main() {
 9. 🌟🌟🌟
 
 ```rust,editable
-
 // Fill in the blanks to make it work
 fn example1() {
     // `T: Trait` is the commonly used way.
@@ -447,28 +436,29 @@ fn example1() {
                     let v = (self.calculation)(arg);
                     self.value = Some(v);
                     v
-                },
+                }
             }
         }
     }
 
-    let mut cacher = Cacher::new(|x| x+1);
+    let mut cacher = Cacher::new(|x| x + 1);
     assert_eq!(cacher.value(10), __);
     assert_eq!(cacher.value(15), __);
 }
 
-
 fn example2() {
     // We can also use `where` to construct `T`
     struct Cacher<T>
-        where T: Fn(u32) -> u32,
+    where
+        T: Fn(u32) -> u32,
     {
         calculation: T,
         value: Option<u32>,
     }
 
     impl<T> Cacher<T>
-        where T: Fn(u32) -> u32,
+    where
+        T: Fn(u32) -> u32,
     {
         fn new(calculation: T) -> Cacher<T> {
             Cacher {
@@ -484,17 +474,15 @@ fn example2() {
                     let v = (self.calculation)(arg);
                     self.value = Some(v);
                     v
-                },
+                }
             }
         }
     }
 
-    let mut cacher = Cacher::new(|x| x+1);
+    let mut cacher = Cacher::new(|x| x + 1);
     assert_eq!(cacher.value(20), __);
     assert_eq!(cacher.value(25), __);
 }
-
-
 
 fn main() {
     example1();

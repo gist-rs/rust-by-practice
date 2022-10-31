@@ -8,5 +8,5 @@ where
 
 fn main() {
     let x = vec![1, 2, 3];
-    fn_once(|z|{z == x.len()})
+    fn_once(|z| z == x.len())
 }

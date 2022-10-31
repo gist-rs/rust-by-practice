@@ -17,7 +17,6 @@ enum Number2 {
     Two = 2,
 }
 
-
 fn main() {
     // a enum variant can be converted to a integer by `as`
     assert_eq!(Number::One as u8, Number1::One as u8);

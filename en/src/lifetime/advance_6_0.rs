@@ -1,5 +1,5 @@
 struct Interface<'b, 'a: 'b> {
-    manager: &'b mut Manager<'a>
+    manager: &'b mut Manager<'a>,
 }
 
 impl<'b, 'a: 'b> Interface<'b, 'a> {
@@ -9,7 +9,7 @@ impl<'b, 'a: 'b> Interface<'b, 'a> {
 }
 
 struct Manager<'a> {
-    text: &'a str
+    text: &'a str,
 }
 
 struct List<'a> {
@@ -18,19 +18,18 @@ struct List<'a> {
 
 impl<'a> List<'a> {
     pub fn get_interface<'b>(&'b mut self) -> Interface<'b, 'a>
-    where 'a: 'b {
+    where
+        'a: 'b,
+    {
         Interface {
-            manager: &mut self.manager
+            manager: &mut self.manager,
         }
     }
 }
 
 fn main() {
-
     let mut list = List {
-        manager: Manager {
-            text: "hello"
-        }
+        manager: Manager { text: "hello" },
     };
 
     list.get_interface().noop();

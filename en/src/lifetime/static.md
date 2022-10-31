@@ -19,7 +19,6 @@ As a reference lifetime, `&'static` indicates the data pointed to by the referen
 1. 🌟🌟 There are several ways to make a variable with `'static` lifetime, two of them are stored in the read-only memory of the binary。
 
 ```rust,editable
-
 /* Fill in the blank in two ways */
 fn main() {
     __;
@@ -28,7 +27,7 @@ fn main() {
     println!("Success!")
 }
 
-fn need_static(r : &'static str) {
+fn need_static(r: &'static str) {
     assert_eq!(r, "hello");
 }
 ```
@@ -54,12 +53,11 @@ fn init() -> Option<&'static mut Config> {
     })
 }
 
-
 fn main() {
     unsafe {
         config = init();
 
-        println!("{:?}",config)
+        println!("{:?}", config)
     }
 }
 ```
@@ -126,17 +124,16 @@ It's important to understand this means that any owned data always passes a `'st
 /* Make it work */
 use std::fmt::Debug;
 
-fn print_it<T: Debug + 'static>( input: T) {
-    println!( "'static value passed in is: {:?}", input );
+fn print_it<T: Debug + 'static>(input: T) {
+    println!("'static value passed in is: {:?}", input);
 }
 
-fn print_it1( input: impl Debug + 'static ) {
-    println!( "'static value passed in is: {:?}", input );
+fn print_it1(input: impl Debug + 'static) {
+    println!("'static value passed in is: {:?}", input);
 }
 
-
-fn print_it2<T: Debug + 'static>( input: &T) {
-    println!( "'static value passed in is: {:?}", input );
+fn print_it2<T: Debug + 'static>(input: &T) {
+    println!("'static value passed in is: {:?}", input);
 }
 
 fn main() {
@@ -163,46 +160,46 @@ fn main() {
 use std::fmt::Display;
 
 fn main() {
-  let mut string = "First".to_owned();
+    let mut string = "First".to_owned();
 
-  string.push_str(string.to_uppercase().as_str());
-  print_a(&string);
-  print_b(&string);
-  print_c(&string); // Compilation error
-  print_d(&string); // Compilation error
-  print_e(&string);
-  print_f(&string);
-  print_g(&string); // Compilation error
+    string.push_str(string.to_uppercase().as_str());
+    print_a(&string);
+    print_b(&string);
+    print_c(&string); // Compilation error
+    print_d(&string); // Compilation error
+    print_e(&string);
+    print_f(&string);
+    print_g(&string); // Compilation error
 }
 
 fn print_a<T: Display + 'static>(t: &T) {
-  println!("{}", t);
+    println!("{}", t);
 }
 
 fn print_b<T>(t: &T)
 where
-  T: Display + 'static,
+    T: Display + 'static,
 {
-  println!("{}", t);
+    println!("{}", t);
 }
 
 fn print_c(t: &'static dyn Display) {
-  println!("{}", t)
+    println!("{}", t)
 }
 
 fn print_d(t: &'static impl Display) {
-  println!("{}", t)
+    println!("{}", t)
 }
 
 fn print_e(t: &(dyn Display + 'static)) {
-  println!("{}", t)
+    println!("{}", t)
 }
 
 fn print_f(t: &(impl Display + 'static)) {
-  println!("{}", t)
+    println!("{}", t)
 }
 
 fn print_g(t: &'static String) {
-  println!("{}", t);
+    println!("{}", t);
 }
 ```

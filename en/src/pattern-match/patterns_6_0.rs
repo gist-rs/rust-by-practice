@@ -4,6 +4,6 @@ fn main() {
 
     match r {
         // The type of value is &mut String
-       value => value.push_str(" world!")
+        value => value.push_str(" world!"),
     }
 }

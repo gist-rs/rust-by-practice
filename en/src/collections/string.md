@@ -7,7 +7,6 @@
 1. 🌟🌟
 
 ```rust,editable
-
 // FILL in the blanks and FIX errors
 // 1. Don't use `to_string()`
 // 2. Don't add/remove any code line
@@ -39,42 +38,41 @@ A `String` is stored as a vector of bytes (`Vec<u8>`), but guaranteed to always 
 ```rust,editable
 // FILL in the blanks
 fn main() {
-   let mut s = String::from("hello, world");
+    let mut s = String::from("hello, world");
 
-   let slice1: &str = __; // In two ways
-   assert_eq!(slice1, "hello, world");
+    let slice1: &str = __; // In two ways
+    assert_eq!(slice1, "hello, world");
 
-   let slice2 = __;
-   assert_eq!(slice2, "hello");
+    let slice2 = __;
+    assert_eq!(slice2, "hello");
 
-   let slice3: __ = __;
-   slice3.push('!');
-   assert_eq!(slice3, "hello, world!");
+    let slice3: __ = __;
+    slice3.push('!');
+    assert_eq!(slice3, "hello, world!");
 
-   println!("Success!");
+    println!("Success!");
 }
 ```
 
 3. 🌟🌟
 
 ```rust,editable
-
 // Question: how many heap allocations are happening here?
 // Your answer:
 fn main() {
     // Create a String type based on `&str`
     // The type of string literals is `&str`
-   let s: String = String::from("hello, world!");
+    let s: String = String::from("hello, world!");
 
-   // Create a slice point to String `s`
-   let slice: &str = &s;
+    // Create a slice point to String `s`
+    let slice: &str = &s;
 
-   // Create a String type based on the recently created slice
-   let s: String = slice.to_string();
+    // Create a String type based on the recently created slice
+    let s: String = slice.to_string();
 
-   assert_eq!(s, "hello, world!");
+    assert_eq!(s, "hello, world!");
 
-   println!("Success!");
+    println!("Success!");
 }
 ```
 
@@ -90,7 +88,6 @@ Indexing is intended to be a constant-time operation, but UTF-8 encoding does no
 4. 🌟🌟🌟 You can't use index to access a char in a string, but you can use slice `&s1[start..end]`.
 
 ```rust,editable
-
 // FILL in the blank and FIX errors
 fn main() {
     let s = String::from("hello, 世界");
@@ -131,7 +128,6 @@ fn main() {
    > Tips: maybe you need `from_utf8` method
 
 ```rust,editable
-
 // FILL in the blanks
 fn main() {
     let mut s = String::new();
@@ -142,7 +138,6 @@ fn main() {
 
     // Turn a byte's vector into a String
     let s1 = __;
-
 
     assert_eq!(s, s1);
 
@@ -159,7 +154,6 @@ The pointer points to an internal buffer String uses to store its data. The leng
 6. 🌟🌟 If a String has enough capacity, adding elements to it will not re-allocate
 
 ```rust,editable
-
 // Modify the code below to print out:
 // 25
 // 25
@@ -182,7 +176,6 @@ fn main() {
 7. 🌟🌟🌟
 
 ```rust,editable
-
 // FILL in the blanks
 use std::mem;
 

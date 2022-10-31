@@ -15,7 +15,6 @@ fn main() {
     assert_eq!(300.1_f32 as u8, 255);
     assert_eq!(-100.1_f32 as u8, 0);
 
-
     // This behavior incurs a small runtime cost and can be avoided
     // with unsafe methods, however the results might overflow and
     // return **unsound values**. Use these methods wisely:

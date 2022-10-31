@@ -16,7 +16,6 @@ All parse text in the same fashion. As a plus, Rust checks format correctness at
 1.🌟
 
 ```rust,editable
-
 fn main() {
     let s1 = "hello";
     /* Fill in the blank */
@@ -32,15 +31,14 @@ fn main() {
 2.🌟
 
 ```rust,editable
-
 fn main() {
-   /* Fill in the blanks to make it print:
-   Hello world, I am
-   Sunface!
-   */
-   __("hello world, ");
-   __("I am");
-   __("Sunface!");
+    /* Fill in the blanks to make it print:
+    Hello world, I am
+    Sunface!
+    */
+    __("hello world, ");
+    __("I am");
+    __("Sunface!");
 }
 ```
 

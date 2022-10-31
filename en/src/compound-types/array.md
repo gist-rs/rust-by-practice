@@ -15,7 +15,6 @@ This will cause an error, because the compiler has no idea of the exact size of 
 1. 🌟
 
 ```rust,editable
-
 fn main() {
     // Fill the blank with proper array type
     let arr: __ = [1, 2, 3, 4, 5];
@@ -32,7 +31,6 @@ fn main() {
 2. 🌟🌟
 
 ```rust,editable
-
 fn main() {
     // We can ignore parts of the array type or even the whole type, let the compiler infer it for us
     let arr0 = [1, 2, 3];
@@ -52,10 +50,9 @@ fn main() {
 3. 🌟 All elements in an array can be initialized to the same value at once.
 
 ```rust,editable
-
 fn main() {
     // Fill the blank
-    let list: [i32; 100] = __ ;
+    let list: [i32; 100] = __;
 
     assert!(list[0] == 1);
     assert!(list.len() == 100);
@@ -69,7 +66,6 @@ fn main() {
 4. 🌟 All elements in an array must be of the same type
 
 ```rust,editable
-
 fn main() {
     // Fix the error
     let _arr = [1, 2, '3'];
@@ -83,7 +79,6 @@ fn main() {
 5. 🌟 Indexing starts at 0.
 
 ```rust,editable
-
 fn main() {
     let arr = ['a', 'b', 'c'];
 
@@ -100,7 +95,6 @@ fn main() {
 6. 🌟 Out of bounds indexing causes `panic`.
 
 ```rust,editable
-
 // Fix the error
 fn main() {
     let names = [String::from("Sunfei"), "Sunface".to_string()];
@@ -113,7 +107,6 @@ fn main() {
 
     println!("Success!");
 }
-
 ```
 
 {{#playground array_6_0.rs answer}}

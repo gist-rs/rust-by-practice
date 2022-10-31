@@ -122,7 +122,6 @@ fn main() {
 3. 🌟🌟
 
 ```rust,editable
-
 // FILL in the blanks.
 trait Draw {
     fn draw(&self) -> String;
@@ -217,7 +216,6 @@ You can only make object-safe traits into trait objects. A trait is object safe 
 5. 🌟🌟🌟🌟
 
 ```rust,editable
-
 // Use at least two approaches to make it work.
 // DON'T add/remove any code line.
 trait MyTrait {
@@ -225,14 +223,18 @@ trait MyTrait {
 }
 
 impl MyTrait for u32 {
-    fn f(&self) -> Self { 42 }
+    fn f(&self) -> Self {
+        42
+    }
 }
 
 impl MyTrait for String {
-    fn f(&self) -> Self { self.clone() }
+    fn f(&self) -> Self {
+        self.clone()
+    }
 }
 
-fn my_function(x: Box<dyn MyTrait>)  {
+fn my_function(x: Box<dyn MyTrait>) {
     x.f()
 }
 

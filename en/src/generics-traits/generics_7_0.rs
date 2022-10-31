@@ -10,6 +10,9 @@ impl Point<f32> {
 }
 
 fn main() {
-    let p = Point{x: 5.0_f32, y: 10.0_f32};
-    println!("{}",p.distance_from_origin())
+    let p = Point {
+        x: 5.0_f32,
+        y: 10.0_f32,
+    };
+    println!("{}", p.distance_from_origin())
 }

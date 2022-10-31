@@ -8,7 +8,7 @@ fn main() {
     println!("Success!")
 }
 
-fn need_static(r : &'static str) {
+fn need_static(r: &'static str) {
     assert_eq!(r, "hello");
 }
 ```
@@ -45,12 +45,11 @@ fn init() -> Option<&'static mut Config> {
     Some(Box::leak(c))
 }
 
-
 fn main() {
     unsafe {
         config = init();
 
-        println!("{:?}",config)
+        println!("{:?}", config)
     }
 }
 ```
@@ -72,22 +71,21 @@ fn main() {
 ```rust
 use std::fmt::Debug;
 
-fn print_it<T: Debug + 'static>( input: T) {
-    println!( "'static value passed in is: {:?}", input );
+fn print_it<T: Debug + 'static>(input: T) {
+    println!("'static value passed in is: {:?}", input);
 }
 
-fn print_it1( input: impl Debug + 'static ) {
-    println!( "'static value passed in is: {:?}", input );
+fn print_it1(input: impl Debug + 'static) {
+    println!("'static value passed in is: {:?}", input);
 }
 
-
-fn print_it2<T: Debug + 'static>( input: &T) {
-    println!( "'static value passed in is: {:?}", input );
+fn print_it2<T: Debug + 'static>(input: &T) {
+    println!("'static value passed in is: {:?}", input);
 }
 
 fn main() {
     // i is owned and contains no references, thus it's 'static:
-    const i:i32 = 5;
+    const i: i32 = 5;
     print_it(i);
 
     // oops, &i only has the lifetime defined by the scope of

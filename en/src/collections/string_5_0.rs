@@ -10,7 +10,6 @@ fn main() {
     // We know these bytes are valid, so we'll use `unwrap()`.
     let s1 = String::from_utf8(v).unwrap();
 
-
     assert_eq!(s, s1);
 
     println!("Success!")

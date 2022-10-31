@@ -9,10 +9,10 @@ fn main() {
 
     // If you need "# in your string, just use more #s in the delimiter.
     // You can use up to 65535 #s.
-    let  delimiter = r###"A string with "# in it. And even "##!"###;
+    let delimiter = r###"A string with "# in it. And even "##!"###;
     println!("{}", delimiter);
 
-    // fill the blank
+    // Fill the blank
     let long_delimiter = r###"Hello, "##""###;
     assert_eq!(long_delimiter, "Hello, \"##\"")
 }

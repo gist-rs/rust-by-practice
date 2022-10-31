@@ -5,7 +5,7 @@ fn drink(beverage: &str) {
         println!("Success!");
         // IMPLEMENT the below code
         panic!("drinked, duang.....peng!")
-     }
+    }
 
     println!("Exercise Failed if printing out this line!");
 }

@@ -230,7 +230,6 @@ fn main() {
 5. 🌟 Each struct is allowed to have multiple impl blocks.
 
 ```rust,editable
-
 struct Rectangle {
     width: u32,
     height: u32,
@@ -247,7 +246,6 @@ impl Rectangle {
     }
 }
 
-
 fn main() {
     println!("Success!");
 }
@@ -260,7 +258,6 @@ fn main() {
 6. 🌟🌟🌟 We can also implement methods for enums.
 
 ```rust,editable
-
 #[derive(Debug)]
 enum TrafficLightColor {
     Red,
@@ -269,16 +266,14 @@ enum TrafficLightColor {
 }
 
 // Implement TrafficLightColor with a method.
-impl TrafficLightColor {
-
-}
+impl TrafficLightColor {}
 
 fn main() {
     let c = TrafficLightColor::Yellow;
 
     assert_eq!(c.color(), "yellow");
 
-    println!("{:?}",c);
+    println!("{:?}", c);
 }
 ```
 

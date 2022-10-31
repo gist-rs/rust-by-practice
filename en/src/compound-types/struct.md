@@ -5,12 +5,11 @@
 1. 🌟 We must specify concrete values for each of the fields in struct.
 
 ```rust,editable
-
 // Fix the error
 struct Person {
     name: String,
     age: u8,
-    hobby: String
+    hobby: String,
 }
 fn main() {
     let age = 30;
@@ -28,7 +27,6 @@ fn main() {
 2. 🌟 Unit struct don't have any fields. It can be useful when you need to implement a trait on some type but don’t have any data that you want to store in the type itself.
 
 ```rust,editable
-
 struct Unit;
 trait SomeTrait {
     // ...Some behaviors defined here.
@@ -36,7 +34,7 @@ trait SomeTrait {
 
 // We don't care about what fields  are  in the Unit, but we care about its behaviors.
 // So we use a struct with no fields and implement some behaviors for it
-impl SomeTrait for Unit {  }
+impl SomeTrait for Unit {}
 fn main() {
     let u = Unit;
     do_something_with_unit(u);
@@ -45,7 +43,7 @@ fn main() {
 }
 
 // Fill the blank to make the code work
-fn do_something_with_unit(u: __) {   }
+fn do_something_with_unit(u: __) {}
 ```
 
 {{#playground struct_2_0.rs answer}}
@@ -53,7 +51,6 @@ fn do_something_with_unit(u: __) {   }
 3. 🌟🌟🌟 Tuple struct looks similar to tuples, it has added meaning the struct name provides but has no named fields. It's useful when you want to give the whole tuple a name, but don't care about the fields's names.
 
 ```rust,editable
-
 // Fix the error and fill the blanks
 struct Color(i32, i32, i32);
 struct Point(i32, i32, i32);
@@ -69,7 +66,7 @@ fn check_color(p: Color) {
     assert_eq!(x, 0);
     assert_eq!(p.1, 127);
     assert_eq!(__, 255);
- }
+}
 ```
 
 {{#playground struct_3_0.rs answer}}
@@ -79,7 +76,6 @@ fn check_color(p: Color) {
 4. 🌟 You can make a whole struct mutable when instantiating it, but Rust doesn't allow us to mark only certain fields as mutable.
 
 ```rust,editable
-
 // Fill the blank and fix the error without adding/removing new line
 struct Person {
     name: String,
@@ -107,7 +103,6 @@ fn main() {
 5. 🌟 Using _field init shorthand syntax_ to reduce repetitions.
 
 ```rust,editable
-
 // Fill the blank
 struct Person {
     name: String,
@@ -118,10 +113,7 @@ fn main() {
 }
 
 fn build_person(name: String, age: u8) -> Person {
-    Person {
-        age,
-        __
-    }
+    Person { age, __ }
 }
 ```
 
@@ -130,7 +122,6 @@ fn build_person(name: String, age: u8) -> Person {
 6. 🌟 You can create instance from other instance with _struct update syntax_
 
 ```rust,editable
-
 // Fill the blank to make the code work
 struct User {
     active: bool,
@@ -154,7 +145,7 @@ fn main() {
 fn set_email(u: User) -> User {
     User {
         email: String::from("contact@im.dev"),
-        __
+        __,
     }
 }
 ```
@@ -166,7 +157,6 @@ fn set_email(u: User) -> User {
 7. 🌟🌟 We can use `#[derive(Debug)]` to [make a struct printable](<https://doc.rust-lang.org/book/ch05-02-example-structs.html?highlight=%23%5Bderive(Debug)%5D#adding-useful-functionality-with-derived-traits>).
 
 ```rust,editable
-
 // Fill the blanks to make the code work
 #[__]
 struct Rectangle {
@@ -229,7 +219,6 @@ fn main() {
 8. 🌟🌟
 
 ```rust,editable
-
 // Fix errors to make it work
 #[derive(Debug)]
 struct File {
@@ -239,13 +228,13 @@ struct File {
 fn main() {
     let f = File {
         name: String::from("readme.md"),
-        data: "Rust By Practice".to_string()
+        data: "Rust By Practice".to_string(),
     };
 
     let _name = f.name;
 
     // ONLY modify this line
-    println!("{}, {}, {:?}",f.name, f.data, f);
+    println!("{}, {}, {:?}", f.name, f.data, f);
 }
 ```
 

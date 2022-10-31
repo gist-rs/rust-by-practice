@@ -2,9 +2,9 @@
 
 ```rust
 fn main() {
-     // impl From<bool> for i32
-    let i1:i32 = false.into();
-    let i2:i32 = i32::from(false);
+    // impl From<bool> for i32
+    let i1: i32 = false.into();
+    let i2: i32 = i32::from(false);
     assert_eq!(i1, i2);
     assert_eq!(i1, 0);
 
@@ -103,7 +103,10 @@ fn main() {
     let n: u8 = match n.try_into() {
         Ok(n) => n,
         Err(e) => {
-            println!("there is an error when converting: {:?}, but we catch it", e.to_string());
+            println!(
+                "there is an error when converting: {:?}, but we catch it",
+                e.to_string()
+            );
             0
         }
     };

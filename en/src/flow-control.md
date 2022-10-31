@@ -52,9 +52,9 @@ fn main() {
 3. 🌟 The `for in` construct can be used to iterate through an Iterator, e.g a range `a..b`.
 
 ```rust,editable
-
 fn main() {
-    for n in 1..=100 { // modify this line to make the code work
+    // modify this line to make the code work
+    for n in 1..=100 {
         if n == 100 {
             panic!("NEVER LET THIS RUN")
         }
@@ -69,10 +69,9 @@ fn main() {
 4. 🌟🌟
 
 ```rust,editable
-
 // Fix the errors without adding or removing lines
 fn main() {
-    let names = [String::from("liming"),String::from("hanmeimei")];
+    let names = [String::from("liming"), String::from("hanmeimei")];
     for name in names {
         // Do something with name...
     }
@@ -98,8 +97,8 @@ fn main() {
     let a = [4, 3, 2, 1];
 
     // Iterate the indexing and value in 'a'
-    for (i,v) in a.__ {
-        println!("The {}th element is {}",i+1,v);
+    for (i, v) in a.__ {
+        println!("The {}th element is {}", i + 1, v);
     }
 }
 ```
@@ -144,15 +143,14 @@ fn main() {
 7. 🌟 Use `break` to break the loop.
 
 ```rust,editable
-
 // Fill in the blank
 fn main() {
     let mut n = 0;
     for i in 0..=100 {
-       if n == 66 {
-           __
-       }
-       n += 1;
+        if n == 66 {
+            __
+        }
+        n += 1;
     }
 
     assert_eq!(n, 66);
@@ -166,17 +164,16 @@ fn main() {
 8. 🌟🌟 `continue` will skip over the remaining code in current iteration and go to the next iteration.
 
 ```rust,editable
-
 // Fill in the blanks
 fn main() {
     let mut n = 0;
     for i in 0..=100 {
-       if n != 66 {
-           n+=1;
-           __;
-       }
+        if n != 66 {
+            n += 1;
+            __;
+        }
 
-       __
+        __
     }
 
     assert_eq!(n, 66);
@@ -192,7 +189,6 @@ fn main() {
 9. 🌟🌟 Loop is usually used together with `break` or `continue`.
 
 ```rust,editable
-
 // Fill in the blanks
 fn main() {
     let mut count = 0u32;
@@ -230,7 +226,6 @@ fn main() {
 10. 🌟🌟 Loop is an expression, so we can use it with `break` to return a value
 
 ```rust,editable
-
 // Fill in the blank
 fn main() {
     let mut counter = 0;
@@ -254,7 +249,6 @@ fn main() {
 11. 🌟🌟🌟 It's possible to break or continue outer loops when dealing with nested loops. In these cases, the loops must be annotated with some 'label, and the label must be passed to the break/continue statement.
 
 ```rust,editable
-
 // Fill in the blank
 fn main() {
     let mut count = 0;

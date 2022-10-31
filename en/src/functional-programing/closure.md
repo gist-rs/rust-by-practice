@@ -61,7 +61,7 @@ fn main() {
     // an immutable reference to `color`.
     let _reborrow = &color;
 
-    println!("{}",color);
+    println!("{}", color);
 }
 ```
 
@@ -84,7 +84,6 @@ fn main() {
 
     inc();
 
-
     let _reborrow = &count;
 
     inc();
@@ -105,15 +104,15 @@ fn main() {
 /* Make it work in two ways, none of them is to remove `take(movable)` away from the code
 */
 fn main() {
-     let movable = Box::new(3);
+    let movable = Box::new(3);
 
-     let consume = || {
-         println!("`movable`: {:?}", movable);
-         take(movable);
-     };
+    let consume = || {
+        println!("`movable`: {:?}", movable);
+        take(movable);
+    };
 
-     consume();
-     consume();
+    consume();
+    consume();
 }
 
 fn take<T>(_v: T) {}
@@ -185,7 +184,7 @@ where
 
 fn main() {
     let x = vec![1, 2, 3];
-    fn_once(|z|{z == x.len()})
+    fn_once(|z| z == x.len())
 }
 ```
 
@@ -202,11 +201,11 @@ fn main() {
 
     exec(update_string);
 
-    println!("{:?}",s);
+    println!("{:?}", s);
 }
 
 /* Fill in the blank */
-fn exec<'a, F: __>(mut f: F)  {
+fn exec<'a, F: __>(mut f: F) {
     f("hello")
 }
 ```
@@ -233,18 +232,20 @@ This is because if a move is possible, then any type of borrow should also be po
 
 // A function which takes a closure as an argument and calls it.
 // <F> denotes that F is a "Generic type parameter"
-fn apply<F>(f: F) where
+fn apply<F>(f: F)
+where
     // The closure takes no input and returns nothing.
-    F: __ {
-
+    F: __,
+{
     f();
 }
 
 // A function which takes a closure and returns an `i32`.
-fn apply_to_3<F>(f: F) -> i32 where
+fn apply_to_3<F>(f: F) -> i32
+where
     // The closure takes an `i32` and returns an `i32`.
-    F: Fn(i32) -> i32 {
-
+    F: Fn(i32) -> i32,
+{
     f(3)
 }
 
@@ -324,7 +325,10 @@ fn exec<F: Fn()>(f: F)  {
 fn main() {
     let mut s = String::new();
 
-    let update_string = |str| -> String {s.push_str(str); s };
+    let update_string = |str| -> String {
+        s.push_str(str);
+        s
+    };
 
     exec(update_string);
 }
@@ -371,7 +375,7 @@ Returning a closure is much harder than you may thought of.
 
 ```rust,editable
 /* Fill in the blank using two approches,
- and fix the errror */
+and fix the errror */
 fn create_fn() -> __ {
     let num = 5;
 
@@ -379,7 +383,6 @@ fn create_fn() -> __ {
     // &T, &mut T, T ?
     |x| x + num
 }
-
 
 fn main() {
     let fn_plain = create_fn();
@@ -394,11 +397,10 @@ fn main() {
 
 ```rust,editable
 /* Fill in the blank and fix the error*/
-fn factory(x:i32) -> __ {
-
+fn factory(x: i32) -> __ {
     let num = 5;
 
-    if x > 1{
+    if x > 1 {
         move |x| x + num
     } else {
         move |x| x + num

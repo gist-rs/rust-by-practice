@@ -5,4 +5,6 @@ fn main() {
     };
 
     assert!(v == 3);
+
+    println!("Success!");
 }

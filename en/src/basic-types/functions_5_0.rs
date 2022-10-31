@@ -13,4 +13,3 @@ fn main() {
 
     println!("Exercise Failed if printing out this line!");
 }
-

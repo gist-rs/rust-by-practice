@@ -5,13 +5,12 @@
 1. 🌟
 
 ```rust,editable
-
 fn main() {
-   let x = 5;
-   // Fill the blank
-   let p = __;
+    let x = 5;
+    // Fill the blank
+    let p = __;
 
-   println!("the memory address of x is {:p}", p); // One possible output: 0x16fa3ac84
+    println!("the memory address of x is {:p}", p); // One possible output: 0x16fa3ac84
 }
 ```
 
@@ -20,7 +19,6 @@ fn main() {
 2. 🌟
 
 ```rust,editable
-
 fn main() {
     let x = 5;
     let y = &x;
@@ -37,7 +35,6 @@ fn main() {
 3. 🌟
 
 ```rust,editable
-
 // Fix error
 fn main() {
     let mut s = String::from("hello, ");
@@ -55,7 +52,6 @@ fn borrow_object(s: &String) {}
 4. 🌟
 
 ```rust,editable
-
 // Fix error
 fn main() {
     let mut s = String::from("hello, ");
@@ -75,7 +71,6 @@ fn push_str(s: &mut String) {
 5. 🌟🌟
 
 ```rust,editable
-
 fn main() {
     let mut s = String::from("hello, ");
 
@@ -126,7 +121,6 @@ fn get_addr(r: &char) -> String {
 7. 🌟
 
 ```rust,editable
-
 // Remove something to make it work
 // Don't remove a whole line !
 fn main() {
@@ -148,10 +142,9 @@ fn main() {
 8. 🌟 Error: Borrow an immutable object as mutable
 
 ```rust,editable
-
 fn main() {
     // Fix error by modifying this line
-    let  s = String::from("hello, ");
+    let s = String::from("hello, ");
 
     borrow_object(&mut s);
 
@@ -166,7 +159,6 @@ fn borrow_object(s: &mut String) {}
 9. 🌟🌟 Ok: Borrow a mutable object as immutable
 
 ```rust,editable
-
 // This code has no errors!
 fn main() {
     let mut s = String::from("hello, ");
@@ -188,7 +180,6 @@ fn borrow_object(s: &String) {}
 10. 🌟🌟
 
 ```rust,editable
-
 // Comment one line to make it work
 fn main() {
     let mut s = String::from("hello, ");
@@ -198,7 +189,7 @@ fn main() {
     let r2 = &mut s;
     r2.push_str("!");
 
-    println!("{}",r1);
+    println!("{}", r1);
 }
 ```
 
@@ -207,7 +198,6 @@ fn main() {
 11. 🌟🌟
 
 ```rust,editable
-
 fn main() {
     let mut s = String::from("hello, ");
 

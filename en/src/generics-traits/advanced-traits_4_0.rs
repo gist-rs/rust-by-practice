@@ -32,7 +32,7 @@ struct CSStudent {
     name: String,
     university: String,
     fav_language: String,
-    git_username: String
+    git_username: String,
 }
 
 impl Person for CSStudent {
@@ -64,7 +64,7 @@ fn main() {
         name: "Sunfei".to_string(),
         university: "XXX".to_string(),
         fav_language: "Rust".to_string(),
-        git_username: "sunface".to_string()
+        git_username: "sunface".to_string(),
     };
 
     println!("{}", comp_sci_student_greeting(&student));

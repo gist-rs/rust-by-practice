@@ -9,7 +9,7 @@ impl TrafficLight {
     // 3. must use `Self`, DONT use `TrafficLight`
     pub fn new() -> Self {
         Self {
-            color: "red".to_string()
+            color: "red".to_string(),
         }
     }
 

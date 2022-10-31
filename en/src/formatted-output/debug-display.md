@@ -23,7 +23,6 @@ struct DebugPrintable(i32);
 1. 🌟
 
 ```rust,editable
-
 /* Fill in the blanks and Fix the errors */
 struct Structure(i32);
 
@@ -43,11 +42,14 @@ fn main() {
 #[derive(Debug)]
 struct Person {
     name: String,
-    age: u8
+    age: u8,
 }
 
 fn main() {
-    let person = Person { name:  "Sunface".to_string(), age: 18 };
+    let person = Person {
+        name: "Sunface".to_string(),
+        age: 18,
+    };
 
     /* Make it output:
     Person {
@@ -64,13 +66,11 @@ fn main() {
 3. 🌟🌟 We can also manually implement `Debug` trait for our types
 
 ```rust,editable
-
 #[derive(Debug)]
 struct Structure(i32);
 
 #[derive(Debug)]
 struct Deep(Structure);
-
 
 fn main() {
     // The problem with `derive` is there is no control over how
@@ -95,7 +95,6 @@ Another thing to note: the placefolder for `Display` is `{}` not `{:?}`.
 4. 🌟🌟
 
 ```rust,editable
-
 /* Make it work*/
 use std::fmt;
 
@@ -114,8 +113,11 @@ impl fmt::Debug for Point2D {
 
 fn main() {
     let point = Point2D { x: 3.3, y: 7.2 };
-    assert_eq!(format!("{}",point), "Display: 3.3 + 7.2i");
-    assert_eq!(format!("{:?}",point), "Debug: Complex { real: 3.3, imag: 7.2 }");
+    assert_eq!(format!("{}", point), "Display: 3.3 + 7.2i");
+    assert_eq!(
+        format!("{:?}", point),
+        "Debug: Complex { real: 3.3, imag: 7.2 }"
+    );
 
     println!("Success!");
 }
@@ -130,7 +132,6 @@ Fortunately, Rust provides the `?` operator to help us eliminate some unnecessar
 5. 🌟🌟
 
 ```rust,editable
-
 /* Make it work */
 use std::fmt;
 
@@ -149,7 +150,9 @@ impl fmt::Display for List {
         for (count, v) in vec.iter().enumerate() {
             // For every element except the first, add a comma.
             // Use the ? operator to return on errors.
-            if count != 0 { write!(f, ", ")?; }
+            if count != 0 {
+                write!(f, ", ")?;
+            }
             write!(f, "{}", v)?;
         }
 
@@ -160,7 +163,7 @@ impl fmt::Display for List {
 
 fn main() {
     let v = List(vec![1, 2, 3]);
-    assert_eq!(format!("{}",v), "[0: 1, 1: 2, 2: 3]");
+    assert_eq!(format!("{}", v), "[0: 1, 1: 2, 2: 3]");
     println!("Success!");
 }
 ```

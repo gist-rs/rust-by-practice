@@ -6,7 +6,7 @@
 
 ```rust,editable
 
-// fix the error
+// Fix the error
 struct Person {
     name: String,
     age: u8,

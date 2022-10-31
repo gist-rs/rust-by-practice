@@ -98,7 +98,7 @@ $ cd rust-by-practice && mdbook serve zh-CN/
 
 ```rust
 
-// fix the error and fill the blanks
+// Fix the error and fill the blanks
 struct Color(i32, i32, i32);
 struct Point(i32, i32, i32);
 fn main() {
@@ -118,7 +118,7 @@ fn check_color(p: Color) {
 
 ```rust
 
-// fix errors to make it work
+// Fix errors to make it work
 #[derive(Debug)]
 struct File {
     name: String,
@@ -141,7 +141,7 @@ fn main() {
 
 ```rust,editable
 
-// fill in the blank to make the code work, `split` MUST be used
+// Fill in the blank to make the code work, `split` MUST be used
 fn main() {
     let num = Some(4);
     let split = 5;

@@ -1,9 +1,9 @@
 1.
 
 ```rust
-struct DoubleRef<'a,'b:'a, T> {
+struct DoubleRef<'a, 'b: 'a, T> {
     r: &'a T,
-    s: &'b T
+    s: &'b T,
 }
 fn main() {
     println!("Success!")
@@ -32,9 +32,12 @@ fn main() {
 3.
 
 ```rust
-fn f<'a, 'b>(x: &'a i32, mut y: &'b i32) where 'a: 'b {
-    y = x;                      // &'a i32 is a subtype of &'b i32 because 'a: 'b
-    let r: &'b &'a i32 = &&0;   // &'b &'a i32 is well formed because 'a: 'b
+fn f<'a, 'b>(x: &'a i32, mut y: &'b i32)
+where
+    'a: 'b,
+{
+    y = x; // &'a i32 is a subtype of &'b i32 because 'a: 'b
+    let r: &'b &'a i32 = &&0; // &'b &'a i32 is well formed because 'a: 'b
 }
 fn main() {
     println!("Success!")
@@ -44,7 +47,10 @@ fn main() {
 4.
 
 ```rust
-fn call_on_ref_zero<F>(f: F) where for<'a> F: Fn(&'a i32) {
+fn call_on_ref_zero<F>(f: F)
+where
+    for<'a> F: Fn(&'a i32),
+{
     let zero = 0;
     f(&zero);
 }
@@ -84,7 +90,7 @@ fn main() {
 
 ```rust
 struct Interface<'b, 'a: 'b> {
-    manager: &'b mut Manager<'a>
+    manager: &'b mut Manager<'a>,
 }
 
 impl<'b, 'a: 'b> Interface<'b, 'a> {
@@ -94,7 +100,7 @@ impl<'b, 'a: 'b> Interface<'b, 'a> {
 }
 
 struct Manager<'a> {
-    text: &'a str
+    text: &'a str,
 }
 
 struct List<'a> {
@@ -103,19 +109,18 @@ struct List<'a> {
 
 impl<'a> List<'a> {
     pub fn get_interface<'b>(&'b mut self) -> Interface<'b, 'a>
-    where 'a: 'b {
+    where
+        'a: 'b,
+    {
         Interface {
-            manager: &mut self.manager
+            manager: &mut self.manager,
         }
     }
 }
 
 fn main() {
-
     let mut list = List {
-        manager: Manager {
-            text: "hello"
-        }
+        manager: Manager { text: "hello" },
     };
 
     list.get_interface().noop();

@@ -4,7 +4,7 @@ fn main() {
     println!("Hello {:05}!", 5); // => Hello 00005!
     println!("Hello {:05}!", -5); // => Hello -0005!
 
-    assert!(format!("{number:0>width$}", number=1, width=6) == "000001");
+    assert!(format!("{number:0>width$}", number = 1, width = 6) == "000001");
 
     println!("Success!")
 }

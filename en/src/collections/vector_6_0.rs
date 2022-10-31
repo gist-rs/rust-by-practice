@@ -18,8 +18,7 @@ fn main() {
     assert_eq!(vec.len(), 11);
     assert!(vec.capacity() >= 11);
 
-
-    // fill in an appropriate value to make the `for` done without reallocating
+    // Fill in an appropriate value to make the `for` done without reallocating
     let mut vec = Vec::with_capacity(100);
     for i in 0..100 {
         vec.push(i);

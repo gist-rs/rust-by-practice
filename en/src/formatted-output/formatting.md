@@ -26,7 +26,7 @@ fn main() {
 
     /* Fill in the blanks */
     assert_eq!(format!("{name}{}", 1, __), "21");
-    assert_eq!(format!(__,a = "a", b = 'b', c = 3 ), "a 3 b");
+    assert_eq!(format!(__, a = "a", b = 'b', c = 3), "a 3 b");
 
     /* Fix the error */
     // Named argument must be placed after other arguments
@@ -64,7 +64,7 @@ fn main() {
 fn main() {
     // Left align
     println!("Hello {:<5}!", "x"); // => Hello x    !
-    // Right align
+                                   // Right align
     assert_eq!(format!("Hello __!", "x"), "Hello     x!");
     // Center align
     assert_eq!(format!("Hello __!", "x"), "Hello   x  !");
@@ -88,10 +88,10 @@ fn main() {
     println!("Hello {:05}!", -5); // => Hello -0005!
 
     /* Fill in the blank */
-    assert!(format!("{number:0>width$}", number=1, width=6) == __);
+    assert!(format!("{number:0>width$}", number = 1, width = 6) == __);
 
-    println!("Success!")
-;}
+    println!("Success!");
+}
 ```
 
 {{#playground formatting_5_0.rs answer}}
@@ -101,7 +101,6 @@ fn main() {
 6.🌟🌟 Floating point precision
 
 ```rust,editable
-
 /* Fill in the blanks */
 fn main() {
     let v = 3.1415926;
@@ -168,7 +167,6 @@ fn get_person() -> String {
 fn get_format() -> (usize, usize) {
     (4, 1)
 }
-
 
 fn main() {
     let person = get_person();

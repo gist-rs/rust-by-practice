@@ -1,7 +1,7 @@
 fn main() {
     let x = Box::new(5);
 
-    let mut y = Box::new(3);       // implement this line, dont change other lines!
+    let mut y = Box::new(3); // implement this line, dont change other lines!
 
     *y = 4;
 

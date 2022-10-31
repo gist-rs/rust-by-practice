@@ -3,7 +3,7 @@
 ```rust
 fn main() {
     let x = 5;
-    // fill the blank
+    // Fill the blank
     let p = &x;
 
     println!("the memory address of x is {:p}", p); // one possible output: 0x16fa3ac84
@@ -54,7 +54,7 @@ fn push_str(s: &mut String) {
 fn main() {
     let mut s = String::from("hello, ");
 
-    // fill the blank to make it work
+    // Fill the blank to make it work
     let p = &mut s;
 
     p.push_str("world");
@@ -68,13 +68,13 @@ fn main() {
     let c = '中';
 
     let r1 = &c;
-    // fill the blank，dont change other code
+    // Fill the blank，dont change other code
     let ref r2 = c;
 
     assert_eq!(*r1, *r2);
 
     // check the equality of the two address strings
-    assert_eq!(get_addr(r1),get_addr(r2));
+    assert_eq!(get_addr(r1), get_addr(r2));
 }
 
 // get memory address string

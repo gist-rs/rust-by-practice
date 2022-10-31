@@ -62,7 +62,6 @@ impl Years {
     }
 }
 
-
 impl Days {
     pub fn to_years(&self) -> Years {
         Years(self.0 / 365)
@@ -202,7 +201,7 @@ fn my_function(n: usize) -> [u32; usize] {
 
 fn main() {
     let arr = my_function();
-    println!("{:?}",arr);
+    println!("{:?}", arr);
 }
 ```
 
@@ -228,8 +227,7 @@ fn main() {
 use std::fmt::Display;
 fn foobar(thing: Display) {}
 
-fn main() {
-}
+fn main() {}
 ```
 
 {{#playground newtype-sized_9_0.rs answer}}

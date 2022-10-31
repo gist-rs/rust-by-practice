@@ -60,7 +60,6 @@ fn main() {
     assert_eq!(300.1_f32 as u8, __);
     assert_eq!(-100.1_f32 as u8, __);
 
-
     // This behavior incurs a small runtime cost and can be avoided
     // with unsafe methods, however the results might overflow and
     // return **unsound values**. Use these methods wisely:
@@ -105,13 +104,11 @@ fn main() {
 
 ```rust,editable
 fn main() {
-    let arr :[u64; 13] = [0; 13];
+    let arr: [u64; 13] = [0; 13];
     assert_eq!(std::mem::size_of_val(&arr), 8 * 13);
     let a: *const [u64] = &arr;
     let b = a as *const [u8];
-    unsafe {
-        assert_eq!(std::mem::size_of_val(&*b), __)
-    }
+    unsafe { assert_eq!(std::mem::size_of_val(&*b), __) }
 
     println!("Success!");
 }

@@ -21,3 +21,7 @@ edit-url-template = "https://github.com/sunface/rust-by-practice/edit/master/en/
 
 [rust]
 edition = "2021"
+
+[output.theme-ace]
+theme-white = "xcode"
+theme-dark = "monokai"

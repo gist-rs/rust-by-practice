@@ -10,7 +10,7 @@ fn main() {
     let msgs: [Message; 3] = [
         Message::Quit,
         Message::Move { x: 1, y: 3 },
-        Message::ChangeColor(255, 255, 0)
+        Message::ChangeColor(255, 255, 0),
     ];
 
     for msg in msgs {

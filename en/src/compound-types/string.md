@@ -7,7 +7,6 @@ The type of string literal `"hello, world"` is `&str`, e.g `let s: &str = "hello
 1. 🌟 We can't use `str` type in normal ways, but we can use `&str`.
 
 ```rust,editable
-
 // Fix error without adding new line
 fn main() {
     let s: str = "hello, world";
@@ -21,7 +20,6 @@ fn main() {
 2. 🌟🌟 We can only use `str` by boxed it, `&` can be used to convert `Box<str>` to `&str`
 
 ```rust,editable
-
 // Fix the error with at least two solutions
 fn main() {
     let s: Box<str> = "hello, world".into();
@@ -29,7 +27,7 @@ fn main() {
 }
 
 fn greetings(s: &str) {
-    println!("{}",s)
+    println!("{}", s)
 }
 ```
 
@@ -43,7 +41,6 @@ fn greetings(s: &str) {
 3. 🌟
 
 ```rust,editable
-
 // Fill the blank
 fn main() {
     let mut s = __;
@@ -61,10 +58,9 @@ fn main() {
 4. 🌟🌟🌟
 
 ```rust,editable
-
 // Fix all errors without adding newline
 fn main() {
-    let  s = String::from("hello");
+    let s = String::from("hello");
     s.push(',');
     s.push(" world");
     s += "!".to_string();
@@ -78,7 +74,6 @@ fn main() {
 5. 🌟🌟 `replace` can be used to replace substring
 
 ```rust,editable
-
 // Fill the blank
 fn main() {
     let s = String::from("I like dogs");
@@ -98,14 +93,13 @@ More `String` methods can be found under [String](https://doc.rust-lang.org/std/
 6. 🌟🌟 You can only concat a `String` with `&str`, and `String`'s ownership can be moved to another variable.
 
 ```rust,editable
-
 // Fix errors without removing any line
 fn main() {
     let s1 = String::from("hello,");
     let s2 = String::from("world!");
     let s3 = s1 + s2;
-    assert_eq!(s3,"hello,world!");
-    println!("{}",s1);
+    assert_eq!(s3, "hello,world!");
+    println!("{}", s1);
 }
 ```
 
@@ -118,7 +112,6 @@ Opsite to the seldom using of `str`, `&str` and `String` are used everywhere!
 7. 🌟🌟 `&str` can be converted to `String` in two ways
 
 ```rust,editable
-
 // Fix error with at least two solutions
 fn main() {
     let s = "hello, world";
@@ -126,7 +119,7 @@ fn main() {
 }
 
 fn greetings(s: String) {
-    println!("{}",s)
+    println!("{}", s)
 }
 ```
 
@@ -136,7 +129,6 @@ fn greetings(s: String) {
 8. 🌟🌟 We can use `String::from` or `to_string` to convert a `&str` to `String`
 
 ```rust,editable
-
 // Use two approaches to fix the error and without adding a new line
 fn main() {
     let s = "hello, world".to_string();
@@ -165,10 +157,12 @@ fn main() {
     let unicode_codepoint = "\u{211D}";
     let character_name = "\"DOUBLE-STRUCK CAPITAL R\"";
 
-    println!("Unicode character {} (U+211D) is called {}",
-                unicode_codepoint, character_name );
+    println!(
+        "Unicode character {} (U+211D) is called {}",
+        unicode_codepoint, character_name
+    );
 
-   let long_string = "String literals
+    let long_string = "String literals
                         can span multiple lines.
                         The linebreak and indentation here \
                          can be escaped too!";
@@ -181,7 +175,6 @@ fn main() {
 10. 🌟🌟🌟 Sometimes there are just too many characters that need to be escaped or it's just much more convenient to write a string out as-is. This is where raw string literals come into play.
 
 ```rust,editable
-
 /* Fill in the blank and fix the errors */
 fn main() {
     let raw_str = r"Escapes don't work here: \x3F \u{211D}";
@@ -193,7 +186,7 @@ fn main() {
 
     // If you need "# in your string, just use more #s in the delimiter.
     // You can use up to 65535 #s.
-    let  delimiter = r###"A string with "# in it. And even "##!"###;
+    let delimiter = r###"A string with "# in it. And even "##!"###;
     println!("{}", delimiter);
 
     let long_delimiter = __;
@@ -258,7 +251,6 @@ A more detailed listing of the ways to write string literals and escape characte
 11. 🌟🌟🌟 You can't use index to access a char in a string, but you can use slice `&s1[start..end]`.
 
 ```rust,editable
-
 fn main() {
     let s1 = String::from("hi,中国");
     let h = s1[0]; // Modify this line to fix the error, tips: `h` only takes 1 byte in UTF8 format
@@ -278,7 +270,6 @@ fn main() {
 12. 🌟
 
 ```rust,editable
-
 fn main() {
     // Fill the blank to print each char in "你好，世界"
     for c in "你好，世界".__ {

@@ -53,34 +53,38 @@ fn main() {
 3. 🌟🌟 We can also implement the `FromStr` trait for our custom types
 
 ```rust,editable
-use std::str::FromStr;
 use std::num::ParseIntError;
+use std::str::FromStr;
 
 #[derive(Debug, PartialEq)]
 struct Point {
     x: i32,
-    y: i32
+    y: i32,
 }
 
 impl FromStr for Point {
     type Err = ParseIntError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        let coords: Vec<&str> = s.trim_matches(|p| p == '(' || p == ')' )
-                                 .split(',')
-                                 .collect();
+        let coords: Vec<&str> = s
+            .trim_matches(|p| p == '(' || p == ')')
+            .split(',')
+            .collect();
 
         let x_fromstr = coords[0].parse::<i32>()?;
         let y_fromstr = coords[1].parse::<i32>()?;
 
-        Ok(Point { x: x_fromstr, y: y_fromstr })
+        Ok(Point {
+            x: x_fromstr,
+            y: y_fromstr,
+        })
     }
 }
 fn main() {
     // FILL in the blanks in two ways
     // DON'T change code anywhere else
     let p = __;
-    assert_eq!(p.unwrap(), Point{ x: 3, y: 4} );
+    assert_eq!(p.unwrap(), Point { x: 3, y: 4 });
 
     println!("Success!");
 }
@@ -112,9 +116,7 @@ fn foo() -> i32 {
 
 fn main() {
     let pointer = foo as *const ();
-    let function = unsafe {
-        std::mem::transmute::<*const (), fn() -> i32>(pointer)
-    };
+    let function = unsafe { std::mem::transmute::<*const (), fn() -> i32>(pointer) };
     assert_eq!(function(), 0);
 }
 ```
@@ -129,8 +131,7 @@ unsafe fn extend_lifetime<'b>(r: R<'b>) -> R<'static> {
     std::mem::transmute::<R<'b>, R<'static>>(r)
 }
 
-unsafe fn shorten_invariant_lifetime<'b, 'c>(r: &'b mut R<'static>)
-                                             -> &'b mut R<'c> {
+unsafe fn shorten_invariant_lifetime<'b, 'c>(r: &'b mut R<'static>) -> &'b mut R<'c> {
     std::mem::transmute::<&'b mut R<'static>, &'b mut R<'c>>(r)
 }
 ```

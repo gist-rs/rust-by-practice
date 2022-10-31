@@ -5,9 +5,9 @@ fn main() {
 
     exec(update_string);
 
-    println!("{:?}",s);
+    println!("{:?}", s);
 }
 
-fn exec<'a, F: FnMut(&'a str)>(mut f: F)  {
+fn exec<'a, F: FnMut(&'a str)>(mut f: F) {
     f("hello")
 }

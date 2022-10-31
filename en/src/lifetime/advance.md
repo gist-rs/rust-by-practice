@@ -51,7 +51,7 @@ fn main() {
 */
 struct DoubleRef<T> {
     r: &T,
-    s: &T
+    s: &T,
 }
 fn main() {
     println!("Success!")
@@ -116,7 +116,10 @@ Only a higher-ranked bound can be used here, because the lifetime of the referen
 
 ```rust,editable
 /* Adding HRTB to make it work!*/
-fn call_on_ref_zero<'a, F>(f: F) where F: Fn(&'a i32) {
+fn call_on_ref_zero<'a, F>(f: F)
+where
+    F: Fn(&'a i32),
+{
     let zero = 0;
     f(&zero);
 }
@@ -261,7 +264,7 @@ struct Ref<'a, T> {
 ```rust,editable
 /* Make it work */
 struct Interface<'a> {
-    manager: &'a mut Manager<'a>
+    manager: &'a mut Manager<'a>,
 }
 
 impl<'a> Interface<'a> {
@@ -271,7 +274,7 @@ impl<'a> Interface<'a> {
 }
 
 struct Manager<'a> {
-    text: &'a str
+    text: &'a str,
 }
 
 struct List<'a> {
@@ -281,16 +284,14 @@ struct List<'a> {
 impl<'a> List<'a> {
     pub fn get_interface(&'a mut self) -> Interface {
         Interface {
-            manager: &mut self.manager
+            manager: &mut self.manager,
         }
     }
 }
 
 fn main() {
     let mut list = List {
-        manager: Manager {
-            text: "hello"
-        }
+        manager: Manager { text: "hello" },
     };
 
     list.get_interface().noop();

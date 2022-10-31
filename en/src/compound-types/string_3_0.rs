@@ -4,4 +4,4 @@ fn main() {
     s.push('!');
 
     assert_eq!(s, "hello, world!");
- }
+}

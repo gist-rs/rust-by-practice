@@ -6,4 +6,6 @@ fn main() {
     };
 
     assert_eq!(v, 3);
+
+    println!("Success!");
 }

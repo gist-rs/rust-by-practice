@@ -11,7 +11,7 @@ fn main() {
         teams_map1.insert(team.0, team.1);
     }
 
-    let teams_map2: HashMap<_,_> = teams.into_iter().collect();
+    let teams_map2: HashMap<_, _> = teams.into_iter().collect();
 
     assert_eq!(teams_map1, teams_map2);
 

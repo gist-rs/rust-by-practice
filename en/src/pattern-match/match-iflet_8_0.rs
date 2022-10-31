@@ -1,7 +1,7 @@
 enum Foo {
     Bar,
     Baz,
-    Qux(u32)
+    Qux(u32),
 }
 
 fn main() {
@@ -10,6 +10,6 @@ fn main() {
     match a {
         Foo::Bar => println!("match foo::bar"),
         Foo::Baz => println!("match foo::baz"),
-        _ =>  println!("match others")
+        _ => println!("match others"),
     }
 }

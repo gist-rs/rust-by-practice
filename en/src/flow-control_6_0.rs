@@ -14,7 +14,6 @@ fn main() {
             println!("{}", n);
         }
 
-
         n += 1;
     }
 

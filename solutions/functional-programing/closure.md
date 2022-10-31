@@ -9,7 +9,7 @@ fn main() {
     print();
     print();
 
-    println!("{}",color);
+    println!("{}", color);
 }
 ```
 
@@ -25,7 +25,6 @@ fn main() {
     };
 
     inc();
-
 
     let _reborrow = &count;
 
@@ -43,24 +42,22 @@ fn main() {
 
 ```rust
 fn main() {
-     // A non-copy type.
-     let movable = Box::new(3);
+    // A non-copy type.
+    let movable = Box::new(3);
 
-     // A copy type would copy into the closure leaving the original untouched.
-     // A non-copy must move and so `movable` immediately moves into
-     // the closure.
-     let consume = || {
-         println!("`movable`: {:?}", movable);
-         take(movable);
-     };
+    // A copy type would copy into the closure leaving the original untouched.
+    // A non-copy must move and so `movable` immediately moves into
+    // the closure.
+    let consume = || {
+        println!("`movable`: {:?}", movable);
+        take(movable);
+    };
 
-     consume();
+    consume();
     // consume();
 }
 
-fn take<T>(_v: T) {
-
-}
+fn take<T>(_v: T) {}
 ```
 
 ```rust
@@ -111,7 +108,7 @@ where
 
 fn main() {
     let x = vec![1, 2, 3];
-    fn_once(|z|{z == x.len()})
+    fn_once(|z| z == x.len())
 }
 ```
 
@@ -140,10 +137,10 @@ fn main() {
 
     exec(update_string);
 
-    println!("{:?}",s);
+    println!("{:?}", s);
 }
 
-fn exec<'a, F: FnMut(&'a str)>(mut f: F)  {
+fn exec<'a, F: FnMut(&'a str)>(mut f: F) {
     f("hello")
 }
 ```
@@ -153,18 +150,20 @@ fn exec<'a, F: FnMut(&'a str)>(mut f: F)  {
 ```rust
 // A function which takes a closure as an argument and calls it.
 // <F> denotes that F is a "Generic type parameter"
-fn apply<F>(f: F) where
+fn apply<F>(f: F)
+where
     // The closure takes no input and returns nothing.
-    F: FnOnce() {
-
+    F: FnOnce(),
+{
     f();
 }
 
 // A function which takes a closure and returns an `i32`.
-fn apply_to_3<F>(f: F) -> i32 where
+fn apply_to_3<F>(f: F) -> i32
+where
     // The closure takes an `i32` and returns an `i32`.
-    F: Fn(i32) -> i32 {
-
+    F: Fn(i32) -> i32,
+{
     f(3)
 }
 
@@ -209,7 +208,10 @@ fn main() {
 fn main() {
     let mut s = String::new();
 
-    let update_string = |str| -> String {s.push_str(str); s };
+    let update_string = |str| -> String {
+        s.push_str(str);
+        s
+    };
 
     exec(update_string);
 }
@@ -253,7 +255,6 @@ fn create_fn() -> impl Fn(i32) -> i32 {
     move |x| x + num
 }
 
-
 fn main() {
     let fn_plain = create_fn();
     fn_plain(1);
@@ -281,11 +282,10 @@ fn main() {
 
 ```rust
 // Every closure has its own type. Even if one closure has the same representation as another, their types are different.
-fn factory(x:i32) -> Box<dyn Fn(i32) -> i32> {
-
+fn factory(x: i32) -> Box<dyn Fn(i32) -> i32> {
     let num = 5;
 
-    if x > 1{
+    if x > 1 {
         Box::new(move |x| x + num)
     } else {
         Box::new(move |x| x + num)

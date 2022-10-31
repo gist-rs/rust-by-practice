@@ -4,7 +4,7 @@
 fn main() {
     let x = String::from("hello, world");
     let y = x.clone();
-    println!("{},{}",x,y);
+    println!("{},{}", x, y);
 }
 ```
 
@@ -91,8 +91,8 @@ fn main() {
     println!("{}", s);
 }
 
-fn print_str(s: String)  {
-    println!("{}",s)
+fn print_str(s: String) {
+    println!("{}", s)
 }
 ```
 
@@ -136,7 +136,7 @@ fn main() {
 fn main() {
     let x = Box::new(5);
 
-    let mut y = Box::new(3);       // implement this line, dont change other lines!
+    let mut y = Box::new(3); // implement this line, dont change other lines!
 
     *y = 4;
 
@@ -154,7 +154,7 @@ fn main() {
 
     // modify this line only, don't use `_s`
     println!("{:?}", t.1);
- }
+}
 ```
 
 9.
@@ -163,7 +163,7 @@ fn main() {
 fn main() {
     let t = (String::from("hello"), String::from("world"));
 
-    // fill the blanks
+    // Fill the blanks
     let (s1, s2) = t.clone();
 
     println!("{:?}, {:?}, {:?}", s1, s2, t); // -> "hello", "world", ("hello", "world")

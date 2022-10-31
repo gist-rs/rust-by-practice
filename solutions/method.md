@@ -13,7 +13,10 @@ impl Rectangle {
 }
 
 fn main() {
-    let rect1 = Rectangle { width: 30, height: 50 };
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
 
     assert_eq!(rect1.area(), 1500);
 }
@@ -57,7 +60,7 @@ impl TrafficLight {
         println!("the current state is {}", self.color);
     }
 
-    // fill in the blank, DON'T use any variants of `Self`
+    // Fill in the blank, DON'T use any variants of `Self`
     pub fn change_state(&mut self) {
         self.color = "green".to_string()
     }
@@ -80,7 +83,7 @@ impl TrafficLight {
     // 3. must use `Self`, DONT use `TrafficLight`
     pub fn new() -> Self {
         Self {
-            color: "red".to_string()
+            color: "red".to_string(),
         }
     }
 

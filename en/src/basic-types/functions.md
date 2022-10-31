@@ -25,12 +25,12 @@ fn sum(x, y: i32) {
 
 ```rust,editable
 fn main() {
-   print();
+    print();
 }
 
 // Replace i32 with another type
 fn print() -> i32 {
-   println!("Success!");
+    println!("Success!");
 }
 ```
 
@@ -49,7 +49,6 @@ fn main() {
 
 fn never_return() -> ! {
     // Implement this function, don't modify the fn signatures
-
 }
 ```
 
@@ -63,7 +62,6 @@ Diverging functions never return to the caller, so they may be used in places wh
 4. 🌟🌟
 
 ```rust,editable
-
 fn main() {
     println!("Success!");
 }
@@ -83,9 +81,7 @@ fn get_option(tp: u8) -> Option<i32> {
 }
 
 // IMPLEMENT this function in THREE ways
-fn never_return_fn() -> ! {
-
-}
+fn never_return_fn() -> ! {}
 ```
 
 {{#playground functions_4_1.rs answer}}
@@ -96,7 +92,6 @@ fn never_return_fn() -> ! {
 5. 🌟🌟
 
 ```rust,editable
-
 fn main() {
     // FILL in the blank
     let b = __;

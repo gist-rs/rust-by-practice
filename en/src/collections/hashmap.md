@@ -11,7 +11,6 @@ The hash table implementation is a Rust port of Google’s [SwissTable](https://
 1. 🌟🌟
 
 ```rust,editable
-
 // FILL in the blanks and FIX the errors
 use std::collections::HashMap;
 fn main() {
@@ -70,7 +69,6 @@ fn main() {
 3. 🌟🌟
 
 ```rust,editable
-
 // FILL in the blanks
 use std::collections::HashMap;
 fn main() {
@@ -85,7 +83,9 @@ fn main() {
 
     // Insert a key using a function that provides a new value only if it
     // doesn't already exist
-    player_stats.entry("health").or_insert_with(random_stat_buff);
+    player_stats
+        .entry("health")
+        .or_insert_with(random_stat_buff);
     assert_eq!(player_stats["health"], __);
 
     // Ensures a value is in the entry by inserting the default if empty, and returns
@@ -120,7 +120,6 @@ All collection classes implement `Eq` and `Hash` if their contained type also re
 4. 🌟🌟
 
 ```rust,editable
-
 // FIX the errors
 // Tips: `derive` is usually a good way to implement some common used traits
 use std::collections::HashMap;
@@ -198,19 +197,19 @@ For types that implement the `Copy` trait, like `i32` , the values are copied in
 // DON'T remove any code line
 use std::collections::HashMap;
 fn main() {
-  let v1 = 10;
-  let mut m1 = HashMap::new();
-  m1.insert(v1, v1);
-  println!("v1 is still usable after inserting to hashmap : {}", v1);
+    let v1 = 10;
+    let mut m1 = HashMap::new();
+    m1.insert(v1, v1);
+    println!("v1 is still usable after inserting to hashmap : {}", v1);
 
-  let v2 = "hello".to_string();
-  let mut m2 = HashMap::new();
-  // Ownership moved here
-  m2.insert(v2, v1);
+    let v2 = "hello".to_string();
+    let mut m2 = HashMap::new();
+    // Ownership moved here
+    m2.insert(v2, v1);
 
-  assert_eq!(v2, "hello");
+    assert_eq!(v2, "hello");
 
-  println!("Success!");
+    println!("Success!");
 }
 ```
 

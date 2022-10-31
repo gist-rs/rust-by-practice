@@ -16,8 +16,10 @@ impl fmt::Display for List {
         for (count, v) in vec.iter().enumerate() {
             // For every element except the first, add a comma.
             // Use the ? operator to return on errors.
-            if count != 0 { write!(f, ", ")?; }
-            write!(f, "{}: {}",count, v)?;
+            if count != 0 {
+                write!(f, ", ")?;
+            }
+            write!(f, "{}: {}", count, v)?;
         }
 
         // Close the opened bracket and return a fmt::Result value.
@@ -27,5 +29,5 @@ impl fmt::Display for List {
 
 fn main() {
     let v = List(vec![1, 2, 3]);
-    assert_eq!(format!("{}",v), "[0: 1, 1: 2, 2: 3]");
+    assert_eq!(format!("{}", v), "[0: 1, 1: 2, 2: 3]");
 }

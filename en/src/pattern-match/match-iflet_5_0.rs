@@ -1,14 +1,15 @@
 enum MyEnum {
     Foo,
-    Bar
+    Bar,
 }
 
 fn main() {
     let mut count = 0;
 
-    let v = vec![MyEnum::Foo,MyEnum::Bar,MyEnum::Foo];
+    let v = vec![MyEnum::Foo, MyEnum::Bar, MyEnum::Foo];
     for e in v {
-        if matches!(e , MyEnum::Foo) { // fix the error with changing only this line
+        if matches!(e, MyEnum::Foo) {
+            // Fix the error with changing only this line
             count += 1;
         }
     }

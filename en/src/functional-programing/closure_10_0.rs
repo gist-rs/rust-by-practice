@@ -6,7 +6,6 @@ fn create_fn() -> impl Fn(i32) -> i32 {
     move |x| x + num
 }
 
-
 fn main() {
     let fn_plain = create_fn();
     fn_plain(1);

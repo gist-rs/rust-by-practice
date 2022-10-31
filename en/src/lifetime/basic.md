@@ -18,7 +18,7 @@ fn main() {
     let i = 3;
     {
         let borrow1 = &i; // `borrow1` lifetime starts. ──┐
-        //                                                │
+                          //                                                │
         println!("borrow1: {}", borrow1); //              │
     } // `borrow1 ends. ──────────────────────────────────┘
     {
@@ -148,8 +148,7 @@ fn invalid_output<'a>() -> &'a String {
     &String::from("foo")
 }
 
-fn main() {
-}
+fn main() {}
 ```
 
 {{#playground basic_4_2.rs answer}}
@@ -229,7 +228,7 @@ fn main() {
     let single = Borrowed(&x);
     let double = NamedBorrowed { x: &x, y: &y };
     let reference = Either::Ref(&x);
-    let number    = Either::Num(y);
+    let number = Either::Num(y);
 
     println!("x is borrowed in {:?}", single);
     println!("x and y are borrowed in {:?}", double);
@@ -251,24 +250,26 @@ struct NoCopyType {}
 #[derive(Debug)]
 struct Example<'a, 'b> {
     a: &'a u32,
-    b: &'b NoCopyType
+    b: &'b NoCopyType,
 }
 
-fn main()
-{
-  /* 'a tied to fn-main stackframe */
-  let var_a = 35;
-  let example: Example;
+fn main() {
+    /* 'a tied to fn-main stackframe */
+    let var_a = 35;
+    let example: Example;
 
-  {
-    /* lifetime 'b tied to new stackframe/scope */
-    let var_b = NoCopyType {};
+    {
+        /* lifetime 'b tied to new stackframe/scope */
+        let var_b = NoCopyType {};
 
-    /* fixme */
-    example = Example { a: &var_a, b: &var_b };
-  }
+        /* fixme */
+        example = Example {
+            a: &var_a,
+            b: &var_b,
+        };
+    }
 
-  println!("(Success!) {:?}", example);
+    println!("(Success!) {:?}", example);
 }
 ```
 
@@ -277,7 +278,6 @@ fn main()
 8. 🌟🌟
 
 ```rust,editable
-
 #[derive(Debug)]
 struct NoCopyType {}
 
@@ -285,15 +285,15 @@ struct NoCopyType {}
 #[allow(dead_code)]
 struct Example<'a, 'b> {
     a: &'a u32,
-    b: &'b NoCopyType
+    b: &'b NoCopyType,
 }
 
 /* Fix function signature */
-fn fix_me(foo: &Example) -> &NoCopyType
-{ foo.b }
+fn fix_me(foo: &Example) -> &NoCopyType {
+    foo.b
+}
 
-fn main()
-{
+fn main() {
     let no_copy = NoCopyType {};
     let example = Example { a: &1, b: &no_copy };
     fix_me(&example);
@@ -364,7 +364,9 @@ fn nput<'a>(x: &'a i32) {
     println!("`annotated_input`: {}", x);
 }
 
-fn pass<'a>(x: &'a i32) -> &'a i32 { x }
+fn pass<'a>(x: &'a i32) -> &'a i32 {
+    x
+}
 
 fn longest<'a, 'b>(x: &'a str, y: &'b str) -> &'a str {
     x
@@ -374,7 +376,9 @@ struct Owner(i32);
 
 impl Owner {
     // Annotate lifetimes as in a standalone function.
-    fn add_one<'a>(&'a mut self) { self.0 += 1; }
+    fn add_one<'a>(&'a mut self) {
+        self.0 += 1;
+    }
     fn print<'a>(&'a self) {
         println!("`print`: {}", self.0);
     }

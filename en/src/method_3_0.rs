@@ -8,7 +8,7 @@ impl TrafficLight {
         println!("the current state is {}", self.color);
     }
 
-    // fill in the blank, DON'T use any variants of `Self`
+    // Fill in the blank, DON'T use any variants of `Self`
     pub fn change_state(&mut self) {
         self.color = "green".to_string()
     }

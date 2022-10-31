@@ -8,5 +8,5 @@ fn main() {
 
     assert_eq!(total, 6);
 
-    println!("{:?}",v1);
+    println!("{:?}", v1);
 }

@@ -6,7 +6,6 @@ fn get_format() -> (usize, usize) {
     (4, 1)
 }
 
-
 fn main() {
     let person = get_person();
     println!("Hello, {person}!");

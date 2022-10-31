@@ -4,5 +4,5 @@ fn main() {
 }
 
 fn greetings(s: String) {
-    println!("{}",s)
+    println!("{}", s)
 }

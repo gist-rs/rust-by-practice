@@ -8,15 +8,15 @@ fn main() {
     let ele = v.get(2).unwrap();
 
     // Sometimes, the compiler is unable to find the overflow errors for you in compile time ,so a panic will occur
-     let v = production_rate_per_hour(2);
+    let v = production_rate_per_hour(2);
 
-     // because of the same reason as above, we have to wrap it in a function to make the panic occur
-     divide(15, 1);
+    // because of the same reason as above, we have to wrap it in a function to make the panic occur
+    divide(15, 1);
 
-     println!("Success!")
+    println!("Success!")
 }
 
-fn divide(x:u8, y:u8) {
+fn divide(x: u8, y: u8) {
     println!("{}", x / y)
 }
 

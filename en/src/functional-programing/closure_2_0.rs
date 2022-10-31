@@ -8,7 +8,6 @@ fn main() {
 
     inc();
 
-
     let _reborrow = &count;
 
     inc();

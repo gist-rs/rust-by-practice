@@ -5,7 +5,7 @@ fn main() {
 
     if let Some(n) = six {
         println!("{}", n);
-        return
+        return;
     }
 
     panic!("NEVER LET THIS RUN！");

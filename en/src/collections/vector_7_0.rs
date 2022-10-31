@@ -8,7 +8,7 @@ fn main() {
     // FILL in the blank
     let v: Vec<IpAddr> = vec![
         IpAddr::V4("127.0.0.1".to_string()),
-        IpAddr::V6("::1".to_string())
+        IpAddr::V6("::1".to_string()),
     ];
 
     // Comparing two enums need to derive the PartialEq trait

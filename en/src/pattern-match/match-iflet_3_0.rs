@@ -8,8 +8,8 @@ enum Message {
 fn main() {
     let msgs = [
         Message::Quit,
-        Message::Move{x:1, y:3},
-        Message::ChangeColor(255,255,0)
+        Message::Move { x: 1, y: 3 },
+        Message::ChangeColor(255, 255, 0),
     ];
 
     for msg in msgs {
@@ -19,14 +19,15 @@ fn main() {
 
 fn show_message(msg: Message) {
     match msg {
-        Message::Move{x: a, y: b} => { // match  Message::Move
+        Message::Move { x: a, y: b } => {
+            // match  Message::Move
             assert_eq!(a, 1);
             assert_eq!(b, 3);
-        },
+        }
         Message::ChangeColor(_, g, b) => {
             assert_eq!(g, 255);
             assert_eq!(b, 0);
         }
-        _ => println!("no data in these variants")
+        _ => println!("no data in these variants"),
     }
 }

@@ -27,10 +27,14 @@ impl Contains for Container {
         (&self.0 == number_1) && (&self.1 == number_2)
     }
     // Grab the first number.
-    fn first(&self) -> i32 { self.0 }
+    fn first(&self) -> i32 {
+        self.0
+    }
 
     // Grab the last number.
-    fn last(&self) -> i32 { self.1 }
+    fn last(&self) -> i32 {
+        self.1
+    }
 }
 
 fn difference<C: Contains>(container: &C) -> i32 {
@@ -43,9 +47,12 @@ fn main() {
 
     let container = Container(number_1, number_2);
 
-    println!("Does container contain {} and {}: {}",
-        &number_1, &number_2,
-        container.contains(&number_1, &number_2));
+    println!(
+        "Does container contain {} and {}: {}",
+        &number_1,
+        &number_2,
+        container.contains(&number_1, &number_2)
+    );
     println!("First number: {}", container.first());
     println!("Last number: {}", container.last());
 
@@ -173,7 +180,7 @@ struct CSStudent {
     name: String,
     university: String,
     fav_language: String,
-    git_username: String
+    git_username: String,
 }
 
 impl Person for CSStudent {
@@ -205,7 +212,7 @@ fn main() {
         name: "Sunfei".to_string(),
         university: "XXX".to_string(),
         fav_language: "Rust".to_string(),
-        git_username: "sunface".to_string()
+        git_username: "sunface".to_string(),
     };
 
     println!("{}", comp_sci_student_greeting(&student));

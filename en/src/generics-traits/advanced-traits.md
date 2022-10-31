@@ -16,7 +16,6 @@ Using of `Address` is much more clearer and convenient than `AsRef<[u8]> + Clone
 1. 🌟🌟🌟
 
 ```rust,editable
-
 struct Container(i32, i32);
 
 // USING associated types to re-implement trait Contains.
@@ -35,10 +34,14 @@ impl Contains<i32, i32> for Container {
         (&self.0 == number_1) && (&self.1 == number_2)
     }
     // Grab the first number.
-    fn first(&self) -> i32 { self.0 }
+    fn first(&self) -> i32 {
+        self.0
+    }
 
     // Grab the last number.
-    fn last(&self) -> i32 { self.1 }
+    fn last(&self) -> i32 {
+        self.1
+    }
 }
 
 fn difference<A, B, C: Contains<A, B>>(container: &C) -> i32 {
@@ -51,9 +54,12 @@ fn main() {
 
     let container = Container(number_1, number_2);
 
-    println!("Does container contain {} and {}: {}",
-        &number_1, &number_2,
-        container.contains(&number_1, &number_2));
+    println!(
+        "Does container contain {} and {}: {}",
+        &number_1,
+        &number_2,
+        container.contains(&number_1, &number_2)
+    );
     println!("First number: {}", container.first());
     println!("Last number: {}", container.last());
 
@@ -70,7 +76,6 @@ When we use generic type parameters, we can specify a default concrete type for 
 2. 🌟🌟
 
 ```rust,editable
-
 use std::ops::Sub;
 
 #[derive(Debug, PartialEq)]
@@ -93,8 +98,10 @@ impl __ {
 }
 
 fn main() {
-    assert_eq!(Point { x: 2, y: 3 } - Point { x: 1, y: 0 },
-        Point { x: 1, y: 3 });
+    assert_eq!(
+        Point { x: 2, y: 3 } - Point { x: 1, y: 0 },
+        Point { x: 1, y: 3 }
+    );
 
     println!("Success!");
 }
@@ -285,7 +292,6 @@ It’s possible to get around this restriction using the newtype pattern, which 
 use std::fmt;
 
 // DEFINE a newtype `Pretty` here
-
 
 impl fmt::Display for Pretty {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {

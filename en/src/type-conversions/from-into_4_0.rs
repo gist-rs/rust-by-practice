@@ -4,7 +4,10 @@ fn main() {
     let n: u8 = match n.try_into() {
         Ok(n) => n,
         Err(e) => {
-            println!("there is an error when converting: {:?}, but we catch it", e.to_string());
+            println!(
+                "there is an error when converting: {:?}, but we catch it",
+                e.to_string()
+            );
             0
         }
     };

@@ -5,21 +5,23 @@
 ```rust
 fn main() {
     let i = 3; // Lifetime for `i` starts. ────────────────┐
-    //                                                     │
-    { //                                                   │
+               //                                                     │
+    {
+        //                                                   │
         let borrow1 = &i; // `borrow1` lifetime starts. ──┐│
-        //                                                ││
+                          //                                                ││
         println!("borrow1: {}", borrow1); //              ││
     } // `borrow1 ends. ──────────────────────────────────┘│
-    //                                                     │
-    //                                                     │
-    { //                                                   │
+      //                                                     │
+      //                                                     │
+    {
+        //                                                   │
         let borrow2 = &i; // `borrow2` lifetime starts. ──┐│
-        //                                                ││
+                          //                                                ││
         println!("borrow2: {}", borrow2); //              ││
     } // `borrow2` ends. ─────────────────────────────────┘│
-    //                                                     │
-}   // Lifetime ends. ─────────────────────────────────────┘
+      //                                                     │
+} // Lifetime ends. ─────────────────────────────────────┘
 ```
 
 2. We can't borrow a item whose lifetime is smaller.
@@ -27,15 +29,16 @@ fn main() {
 ```rust
 fn main() {
     {
-        let r;                // ---------+-- 'a
-                              //          |
-        {                     //          |
-            let x = 5;        // -+-- 'b  |
-            r = &x;           //  |       |
-        }                     // -+       |
-                              //          |
+        let r; // ---------+-- 'a
+               //          |
+        {
+            //          |
+            let x = 5; // -+-- 'b  |
+            r = &x; //  |       |
+        } // -+       |
+          //          |
         println!("r: {}", r); //          |
-    }                         // ---------+
+    } // ---------+
 }
 ```
 
@@ -131,7 +134,7 @@ fn main() {
     let single = Borrowed(&x);
     let double = NamedBorrowed { x: &x, y: &y };
     let reference = Either::Ref(&x);
-    let number    = Either::Num(y);
+    let number = Either::Num(y);
 
     println!("x is borrowed in {:?}", single);
     println!("x and y are borrowed in {:?}", double);
@@ -151,31 +154,32 @@ struct NoCopyType {}
 #[derive(Debug)]
 struct Example<'a, 'b> {
     a: &'a u32,
-    b: &'b NoCopyType
+    b: &'b NoCopyType,
 }
 
-fn main()
-{
-  /* 'a tied to fn-main stackframe */
-  let var_a = 35;
-  let example: Example;
+fn main() {
+    /* 'a tied to fn-main stackframe */
+    let var_a = 35;
+    let example: Example;
 
-  // {
+    // {
     /* lifetime 'b tied to new stackframe/scope */
     let var_b = NoCopyType {};
 
     /* fixme */
-    example = Example { a: &var_a, b: &var_b };
-  // }
+    example = Example {
+        a: &var_a,
+        b: &var_b,
+    };
+    // }
 
-  println!("(Success!) {:?}", example);
+    println!("(Success!) {:?}", example);
 }
 ```
 
 8. 🌟
 
 ```rust,editable
-
 #[derive(Debug)]
 struct NoCopyType {}
 
@@ -183,15 +187,15 @@ struct NoCopyType {}
 #[allow(dead_code)]
 struct Example<'a, 'b> {
     a: &'a u32,
-    b: &'b NoCopyType
+    b: &'b NoCopyType,
 }
 
 /* Fix function signature */
-fn fix_me<'b>(foo: &Example<'_, 'b>) -> &'b NoCopyType
-{ foo.b }
+fn fix_me<'b>(foo: &Example<'_, 'b>) -> &'b NoCopyType {
+    foo.b
+}
 
-fn main()
-{
+fn main() {
     let no_copy = NoCopyType {};
     let example = Example { a: &1, b: &no_copy };
     fix_me(&example);
@@ -218,12 +222,13 @@ fn main() {}
 10.
 
 ```rust
-
 fn nput(x: &i32) {
     println!("`annotated_input`: {}", x);
 }
 
-fn pass(x: &i32) -> &i32 { x }
+fn pass(x: &i32) -> &i32 {
+    x
+}
 
 fn longest<'a, 'b>(x: &'a str, y: &'b str) -> &'a str {
     x
@@ -233,7 +238,9 @@ struct Owner(i32);
 
 impl Owner {
     // Annotate lifetimes as in a standalone function.
-    fn add_one(&mut self) { self.0 += 1; }
+    fn add_one(&mut self) {
+        self.0 += 1;
+    }
     fn print(&self) {
         println!("`print`: {}", self.0);
     }

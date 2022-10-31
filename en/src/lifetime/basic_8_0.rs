@@ -1,4 +1,3 @@
-
 #[derive(Debug)]
 struct NoCopyType {}
 
@@ -6,15 +5,15 @@ struct NoCopyType {}
 #[allow(dead_code)]
 struct Example<'a, 'b> {
     a: &'a u32,
-    b: &'b NoCopyType
+    b: &'b NoCopyType,
 }
 
 /* Fix function signature */
-fn fix_me<'b>(foo: &Example<'_, 'b>) -> &'b NoCopyType
-{ foo.b }
+fn fix_me<'b>(foo: &Example<'_, 'b>) -> &'b NoCopyType {
+    foo.b
+}
 
-fn main()
-{
+fn main() {
     let no_copy = NoCopyType {};
     let example = Example { a: &1, b: &no_copy };
     fix_me(&example);

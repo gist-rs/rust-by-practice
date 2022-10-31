@@ -58,7 +58,7 @@ impl Inches {
 
 // Add some attributes to make the code work
 // DON'T modify other codes
-#[derive(Debug,PartialEq,PartialOrd)]
+#[derive(Debug, PartialEq, PartialOrd)]
 struct Seconds(i32);
 
 fn main() {
@@ -74,12 +74,11 @@ fn main() {
 
     let meter = Centimeters(100.0);
 
-    let cmp =
-        if foot.to_centimeters() < meter {
-            "smaller"
-        } else {
-            "bigger"
-        };
+    let cmp = if foot.to_centimeters() < meter {
+        "smaller"
+    } else {
+        "bigger"
+    };
 
     println!("One foot is {} than one meter.", cmp);
 }
@@ -148,7 +147,7 @@ fn main() {
 
 ```rust
 // implement `fn summary` to make the code work
-// fix the errors without removing any code line
+// Fix the errors without removing any code line
 trait Summary {
     fn summarize(&self) -> String;
 }
@@ -236,7 +235,10 @@ fn random_animal(random_number: f64) -> impl Animal {
 fn main() {
     let random_number = 0.234;
     let animal = random_animal(random_number);
-    println!("You've randomly chosen an animal, and it says {}", animal.noise());
+    println!(
+        "You've randomly chosen an animal, and it says {}",
+        animal.noise()
+    );
 }
 ```
 
@@ -314,10 +316,7 @@ struct Pair<T> {
 
 impl<T> Pair<T> {
     fn new(x: T, y: T) -> Self {
-        Self {
-            x,
-            y,
-        }
+        Self { x, y }
     }
 }
 
@@ -335,9 +334,9 @@ impl<T: std::fmt::Debug + PartialOrd> Pair<T> {
 struct Unit(i32);
 
 fn main() {
-    let pair = Pair{
+    let pair = Pair {
         x: Unit(1),
-        y: Unit(3)
+        y: Unit(3),
     };
 
     pair.cmp_display();
@@ -370,28 +369,29 @@ fn example1() {
                     let v = (self.calculation)(arg);
                     self.value = Some(v);
                     v
-                },
+                }
             }
         }
     }
 
-    let mut cacher = Cacher::new(|x| x+1);
+    let mut cacher = Cacher::new(|x| x + 1);
     assert_eq!(cacher.value(10), 11);
     assert_eq!(cacher.value(15), 11);
 }
 
-
 fn example2() {
     // We can also use `where` to constrain `T`
     struct Cacher<T>
-        where T: Fn(u32) -> u32,
+    where
+        T: Fn(u32) -> u32,
     {
         calculation: T,
         value: Option<u32>,
     }
 
     impl<T> Cacher<T>
-        where T: Fn(u32) -> u32,
+    where
+        T: Fn(u32) -> u32,
     {
         fn new(calculation: T) -> Cacher<T> {
             Cacher {
@@ -407,17 +407,15 @@ fn example2() {
                     let v = (self.calculation)(arg);
                     self.value = Some(v);
                     v
-                },
+                }
             }
         }
     }
 
-    let mut cacher = Cacher::new(|x| x+1);
+    let mut cacher = Cacher::new(|x| x + 1);
     assert_eq!(cacher.value(20), 21);
     assert_eq!(cacher.value(25), 21);
 }
-
-
 
 fn main() {
     example1();

@@ -15,7 +15,7 @@ fn main() {
 fn main() {
     let mut v = Vec::new();
     for n in 1..101 {
-       v.push(n);
+        v.push(n);
     }
 
     assert_eq!(v.len(), 100);
@@ -59,7 +59,7 @@ fn main() {
         println!("{}", i)
     }
 
-    println!("{:?}",arr);
+    println!("{:?}", arr);
 }
 ```
 
@@ -155,7 +155,7 @@ fn main() {
 
     assert_eq!(total, 6);
 
-    println!("{:?}",v1);
+    println!("{:?}", v1);
 }
 ```
 
@@ -164,10 +164,10 @@ fn main() {
 ```rust
 use std::collections::HashMap;
 fn main() {
-    let names = [("sunface",18), ("sunfei",18)];
+    let names = [("sunface", 18), ("sunfei", 18)];
     let folks: HashMap<_, _> = names.into_iter().collect();
 
-    println!("{:?}",folks);
+    println!("{:?}", folks);
 
     let v1: Vec<i32> = vec![1, 2, 3];
 
@@ -198,7 +198,7 @@ fn main() {
     let ages = [18, 18];
     let folks: HashMap<_, _> = names.into_iter().zip(ages.into_iter()).collect();
 
-    println!("{:?}",folks);
+    println!("{:?}", folks);
 }
 ```
 

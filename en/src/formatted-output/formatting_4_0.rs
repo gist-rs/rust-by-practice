@@ -1,7 +1,7 @@
 fn main() {
     // left align
     println!("Hello {:<5}!", "x"); // => Hello x    !
-    // right align
+                                   // right align
     assert_eq!(format!("Hello {:>5}!", "x"), "Hello     x!");
     // center align
     assert_eq!(format!("Hello {:^5}!", "x"), "Hello   x  !");

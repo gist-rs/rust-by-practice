@@ -2,7 +2,7 @@
 
 ```rust
 fn main() {
-    let _t0: (u8,i16) = (0, -1);
+    let _t0: (u8, i16) = (0, -1);
     // Tuples can be tuple's members
     let _t1: (u8, (i16, u32)) = (0, (-1, 1));
     let t: (u8, u16, i64, &str, String) = (1u8, 2u16, 3i64, "hello", String::from(", world"));
@@ -15,7 +15,7 @@ fn main() {
 fn main() {
     let t = ("i", "am", "sunface");
     assert_eq!(t.2, "sunface");
- }
+}
 ```
 
 3.
@@ -47,7 +47,7 @@ fn main() {
 fn main() {
     let (x, y, z);
 
-    // fill the blank
+    // Fill the blank
     (y, z, x) = (1, 2, 3);
 
     assert_eq!(x, 3);
@@ -64,9 +64,9 @@ fn main() {
 
     assert_eq!(x, 5);
     assert_eq!(y, 6);
- }
+}
 
- fn sum_multiply(nums: (i32, i32)) -> (i32, i32) {
-     (nums.0 + nums.1, nums.0 * nums.1)
- }
+fn sum_multiply(nums: (i32, i32)) -> (i32, i32) {
+    (nums.0 + nums.1, nums.0 * nums.1)
+}
 ```

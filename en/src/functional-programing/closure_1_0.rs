@@ -6,5 +6,5 @@ fn main() {
     print();
     print();
 
-    println!("{}",color);
+    println!("{}", color);
 }

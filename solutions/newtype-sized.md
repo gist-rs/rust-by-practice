@@ -44,7 +44,6 @@ impl Years {
     }
 }
 
-
 impl Days {
     pub fn to_years(&self) -> Years {
         Years(self.0 / 365)
@@ -67,8 +66,8 @@ fn main() {
 4. Sometimes `newtype` pattern can provide extra readability.
 
 ```rust
-use std::ops::Add;
 use std::fmt::{self, format};
+use std::ops::Add;
 
 struct Meters(u32);
 

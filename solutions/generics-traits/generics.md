@@ -1,8 +1,8 @@
 1.
 
 ```rust
-struct A;          // Concrete type `A`.
-struct S(A);       // Concrete type `S`.
+struct A; // Concrete type `A`.
+struct S(A); // Concrete type `S`.
 struct SGen<T>(T); // Generic type `SGen`.
 
 fn reg_fn(_s: S) {}
@@ -15,8 +15,8 @@ fn generic<T>(_s: SGen<T>) {}
 
 fn main() {
     // Using the non-generic functions
-    reg_fn(S(A));          // Concrete type.
-    gen_spec_t(SGen(A));   // Implicitly specified type parameter `A`.
+    reg_fn(S(A)); // Concrete type.
+    gen_spec_t(SGen(A)); // Implicitly specified type parameter `A`.
     gen_spec_i32(SGen(6)); // Implicitly specified type parameter `i32`.
 
     // Explicitly specified type parameter `char` to `generic()`.
@@ -30,7 +30,7 @@ fn main() {
 2.
 
 ```rust
-fn sum<T:std::ops::Add<Output = T>>(x: T, y: T) -> T {
+fn sum<T: std::ops::Add<Output = T>>(x: T, y: T) -> T {
     x + y
 }
 
@@ -66,7 +66,10 @@ struct Point<T, U> {
 
 fn main() {
     // DON'T modify here
-    let p = Point{x: 5, y : "hello".to_string()};
+    let p = Point {
+        x: 5,
+        y: "hello".to_string(),
+    };
 }
 ```
 
@@ -83,10 +86,11 @@ impl<T> Val<T> {
     }
 }
 
-
 fn main() {
-    let x = Val{ val: 3.0 };
-    let y = Val{ val: "hello".to_string()};
+    let x = Val { val: 3.0 };
+    let y = Val {
+        val: "hello".to_string(),
+    };
     println!("{}, {}", x.value(), y.value());
 }
 ```
@@ -110,7 +114,10 @@ impl<T, U> Point<T, U> {
 
 fn main() {
     let p1 = Point { x: 5, y: 10 };
-    let p2 = Point { x: "Hello", y: '中'};
+    let p2 = Point {
+        x: "Hello",
+        y: '中',
+    };
 
     let p3 = p1.mixup(p2);
 
@@ -134,7 +141,10 @@ impl Point<f32> {
 }
 
 fn main() {
-    let p = Point{x: 5.0_f32, y: 10.0_f32};
-    println!("{}",p.distance_from_origin())
+    let p = Point {
+        x: 5.0_f32,
+        y: 10.0_f32,
+    };
+    println!("{}", p.distance_from_origin())
 }
 ```

@@ -5,6 +5,6 @@ fn main() {
     println!("Success!")
 }
 
-fn need_static(r : &'static str) {
+fn need_static(r: &'static str) {
     assert_eq!(r, "hello");
 }

@@ -7,7 +7,6 @@
 > Tips: If we don't explicitly assign a type to a variable, then the compiler will infer one for us.
 
 ```rust,editable
-
 // Remove something to make it work
 fn main() {
     let x: i32 = 5;
@@ -26,7 +25,6 @@ fn main() {
 2. 🌟
 
 ```rust,editable
-
 // Fill the blank
 fn main() {
     let v: u16 = 38_u8 as __;
@@ -42,7 +40,6 @@ fn main() {
 > Tips: If we don't explicitly assign a type to a variable, then the compiler will infer one for us.
 
 ```rust,editable
-
 // Modify `assert_eq!` to make it work
 fn main() {
     let x = 5;
@@ -62,7 +59,6 @@ fn type_of<T>(_: &T) -> String {
 4. 🌟🌟
 
 ```rust,editable
-
 // Fill the blanks to make it work
 fn main() {
     assert_eq!(i8::MAX, __);
@@ -77,7 +73,6 @@ fn main() {
 5. 🌟🌟
 
 ```rust,editable
-
 // Fix errors and panics to make it work
 fn main() {
     let v1 = 251_u8 + 8;
@@ -91,7 +86,6 @@ fn main() {
 6. 🌟🌟
 
 ```rust,editable
-
 // Modify `assert!` to make it work
 fn main() {
     let v = 1_024 + 0xff + 0o77 + 0b1111_1111;
@@ -108,7 +102,6 @@ fn main() {
 7. 🌟
 
 ```rust,editable
-
 // Fill the blank to make it work
 fn main() {
     let x = 1_000.000_1; // ?
@@ -129,9 +122,8 @@ fn type_of<T>(_: &T) -> String {
 8. 🌟🌟 Make it work in two distinct ways
 
 ```rust,editable
-
 fn main() {
-    assert!(0.1+0.2==0.3);
+    assert!(0.1 + 0.2 == 0.3);
 
     println!("Success!");
 }
@@ -154,7 +146,7 @@ fn main() {
     assert!(sum == -3);
 
     for c in 'a'..='z' {
-        println!("{}",c);
+        println!("{}", c);
     }
 }
 ```
@@ -164,7 +156,6 @@ fn main() {
 10. 🌟🌟
 
 ```rust,editable
-
 // Fill the blanks
 use std::ops::{Range, RangeInclusive};
 fn main() {
@@ -182,7 +173,6 @@ fn main() {
 11. 🌟
 
 ```rust,editable
-
 // Fill the blanks and fix the errors
 fn main() {
     // Integer addition

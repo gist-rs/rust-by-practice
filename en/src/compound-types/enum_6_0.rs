@@ -35,7 +35,7 @@ impl List {
             // instead take a reference to the tail
             Cons(_, ref tail) => 1 + tail.len(),
             // Base Case: An empty list has zero length
-            Nil => 0
+            Nil => 0,
         }
     }
 

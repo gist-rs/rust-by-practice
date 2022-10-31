@@ -19,13 +19,13 @@ impl Swan {
 }
 
 impl Bird for Duck {
-    fn quack(&self) -> String{
+    fn quack(&self) -> String {
         "duck duck".to_string()
     }
 }
 
 impl Bird for Swan {
-    fn quack(&self) -> String{
+    fn quack(&self) -> String {
         "swan swan".to_string()
     }
 }
@@ -49,11 +49,11 @@ fn main() {
     println!("Success!")
 }
 
-fn hatch_a_bird(species: u8) ->Box<dyn Bird> {
+fn hatch_a_bird(species: u8) -> Box<dyn Bird> {
     if species == 1 {
-        Box::new(Swan{})
+        Box::new(Swan {})
     } else {
-        Box::new(Duck{})
+        Box::new(Duck {})
     }
 }
 ```
@@ -149,11 +149,15 @@ trait Foo {
 }
 
 impl Foo for u8 {
-    fn method(&self) -> String { format!("u8: {}", *self) }
+    fn method(&self) -> String {
+        format!("u8: {}", *self)
+    }
 }
 
 impl Foo for String {
-    fn method(&self) -> String { format!("string: {}", *self) }
+    fn method(&self) -> String {
+        format!("string: {}", *self)
+    }
 }
 
 // implement below with generics
@@ -185,14 +189,18 @@ trait MyTrait {
 }
 
 impl MyTrait for u32 {
-    fn f(&self) -> u32 { 42 }
+    fn f(&self) -> u32 {
+        42
+    }
 }
 
 impl MyTrait for String {
-    fn f(&self) -> String { self.clone() }
+    fn f(&self) -> String {
+        self.clone()
+    }
 }
 
-fn my_function(x: impl MyTrait) -> impl MyTrait  {
+fn my_function(x: impl MyTrait) -> impl MyTrait {
     x.f()
 }
 

@@ -18,11 +18,14 @@ fn main() {
 #[derive(Debug)]
 struct Person {
     name: String,
-    age: u8
+    age: u8,
 }
 
 fn main() {
-    let person = Person { name:  "Sunface".to_string(), age: 18 };
+    let person = Person {
+        name: "Sunface".to_string(),
+        age: 18,
+    };
 
     println!("{:#?}", person);
 }
@@ -38,7 +41,7 @@ struct Structure(i32);
 struct Deep(Structure);
 impl fmt::Debug for Deep {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{:?}", self.0.0)
+        write!(f, "{:?}", self.0 .0)
     }
 }
 
@@ -104,8 +107,10 @@ impl fmt::Display for List {
         for (count, v) in vec.iter().enumerate() {
             // For every element except the first, add a comma.
             // Use the ? operator to return on errors.
-            if count != 0 { write!(f, ", ")?; }
-            write!(f, "{}: {}",count, v)?;
+            if count != 0 {
+                write!(f, ", ")?;
+            }
+            write!(f, "{}: {}", count, v)?;
         }
 
         // Close the opened bracket and return a fmt::Result value.
@@ -115,6 +120,6 @@ impl fmt::Display for List {
 
 fn main() {
     let v = List(vec![1, 2, 3]);
-    assert_eq!(format!("{}",v), "[0: 1, 1: 2, 2: 3]");
+    assert_eq!(format!("{}", v), "[0: 1, 1: 2, 2: 3]");
 }
 ```

@@ -6,7 +6,7 @@ struct File {
 fn main() {
     let f = File {
         name: String::from("readme.md"),
-        data: "Rust By Practice".to_string()
+        data: "Rust By Practice".to_string(),
     };
 
     let _name = f.name;

@@ -6,5 +6,8 @@ struct Point<T, U> {
 
 fn main() {
     // DON'T modify here
-    let p = Point{x: 5, y : "hello".to_string()};
+    let p = Point {
+        x: 5,
+        y: "hello".to_string(),
+    };
 }

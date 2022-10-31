@@ -14,11 +14,10 @@ fn init() -> Option<&'static mut Config> {
     Some(Box::leak(c))
 }
 
-
 fn main() {
     unsafe {
         config = init();
 
-        println!("{:?}",config)
+        println!("{:?}", config)
     }
 }

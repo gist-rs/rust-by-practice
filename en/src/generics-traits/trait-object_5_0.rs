@@ -3,14 +3,18 @@ trait MyTrait {
 }
 
 impl MyTrait for u32 {
-    fn f(&self) -> u32 { 42 }
+    fn f(&self) -> u32 {
+        42
+    }
 }
 
 impl MyTrait for String {
-    fn f(&self) -> String { self.clone() }
+    fn f(&self) -> String {
+        self.clone()
+    }
 }
 
-fn my_function(x: impl MyTrait) -> impl MyTrait  {
+fn my_function(x: impl MyTrait) -> impl MyTrait {
     x.f()
 }
 

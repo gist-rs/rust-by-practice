@@ -5,7 +5,6 @@ Slices are similar to arrays, but their length is not known at compile time, so 
 1. 🌟🌟 Here, both `[i32]` and `str` are slice types, but directly using it will cause errors. You have to use the reference of the slice instead: `&[i32]`, `&str`.
 
 ```rust,editable
-
 // Fix the errors, DON'T add new lines!
 fn main() {
     let arr = [1, 2, 3];
@@ -24,7 +23,6 @@ A slice reference is a two-word object, for simplicity reasons, from now on we w
 2. 🌟🌟🌟
 
 ```rust,editable
-
 fn main() {
     let arr: [char; 3] = ['中', '国', '人'];
 
@@ -43,7 +41,6 @@ fn main() {
 3. 🌟🌟
 
 ```rust,editable
-
 fn main() {
     let arr: [i32; 5] = [1, 2, 3, 4, 5];
     // Fill the blanks to make the code work
@@ -61,7 +58,6 @@ fn main() {
 4. 🌟
 
 ```rust,editable
-
 fn main() {
     let s = String::from("hello");
 
@@ -80,7 +76,6 @@ fn main() {
 5. 🌟
 
 ```rust,editable
-
 fn main() {
     let s = "你好，世界";
     // Modify this line to make the code work
@@ -97,7 +92,6 @@ fn main() {
 6. 🌟🌟 `&String` can be implicitly converted into `&str`.
 
 ```rust,editable
-
 // Fix errors
 fn main() {
     let mut s = String::from("hello world");

@@ -45,7 +45,7 @@ fn main() {
         teams_map1.insert(team.0, team.1);
     }
 
-    let teams_map2: HashMap<_,_> = teams.into_iter().collect();
+    let teams_map2: HashMap<_, _> = teams.into_iter().collect();
 
     assert_eq!(teams_map1, teams_map2);
 
@@ -92,7 +92,9 @@ fn main() {
 
     // insert a key using a function that provides a new value only if it
     // doesn't already exist
-    player_stats.entry("health").or_insert_with(random_stat_buff);
+    player_stats
+        .entry("health")
+        .or_insert_with(random_stat_buff);
     assert_eq!(player_stats["health"], 100);
 
     // Ensures a value is in the entry by inserting the default if empty, and returns

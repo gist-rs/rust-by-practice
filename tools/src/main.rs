@@ -416,8 +416,8 @@ fn main() -> Result<(), anyhow::Error> {
     // format_md_rs(&"./en/src/pattern-match/match-iflet.md".to_string())
     // format_md_rs(&"./en/src/pattern-match/patterns.md".to_string())
 
-    // format_md_rs_in_folder("./solutions")
-    // format_md_rs_in_folder("./en/src")
+    // format_md_rs_in_folder("../solutions")
+    // format_md_rs_in_folder("../en/src")
 
     // format_md_rs_in_folder("./en/src/basic-types")
 
